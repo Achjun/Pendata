@@ -1,0 +1,14 @@
+
+
+format: jb-book
+root: intro
+
+chapters:
+  - file: pertemuan1   
+  - file: pertemuan2  
+    sections:
+      - file: tugas1  
+        sections:
+          - file: data-iris  
+          - file: analisis-des  
+          - file: visualisasi_dis
