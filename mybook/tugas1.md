@@ -1,6 +1,4 @@
-# Tugas Pertama
-
-## Explorasi Data
+# Eksplorasi Data
 ### Pengertian
 Explorasi Data adalah tahap dalam proyek sains data yang berfokus pada analisis mendalam terhadap dataset untuk menemukan pola, tren, hubungan antar variabel, dan anomali. Tahap ini sering disebut juga sebagai Exploratory Data Analysis (EDA), yaitu proses untuk “menceritakan kisah” yang ada di balik data melalui analisis statistik dan visualisasi.
 

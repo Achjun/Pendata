@@ -1,7 +1,7 @@
-# Pertemuan 2
+# Memahami Data
 
 
-## MEMAHAMI DATA
+
 
 Pada pertemuan 2 membahas topik tentang *memahami data*.
 
