@@ -1,113 +1,199 @@
-# tugas 2
+# tugas
 
-## 1. Struktur Dataset
+## Data Understanding
 
-Dataset yang digunakan merupakan data mahasiswa dengan total:
+Dataset yang digunakan merupakan data mahasiswa {download}`mahasiswa.csv <data/mahasiswa.csv>`:
 
-- Jumlah observasi: **150 baris**
-- Jumlah variabel: **11 kolom**
-- Tidak terdapat missing value (150 non-null untuk semua variabel)
-
-### Klasifikasi Variabel
-
-**Variabel Numerik:**
-- Usia
-- Semester
-- IPK
-- Jumlah_Organisasi
-- ID (identifier)
-
-**Variabel Kategorikal (Nominal):**
-- Jenis_Kelamin
-- Program_Studi
-- Status_Beasiswa
-- Status_Kerja
-
-**Variabel Ordinal:**
-- Tingkat_Kepuasan  
-  (Rendah < Sedang < Tinggi < Sangat Tinggi)
-- Motivasi_Belajar  
-  (Sangat Rendah < Rendah < Sedang < Tinggi < Sangat Tinggi)
+##  Ringkasan Dataset
+- **Jumlah observasi:** 49 mahasiswa
+- **Jumlah variabel:** 11 kolom
+- **Missing value:** Tidak ada
+- **Jenis data:** Numerik dan Kategorikal (termasuk ordinal dalam bentuk kategori teks)
 
 ---
 
-## 2. Statistik Deskriptif Variabel Numerik
+##  Struktur Data
 
-| Variabel            | Mean  | Min | Max |
-|---------------------|-------|-----|-----|
-| Usia                | 21.43 | 18  | 25  |
-| Semester            | 4.33  | 1   | 8   |
-| IPK                 | 2.97  | 2.00| 3.99|
-| Jumlah_Organisasi   | 2.60  | 0   | 5   |
-
-### Interpretasi:
-- Rata-rata mahasiswa berada pada usia **21 tahun**
-- Mayoritas berada di sekitar **semester 4**
-- Rata-rata IPK sebesar **2.97**
-- Mahasiswa rata-rata mengikuti **2–3 organisasi**
-
----
-
-## 3. Distribusi Variabel Kategorikal
-
-### Jenis_Kelamin
-- Perempuan: 80
-- Laki-laki: 70
-
-Distribusi relatif seimbang.
-
-### Program_Studi
-- Manajemen: 45
-- Sistem Informasi: 40
-- Teknik Informatika: 33
-- Akuntansi: 32
-
-Distribusi program studi cukup merata.
-
-### Status_Beasiswa
-- Tidak: 78
-- Ya: 72
-
-Distribusi hampir seimbang.
-
-### Status_Kerja
-- Part Time: 62
-- Tidak Bekerja: 50
-- Full Time: 38
-
-Mayoritas mahasiswa bekerja paruh waktu.
+| Kolom               | Tipe Data | Jenis Variabel | Keterangan |
+|---------------------|----------|---------------|------------|
+| ID                  | int      | Identifier    | Nomor unik mahasiswa |
+| Jenis_Kelamin       | object   | Kategorikal   | Laki-laki / Perempuan |
+| Usia                | int      | Numerik       | Rentang 18–25 tahun |
+| Program_Studi       | object   | Kategorikal   | Jurusan mahasiswa |
+| Semester            | int      | Numerik       | Semester 1–8 |
+| IPK                 | float    | Numerik       | Rentang 2.01–3.99 |
+| Jumlah_Organisasi   | int      | Numerik       | Rentang 0–5 |
+| Tingkat_Kepuasan    | object   | Ordinal       | Sangat Rendah – Sangat Tinggi |
+| Motivasi_Belajar    | object   | Ordinal       | Sangat Rendah – Sangat Tinggi |
+| Status_Beasiswa     | object   | Kategorikal   | Ya / Tidak |
+| Status_Kerja        | object   | Kategorikal   | Tidak Bekerja / Part Time / Full Time |
 
 ---
 
-## 4. Distribusi Variabel Ordinal
+##  Statistik Deskriptif (Numerik)
 
-### Tingkat_Kepuasan
-- Tinggi: 45
-- Rendah: 37
-- Sangat Tinggi: 37
-- Sedang: 31
+| Variabel            | Mean | Min | Max | Std Dev |
+|---------------------|------|------|------|---------|
+| Usia                | 21.45 | 18 | 25 | 2.15 |
+| Semester            | 4.33 | 1 | 8 | 2.17 |
+| IPK                 | 3.04 | 2.01 | 3.99 | 0.66 |
+| Jumlah_Organisasi   | 2.59 | 0 | 5 | 1.63 |
 
-Mayoritas mahasiswa berada pada kategori **Tinggi dan Sangat Tinggi**.
-
-### Motivasi_Belajar
-- Sangat Rendah: 33
-- Tinggi: 33
-- Sedang: 33
-- Sangat Tinggi: 27
-- Rendah: 24
-
-Distribusi motivasi belajar relatif merata.
+> Kolom **ID** tidak dianalisis karena hanya identifier.
 
 ---
 
-## 5. Kesimpulan Tahap Data Understanding
+##  Karakteristik Variabel Ordinal
 
-1. Dataset bersih dan tidak memiliki missing value.
-2. Distribusi data cukup seimbang untuk analisis statistik.
-3. Tidak terdapat nilai ekstrem pada variabel IPK.
-4. Dataset cocok digunakan untuk:
-   - Analisis regresi
-   - Uji korelasi (Pearson/Spearman)
-   - Uji beda (t-test / ANOVA)
-   - Clustering
-   - Analisis hubungan variabel ordinal
+- `Tingkat_Kepuasan` memiliki 4 kategori
+- `Motivasi_Belajar` memiliki 5 kategori
+- Kategori berbentuk teks (misal: Rendah, Sedang, Tinggi), sehingga perlu encoding ordinal jika digunakan untuk modeling
+
+---
+
+##  Kualitas Data
+
+- Tidak ada missing value
+- Semua ID unik (1–49)
+- Tidak ada nilai di luar rentang wajar
+- Dataset relatif bersih dan siap dianalisis
+
+---
+
+##  Rekomendasi Preprocessing
+
+1. Hapus kolom `ID`
+2. Encoding:
+   - One-Hot: Program_Studi, Status_Kerja, Jenis_Kelamin, Status_Beasiswa
+   - Ordinal Encoding: Tingkat_Kepuasan, Motivasi_Belajar (berdasarkan urutan level)
+3. Scaling numerik jika menggunakan model berbasis jarak
+
+---
+
+##  Kesimpulan Awal
+
+Dataset terdiri dari 49 mahasiswa dengan karakteristik demografis, akademik, dan aktivitas organisasi.  
+Data sudah bersih dan dapat langsung digunakan untuk:
+- Analisis deskriptif
+- Clustering mahasiswa
+- Klasifikasi (misalnya prediksi kepuasan atau performa akademik)
+- Analisis hubungan IPK dengan faktor lain
+
+## Visualisasi Data Mahasiswa
+
+### 1. Distribusi IPK
+![Distribusi IPK](images/ipk.png)
+
+### 2. Distribusi Jenis Kelamin
+![Distribusi Semester](images/jenisk.png)
+
+### 3. Distribusi Program Studi
+![Distribusi Tingkat Kepuasan](images/prodi.png)
+
+##  Mengukur Jarak Dataset Mahasiswa
+
+
+## - Rumus Euclidean Distance
+
+Untuk dua mahasiswa A dan B:
+
+\[
+d(A,B) = \sqrt{(x_A - x_B)^2}
+\]
+
+Karena hanya menggunakan satu variabel (Usia), maka:
+
+\[
+d = |Usia_A - Usia_B|
+\]
+###  Euclidean Distance (Variabel: Usia)  
+![Euclidean Distance](images/usia_ecludian.png)  
+
+### Interpretasi
+- Nilai kecil → usia hampir sama
+- Nilai besar → perbedaan usia jauh
+- Nilai 0 pada diagonal → jarak terhadap diri sendiri
+
+### Karakteristik
+- Cocok untuk data numerik kontinu
+- Sensitif terhadap outlier
+- Mengukur jarak secara geometris
+
+---
+
+
+## - Rumus Manhattan Distance
+
+\[
+d(A,B) = |x_1 - y_1| + |x_2 - y_2| + ... + |x_n - y_n|
+\]
+
+Jika hanya menggunakan Semester:
+
+\[
+d = |Semester_A - Semester_B|
+\]
+###  Manhattan Distance (Variabel: Semester)
+![Manhattan Distance](images/smt_manhattan.png)
+
+### Interpretasi
+- Nilai kecil → semester hampir sama
+- Nilai besar → semester sangat berbeda
+
+### Karakteristik
+- Lebih stabil dibanding Euclidean
+- Tidak menggunakan kuadrat
+- Cocok untuk data numerik diskrit
+
+---
+
+
+## - Rumus Hamming Distance
+
+\[
+d(A,B) =
+\begin{cases}
+0, & \text{jika sama} \\
+1, & \text{jika berbeda}
+\end{cases}
+\]
+
+Jika lebih dari satu atribut:
+
+\[
+d = \frac{\text{jumlah atribut berbeda}}{\text{total atribut}}
+\]
+
+###  Hamming Distance (Variabel: IPK yang Dikategorikan)
+![Hamming Distance](images/ipk_hamming.png)
+### Interpretasi
+- 0 → kategori sama
+- 1 → kategori berbeda
+
+### Karakteristik
+- Cocok untuk data kategorikal atau biner
+- Tidak cocok untuk numerik kontinu tanpa kategorisasi
+
+---
+
+##  Perbandingan Metode Distance
+
+| Metode      | Tipe Data           | Sensitif Outlier | Cocok Untuk |
+|------------|--------------------|------------------|-------------|
+| Euclidean  | Numerik kontinu     | Ya               | Usia, IPK asli |
+| Manhattan  | Numerik diskrit     | Lebih stabil     | Semester |
+| Hamming    | Kategorikal/Biner   | Tidak relevan    | Jenis kelamin, status, kategori IPK |
+
+---
+
+##  Kesimpulan
+
+1. **Euclidean Distance** cocok untuk variabel numerik kontinu seperti Usia.
+2. **Manhattan Distance** lebih stabil untuk data diskrit seperti Semester.
+3. **Hamming Distance** hanya tepat untuk data kategorikal atau data numerik yang telah dikategorikan.
+4. Jika dataset memiliki campuran numerik dan kategorikal, metode yang lebih tepat adalah:
+   - **Gower Distance**
+   - Atau normalisasi + encoding sebelum clustering
+
+**Penulis:**  
+Analisis Distance Matrix Dataset Mahasiswa  

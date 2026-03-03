@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>tugas 2 &#8212; My sample book</title>
+    <title>tugas &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="coba" href="random.html" />
     <link rel="prev" title="Mengukur Jarak" href="pertemuan3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,8 +192,10 @@
 <li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Distribusi Data</a></li>
 </ul>
 </details></li>
-<li class="toctree-l2"><a class="reference internal" href="pertemuan3.html">Mengukur Jarak</a></li>
-
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pertemuan3.html">Mengukur Jarak</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">tugas</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 </ul>
@@ -382,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>tugas 2</h1>
+    <h1>tugas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,27 +393,41 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1. Struktur Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-variabel">Klasifikasi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-dataset">Ringkasan Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-data">Struktur Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-numerik">Statistik Deskriptif (Numerik)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-variabel-ordinal">Karakteristik Variabel Ordinal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data">Kualitas Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekomendasi-preprocessing">Rekomendasi Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-awal">Kesimpulan Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-mahasiswa">Visualisasi Data Mahasiswa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-ipk">1. Distribusi IPK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-jenis-kelamin">2. Distribusi Jenis Kelamin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-program-studi">3. Distribusi Program Studi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-variabel-numerik">2. Statistik Deskriptif Variabel Numerik</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-jarak-dataset-mahasiswa">Mengukur Jarak Dataset Mahasiswa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-euclidean-distance">- Rumus Euclidean Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-distance-variabel-usia">Euclidean Distance (Variabel: Usia)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik">Karakteristik</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-kategorikal">3. Distribusi Variabel Kategorikal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-kelamin">Jenis_Kelamin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-studi">Program_Studi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-beasiswa">Status_Beasiswa</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-kerja">Status_Kerja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-manhattan-distance">- Rumus Manhattan Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manhattan-distance-variabel-semester">Manhattan Distance (Variabel: Semester)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Karakteristik</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-ordinal">4. Distribusi Variabel Ordinal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-kepuasan">Tingkat_Kepuasan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivasi-belajar">Motivasi_Belajar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-hamming-distance">- Rumus Hamming Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamming-distance-variabel-ipk-yang-dikategorikan">Hamming Distance (Variabel: IPK yang Dikategorikan)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Karakteristik</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-tahap-data-understanding">5. Kesimpulan Tahap Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-metode-distance">Perbandingan Metode Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
             </nav>
         </div>
@@ -424,168 +439,340 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-2">
-<h1>tugas 2<a class="headerlink" href="#tugas-2" title="Link to this heading">#</a></h1>
-<section id="struktur-dataset">
-<h2>1. Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h2>
-<p>Dataset yang digunakan merupakan data mahasiswa dengan total:</p>
-<ul class="simple">
-<li><p>Jumlah observasi: <strong>150 baris</strong></p></li>
-<li><p>Jumlah variabel: <strong>11 kolom</strong></p></li>
-<li><p>Tidak terdapat missing value (150 non-null untuk semua variabel)</p></li>
-</ul>
-<section id="klasifikasi-variabel">
-<h3>Klasifikasi Variabel<a class="headerlink" href="#klasifikasi-variabel" title="Link to this heading">#</a></h3>
-<p><strong>Variabel Numerik:</strong></p>
-<ul class="simple">
-<li><p>Usia</p></li>
-<li><p>Semester</p></li>
-<li><p>IPK</p></li>
-<li><p>Jumlah_Organisasi</p></li>
-<li><p>ID (identifier)</p></li>
-</ul>
-<p><strong>Variabel Kategorikal (Nominal):</strong></p>
-<ul class="simple">
-<li><p>Jenis_Kelamin</p></li>
-<li><p>Program_Studi</p></li>
-<li><p>Status_Beasiswa</p></li>
-<li><p>Status_Kerja</p></li>
-</ul>
-<p><strong>Variabel Ordinal:</strong></p>
-<ul class="simple">
-<li><p>Tingkat_Kepuasan<br />
-(Rendah &lt; Sedang &lt; Tinggi &lt; Sangat Tinggi)</p></li>
-<li><p>Motivasi_Belajar<br />
-(Sangat Rendah &lt; Rendah &lt; Sedang &lt; Tinggi &lt; Sangat Tinggi)</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas">
+<h1>tugas<a class="headerlink" href="#tugas" title="Link to this heading">#</a></h1>
+<section id="data-understanding">
+<h2>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
+<p>Dataset yang digunakan merupakan data mahasiswa <a class="reference download internal" download="" href="_downloads/27fb7f714b6c3e5a3b98e93f117405ad/mahasiswa.csv"><code class="xref download docutils literal notranslate"><span class="pre">mahasiswa.csv</span></code></a>:</p>
 </section>
+<section id="ringkasan-dataset">
+<h2>Ringkasan Dataset<a class="headerlink" href="#ringkasan-dataset" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Jumlah observasi:</strong> 49 mahasiswa</p></li>
+<li><p><strong>Jumlah variabel:</strong> 11 kolom</p></li>
+<li><p><strong>Missing value:</strong> Tidak ada</p></li>
+<li><p><strong>Jenis data:</strong> Numerik dan Kategorikal (termasuk ordinal dalam bentuk kategori teks)</p></li>
+</ul>
 </section>
 <hr class="docutils" />
-<section id="statistik-deskriptif-variabel-numerik">
-<h2>2. Statistik Deskriptif Variabel Numerik<a class="headerlink" href="#statistik-deskriptif-variabel-numerik" title="Link to this heading">#</a></h2>
+<section id="struktur-data">
+<h2>Struktur Data<a class="headerlink" href="#struktur-data" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Kolom</p></th>
+<th class="head"><p>Tipe Data</p></th>
+<th class="head"><p>Jenis Variabel</p></th>
+<th class="head"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ID</p></td>
+<td><p>int</p></td>
+<td><p>Identifier</p></td>
+<td><p>Nomor unik mahasiswa</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jenis_Kelamin</p></td>
+<td><p>object</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>Laki-laki / Perempuan</p></td>
+</tr>
+<tr class="row-even"><td><p>Usia</p></td>
+<td><p>int</p></td>
+<td><p>Numerik</p></td>
+<td><p>Rentang 18–25 tahun</p></td>
+</tr>
+<tr class="row-odd"><td><p>Program_Studi</p></td>
+<td><p>object</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>Jurusan mahasiswa</p></td>
+</tr>
+<tr class="row-even"><td><p>Semester</p></td>
+<td><p>int</p></td>
+<td><p>Numerik</p></td>
+<td><p>Semester 1–8</p></td>
+</tr>
+<tr class="row-odd"><td><p>IPK</p></td>
+<td><p>float</p></td>
+<td><p>Numerik</p></td>
+<td><p>Rentang 2.01–3.99</p></td>
+</tr>
+<tr class="row-even"><td><p>Jumlah_Organisasi</p></td>
+<td><p>int</p></td>
+<td><p>Numerik</p></td>
+<td><p>Rentang 0–5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tingkat_Kepuasan</p></td>
+<td><p>object</p></td>
+<td><p>Ordinal</p></td>
+<td><p>Sangat Rendah – Sangat Tinggi</p></td>
+</tr>
+<tr class="row-even"><td><p>Motivasi_Belajar</p></td>
+<td><p>object</p></td>
+<td><p>Ordinal</p></td>
+<td><p>Sangat Rendah – Sangat Tinggi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status_Beasiswa</p></td>
+<td><p>object</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>Ya / Tidak</p></td>
+</tr>
+<tr class="row-even"><td><p>Status_Kerja</p></td>
+<td><p>object</p></td>
+<td><p>Kategorikal</p></td>
+<td><p>Tidak Bekerja / Part Time / Full Time</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="statistik-deskriptif-numerik">
+<h2>Statistik Deskriptif (Numerik)<a class="headerlink" href="#statistik-deskriptif-numerik" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Variabel</p></th>
 <th class="head"><p>Mean</p></th>
 <th class="head"><p>Min</p></th>
 <th class="head"><p>Max</p></th>
+<th class="head"><p>Std Dev</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Usia</p></td>
-<td><p>21.43</p></td>
+<td><p>21.45</p></td>
 <td><p>18</p></td>
 <td><p>25</p></td>
+<td><p>2.15</p></td>
 </tr>
 <tr class="row-odd"><td><p>Semester</p></td>
 <td><p>4.33</p></td>
 <td><p>1</p></td>
 <td><p>8</p></td>
+<td><p>2.17</p></td>
 </tr>
 <tr class="row-even"><td><p>IPK</p></td>
-<td><p>2.97</p></td>
-<td><p>2.00</p></td>
+<td><p>3.04</p></td>
+<td><p>2.01</p></td>
 <td><p>3.99</p></td>
+<td><p>0.66</p></td>
 </tr>
 <tr class="row-odd"><td><p>Jumlah_Organisasi</p></td>
-<td><p>2.60</p></td>
+<td><p>2.59</p></td>
 <td><p>0</p></td>
 <td><p>5</p></td>
+<td><p>1.63</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<section id="interpretasi">
-<h3>Interpretasi:<a class="headerlink" href="#interpretasi" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Rata-rata mahasiswa berada pada usia <strong>21 tahun</strong></p></li>
-<li><p>Mayoritas berada di sekitar <strong>semester 4</strong></p></li>
-<li><p>Rata-rata IPK sebesar <strong>2.97</strong></p></li>
-<li><p>Mahasiswa rata-rata mengikuti <strong>2–3 organisasi</strong></p></li>
-</ul>
-</section>
+<blockquote>
+<div><p>Kolom <strong>ID</strong> tidak dianalisis karena hanya identifier.</p>
+</div></blockquote>
 </section>
 <hr class="docutils" />
-<section id="distribusi-variabel-kategorikal">
-<h2>3. Distribusi Variabel Kategorikal<a class="headerlink" href="#distribusi-variabel-kategorikal" title="Link to this heading">#</a></h2>
-<section id="jenis-kelamin">
-<h3>Jenis_Kelamin<a class="headerlink" href="#jenis-kelamin" title="Link to this heading">#</a></h3>
+<section id="karakteristik-variabel-ordinal">
+<h2>Karakteristik Variabel Ordinal<a class="headerlink" href="#karakteristik-variabel-ordinal" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Perempuan: 80</p></li>
-<li><p>Laki-laki: 70</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tingkat_Kepuasan</span></code> memiliki 4 kategori</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Motivasi_Belajar</span></code> memiliki 5 kategori</p></li>
+<li><p>Kategori berbentuk teks (misal: Rendah, Sedang, Tinggi), sehingga perlu encoding ordinal jika digunakan untuk modeling</p></li>
 </ul>
-<p>Distribusi relatif seimbang.</p>
-</section>
-<section id="program-studi">
-<h3>Program_Studi<a class="headerlink" href="#program-studi" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Manajemen: 45</p></li>
-<li><p>Sistem Informasi: 40</p></li>
-<li><p>Teknik Informatika: 33</p></li>
-<li><p>Akuntansi: 32</p></li>
-</ul>
-<p>Distribusi program studi cukup merata.</p>
-</section>
-<section id="status-beasiswa">
-<h3>Status_Beasiswa<a class="headerlink" href="#status-beasiswa" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Tidak: 78</p></li>
-<li><p>Ya: 72</p></li>
-</ul>
-<p>Distribusi hampir seimbang.</p>
-</section>
-<section id="status-kerja">
-<h3>Status_Kerja<a class="headerlink" href="#status-kerja" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Part Time: 62</p></li>
-<li><p>Tidak Bekerja: 50</p></li>
-<li><p>Full Time: 38</p></li>
-</ul>
-<p>Mayoritas mahasiswa bekerja paruh waktu.</p>
-</section>
 </section>
 <hr class="docutils" />
-<section id="distribusi-variabel-ordinal">
-<h2>4. Distribusi Variabel Ordinal<a class="headerlink" href="#distribusi-variabel-ordinal" title="Link to this heading">#</a></h2>
-<section id="tingkat-kepuasan">
-<h3>Tingkat_Kepuasan<a class="headerlink" href="#tingkat-kepuasan" title="Link to this heading">#</a></h3>
+<section id="kualitas-data">
+<h2>Kualitas Data<a class="headerlink" href="#kualitas-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Tinggi: 45</p></li>
-<li><p>Rendah: 37</p></li>
-<li><p>Sangat Tinggi: 37</p></li>
-<li><p>Sedang: 31</p></li>
+<li><p>Tidak ada missing value</p></li>
+<li><p>Semua ID unik (1–49)</p></li>
+<li><p>Tidak ada nilai di luar rentang wajar</p></li>
+<li><p>Dataset relatif bersih dan siap dianalisis</p></li>
 </ul>
-<p>Mayoritas mahasiswa berada pada kategori <strong>Tinggi dan Sangat Tinggi</strong>.</p>
-</section>
-<section id="motivasi-belajar">
-<h3>Motivasi_Belajar<a class="headerlink" href="#motivasi-belajar" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Sangat Rendah: 33</p></li>
-<li><p>Tinggi: 33</p></li>
-<li><p>Sedang: 33</p></li>
-<li><p>Sangat Tinggi: 27</p></li>
-<li><p>Rendah: 24</p></li>
-</ul>
-<p>Distribusi motivasi belajar relatif merata.</p>
-</section>
 </section>
 <hr class="docutils" />
-<section id="kesimpulan-tahap-data-understanding">
-<h2>5. Kesimpulan Tahap Data Understanding<a class="headerlink" href="#kesimpulan-tahap-data-understanding" title="Link to this heading">#</a></h2>
+<section id="rekomendasi-preprocessing">
+<h2>Rekomendasi Preprocessing<a class="headerlink" href="#rekomendasi-preprocessing" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Dataset bersih dan tidak memiliki missing value.</p></li>
-<li><p>Distribusi data cukup seimbang untuk analisis statistik.</p></li>
-<li><p>Tidak terdapat nilai ekstrem pada variabel IPK.</p></li>
-<li><p>Dataset cocok digunakan untuk:</p>
+<li><p>Hapus kolom <code class="docutils literal notranslate"><span class="pre">ID</span></code></p></li>
+<li><p>Encoding:</p>
 <ul class="simple">
-<li><p>Analisis regresi</p></li>
-<li><p>Uji korelasi (Pearson/Spearman)</p></li>
-<li><p>Uji beda (t-test / ANOVA)</p></li>
-<li><p>Clustering</p></li>
-<li><p>Analisis hubungan variabel ordinal</p></li>
+<li><p>One-Hot: Program_Studi, Status_Kerja, Jenis_Kelamin, Status_Beasiswa</p></li>
+<li><p>Ordinal Encoding: Tingkat_Kepuasan, Motivasi_Belajar (berdasarkan urutan level)</p></li>
+</ul>
+</li>
+<li><p>Scaling numerik jika menggunakan model berbasis jarak</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan-awal">
+<h2>Kesimpulan Awal<a class="headerlink" href="#kesimpulan-awal" title="Link to this heading">#</a></h2>
+<p>Dataset terdiri dari 49 mahasiswa dengan karakteristik demografis, akademik, dan aktivitas organisasi.<br />
+Data sudah bersih dan dapat langsung digunakan untuk:</p>
+<ul class="simple">
+<li><p>Analisis deskriptif</p></li>
+<li><p>Clustering mahasiswa</p></li>
+<li><p>Klasifikasi (misalnya prediksi kepuasan atau performa akademik)</p></li>
+<li><p>Analisis hubungan IPK dengan faktor lain</p></li>
+</ul>
+</section>
+<section id="visualisasi-data-mahasiswa">
+<h2>Visualisasi Data Mahasiswa<a class="headerlink" href="#visualisasi-data-mahasiswa" title="Link to this heading">#</a></h2>
+<section id="distribusi-ipk">
+<h3>1. Distribusi IPK<a class="headerlink" href="#distribusi-ipk" title="Link to this heading">#</a></h3>
+<p><img alt="Distribusi IPK" src="_images/ipk.png" /></p>
+</section>
+<section id="distribusi-jenis-kelamin">
+<h3>2. Distribusi Jenis Kelamin<a class="headerlink" href="#distribusi-jenis-kelamin" title="Link to this heading">#</a></h3>
+<p><img alt="Distribusi Semester" src="_images/jenisk.png" /></p>
+</section>
+<section id="distribusi-program-studi">
+<h3>3. Distribusi Program Studi<a class="headerlink" href="#distribusi-program-studi" title="Link to this heading">#</a></h3>
+<p><img alt="Distribusi Tingkat Kepuasan" src="_images/prodi.png" /></p>
+</section>
+</section>
+<section id="mengukur-jarak-dataset-mahasiswa">
+<h2>Mengukur Jarak Dataset Mahasiswa<a class="headerlink" href="#mengukur-jarak-dataset-mahasiswa" title="Link to this heading">#</a></h2>
+</section>
+<section id="rumus-euclidean-distance">
+<h2>- Rumus Euclidean Distance<a class="headerlink" href="#rumus-euclidean-distance" title="Link to this heading">#</a></h2>
+<p>Untuk dua mahasiswa A dan B:</p>
+<p>[
+d(A,B) = \sqrt{(x_A - x_B)^2}
+]</p>
+<p>Karena hanya menggunakan satu variabel (Usia), maka:</p>
+<p>[
+d = |Usia_A - Usia_B|
+]</p>
+<section id="euclidean-distance-variabel-usia">
+<h3>Euclidean Distance (Variabel: Usia)<a class="headerlink" href="#euclidean-distance-variabel-usia" title="Link to this heading">#</a></h3>
+<p><img alt="Euclidean Distance" src="_images/usia_ecludian.png" /></p>
+</section>
+<section id="interpretasi">
+<h3>Interpretasi<a class="headerlink" href="#interpretasi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nilai kecil → usia hampir sama</p></li>
+<li><p>Nilai besar → perbedaan usia jauh</p></li>
+<li><p>Nilai 0 pada diagonal → jarak terhadap diri sendiri</p></li>
+</ul>
+</section>
+<section id="karakteristik">
+<h3>Karakteristik<a class="headerlink" href="#karakteristik" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cocok untuk data numerik kontinu</p></li>
+<li><p>Sensitif terhadap outlier</p></li>
+<li><p>Mengukur jarak secara geometris</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="rumus-manhattan-distance">
+<h2>- Rumus Manhattan Distance<a class="headerlink" href="#rumus-manhattan-distance" title="Link to this heading">#</a></h2>
+<p>[
+d(A,B) = |x_1 - y_1| + |x_2 - y_2| + … + |x_n - y_n|
+]</p>
+<p>Jika hanya menggunakan Semester:</p>
+<p>[
+d = |Semester_A - Semester_B|
+]</p>
+<section id="manhattan-distance-variabel-semester">
+<h3>Manhattan Distance (Variabel: Semester)<a class="headerlink" href="#manhattan-distance-variabel-semester" title="Link to this heading">#</a></h3>
+<p><img alt="Manhattan Distance" src="_images/smt_manhattan.png" /></p>
+</section>
+<section id="id1">
+<h3>Interpretasi<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nilai kecil → semester hampir sama</p></li>
+<li><p>Nilai besar → semester sangat berbeda</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Karakteristik<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Lebih stabil dibanding Euclidean</p></li>
+<li><p>Tidak menggunakan kuadrat</p></li>
+<li><p>Cocok untuk data numerik diskrit</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="rumus-hamming-distance">
+<h2>- Rumus Hamming Distance<a class="headerlink" href="#rumus-hamming-distance" title="Link to this heading">#</a></h2>
+<p>[
+d(A,B) =
+\begin{cases}
+0, &amp; \text{jika sama} \
+1, &amp; \text{jika berbeda}
+\end{cases}
+]</p>
+<p>Jika lebih dari satu atribut:</p>
+<p>[
+d = \frac{\text{jumlah atribut berbeda}}{\text{total atribut}}
+]</p>
+<section id="hamming-distance-variabel-ipk-yang-dikategorikan">
+<h3>Hamming Distance (Variabel: IPK yang Dikategorikan)<a class="headerlink" href="#hamming-distance-variabel-ipk-yang-dikategorikan" title="Link to this heading">#</a></h3>
+<p><img alt="Hamming Distance" src="_images/ipk_hamming.png" /></p>
+</section>
+<section id="id3">
+<h3>Interpretasi<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>0 → kategori sama</p></li>
+<li><p>1 → kategori berbeda</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Karakteristik<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cocok untuk data kategorikal atau biner</p></li>
+<li><p>Tidak cocok untuk numerik kontinu tanpa kategorisasi</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="perbandingan-metode-distance">
+<h2>Perbandingan Metode Distance<a class="headerlink" href="#perbandingan-metode-distance" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metode</p></th>
+<th class="head"><p>Tipe Data</p></th>
+<th class="head"><p>Sensitif Outlier</p></th>
+<th class="head"><p>Cocok Untuk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Euclidean</p></td>
+<td><p>Numerik kontinu</p></td>
+<td><p>Ya</p></td>
+<td><p>Usia, IPK asli</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manhattan</p></td>
+<td><p>Numerik diskrit</p></td>
+<td><p>Lebih stabil</p></td>
+<td><p>Semester</p></td>
+</tr>
+<tr class="row-even"><td><p>Hamming</p></td>
+<td><p>Kategorikal/Biner</p></td>
+<td><p>Tidak relevan</p></td>
+<td><p>Jenis kelamin, status, kategori IPK</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Euclidean Distance</strong> cocok untuk variabel numerik kontinu seperti Usia.</p></li>
+<li><p><strong>Manhattan Distance</strong> lebih stabil untuk data diskrit seperti Semester.</p></li>
+<li><p><strong>Hamming Distance</strong> hanya tepat untuk data kategorikal atau data numerik yang telah dikategorikan.</p></li>
+<li><p>Jika dataset memiliki campuran numerik dan kategorikal, metode yang lebih tepat adalah:</p>
+<ul class="simple">
+<li><p><strong>Gower Distance</strong></p></li>
+<li><p>Atau normalisasi + encoding sebelum clustering</p></li>
 </ul>
 </li>
 </ol>
+<p><strong>Penulis:</strong><br />
+Analisis Distance Matrix Dataset Mahasiswa</p>
 </section>
 </section>
 
@@ -628,15 +815,6 @@ document.write(`
         <p class="prev-next-title">Mengukur Jarak</p>
       </div>
     </a>
-    <a class="right-next"
-       href="random.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">coba</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -653,27 +831,41 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1. Struktur Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-variabel">Klasifikasi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-dataset">Ringkasan Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-data">Struktur Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-numerik">Statistik Deskriptif (Numerik)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-variabel-ordinal">Karakteristik Variabel Ordinal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kualitas-data">Kualitas Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekomendasi-preprocessing">Rekomendasi Preprocessing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-awal">Kesimpulan Awal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data-mahasiswa">Visualisasi Data Mahasiswa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-ipk">1. Distribusi IPK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-jenis-kelamin">2. Distribusi Jenis Kelamin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-program-studi">3. Distribusi Program Studi</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-variabel-numerik">2. Statistik Deskriptif Variabel Numerik</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-jarak-dataset-mahasiswa">Mengukur Jarak Dataset Mahasiswa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-euclidean-distance">- Rumus Euclidean Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euclidean-distance-variabel-usia">Euclidean Distance (Variabel: Usia)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik">Karakteristik</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-kategorikal">3. Distribusi Variabel Kategorikal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-kelamin">Jenis_Kelamin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-studi">Program_Studi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-beasiswa">Status_Beasiswa</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-kerja">Status_Kerja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-manhattan-distance">- Rumus Manhattan Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manhattan-distance-variabel-semester">Manhattan Distance (Variabel: Semester)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Interpretasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Karakteristik</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-ordinal">4. Distribusi Variabel Ordinal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-kepuasan">Tingkat_Kepuasan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivasi-belajar">Motivasi_Belajar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-hamming-distance">- Rumus Hamming Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamming-distance-variabel-ipk-yang-dikategorikan">Hamming Distance (Variabel: IPK yang Dikategorikan)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Interpretasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Karakteristik</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-tahap-data-understanding">5. Kesimpulan Tahap Data Understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-metode-distance">Perbandingan Metode Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
   </nav></div>
 

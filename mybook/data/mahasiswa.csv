@@ -1,0 +1,50 @@
+ID,Jenis_Kelamin,Usia,Program_Studi,Semester,IPK,Jumlah_Organisasi,Tingkat_Kepuasan,Motivasi_Belajar,Status_Beasiswa,Status_Kerja
+1,Perempuan,18,Manajemen,5,2.22,1,Sedang,Rendah,Tidak,Part Time
+2,Perempuan,25,Sistem Informasi,3,3.72,4,Rendah,Sangat Tinggi,Ya,Full Time
+3,Perempuan,22,Akuntansi,5,3.83,3,Tinggi,Sangat Rendah,Tidak,Tidak Bekerja
+4,Laki-laki,24,Akuntansi,1,2.19,3,Sedang,Rendah,Ya,Full Time
+5,Perempuan,21,Akuntansi,1,3.27,1,Tinggi,Rendah,Tidak,Full Time
+6,Laki-laki,22,Sistem Informasi,7,2.95,5,Tinggi,Rendah,Tidak,Part Time
+7,Laki-laki,22,Teknik Informatika,2,3.99,5,Sedang,Rendah,Tidak,Full Time
+8,Laki-laki,23,Sistem Informasi,8,3.24,4,Sangat Tinggi,Rendah,Tidak,Part Time
+9,Perempuan,19,Sistem Informasi,4,3.46,1,Sangat Tinggi,Sangat Tinggi,Tidak,Part Time
+10,Laki-laki,22,Manajemen,4,3.79,2,Sangat Tinggi,Sangat Rendah,Tidak,Full Time
+11,Laki-laki,21,Manajemen,5,3.57,0,Sedang,Tinggi,Ya,Part Time
+12,Perempuan,24,Sistem Informasi,7,3.36,0,Sangat Tinggi,Sangat Rendah,Tidak,Tidak Bekerja
+13,Laki-laki,24,Teknik Informatika,3,3.62,0,Tinggi,Rendah,Tidak,Part Time
+14,Laki-laki,20,Manajemen,5,2.41,1,Rendah,Sedang,Tidak,Tidak Bekerja
+15,Laki-laki,19,Manajemen,3,2.68,2,Tinggi,Tinggi,Ya,Part Time
+16,Perempuan,21,Akuntansi,1,2.61,4,Tinggi,Sangat Rendah,Ya,Tidak Bekerja
+17,Perempuan,25,Teknik Informatika,5,3.9,1,Sedang,Tinggi,Tidak,Part Time
+18,Perempuan,20,Akuntansi,6,2.49,5,Rendah,Sedang,Ya,Tidak Bekerja
+19,Perempuan,18,Manajemen,4,3.1,4,Sedang,Rendah,Ya,Part Time
+20,Laki-laki,22,Teknik Informatika,4,3.21,4,Rendah,Sangat Tinggi,Ya,Tidak Bekerja
+21,Laki-laki,22,Sistem Informasi,8,2.16,0,Rendah,Tinggi,Tidak,Full Time
+22,Perempuan,22,Teknik Informatika,5,2.25,5,Tinggi,Sangat Rendah,Tidak,Part Time
+23,Laki-laki,18,Akuntansi,6,3.42,2,Sangat Tinggi,Sangat Tinggi,Ya,Tidak Bekerja
+24,Perempuan,18,Manajemen,6,2.14,1,Sedang,Sedang,Tidak,Tidak Bekerja
+25,Perempuan,22,Sistem Informasi,2,2.32,4,Sangat Tinggi,Sedang,Tidak,Tidak Bekerja
+26,Laki-laki,19,Sistem Informasi,1,3.12,2,Sedang,Rendah,Ya,Full Time
+27,Perempuan,19,Teknik Informatika,5,2.87,1,Sangat Tinggi,Sedang,Ya,Full Time
+28,Perempuan,21,Manajemen,8,3.56,3,Rendah,Tinggi,Tidak,Full Time
+29,Perempuan,25,Teknik Informatika,4,3.43,3,Sangat Tinggi,Rendah,Ya,Part Time
+30,Perempuan,21,Sistem Informasi,7,2.18,1,Sangat Tinggi,Sedang,Ya,Part Time
+31,Perempuan,18,Manajemen,5,2.07,4,Rendah,Sedang,Tidak,Part Time
+32,Laki-laki,25,Teknik Informatika,1,2.7,4,Sangat Tinggi,Sangat Rendah,Ya,Tidak Bekerja
+33,Laki-laki,22,Teknik Informatika,3,3.35,4,Rendah,Sedang,Ya,Tidak Bekerja
+34,Laki-laki,25,Sistem Informasi,6,3.97,3,Tinggi,Sangat Tinggi,Tidak,Part Time
+35,Perempuan,24,Manajemen,5,3.37,1,Tinggi,Tinggi,Tidak,Tidak Bekerja
+36,Perempuan,23,Sistem Informasi,7,3.98,4,Rendah,Tinggi,Ya,Part Time
+37,Perempuan,18,Akuntansi,8,2.28,5,Sangat Tinggi,Rendah,Tidak,Tidak Bekerja
+38,Perempuan,22,Manajemen,4,2.21,4,Rendah,Sangat Rendah,Ya,Tidak Bekerja
+39,Laki-laki,18,Teknik Informatika,2,3.94,0,Sedang,Rendah,Tidak,Part Time
+40,Perempuan,22,Sistem Informasi,1,3.83,1,Sedang,Sedang,Ya,Part Time
+41,Perempuan,23,Akuntansi,6,2.98,3,Rendah,Tinggi,Ya,Part Time
+42,Perempuan,20,Akuntansi,6,2.06,2,Sedang,Sangat Rendah,Ya,Tidak Bekerja
+43,Perempuan,22,Manajemen,2,2.36,5,Rendah,Sangat Rendah,Ya,Part Time
+44,Laki-laki,21,Sistem Informasi,4,3.51,1,Tinggi,Sangat Tinggi,Ya,Full Time
+45,Laki-laki,24,Akuntansi,1,3.31,4,Sangat Tinggi,Sangat Rendah,Tidak,Tidak Bekerja
+46,Perempuan,21,Akuntansi,2,2.51,1,Sedang,Sangat Tinggi,Tidak,Full Time
+47,Laki-laki,21,Sistem Informasi,2,3.61,4,Sangat Tinggi,Sangat Tinggi,Ya,Part Time
+48,Laki-laki,22,Sistem Informasi,6,3.95,3,Tinggi,Tinggi,Tidak,Full Time
+49,Perempuan,21,Sistem Informasi,6,2.01,2,Rendah,Sedang,Ya,Part Time
