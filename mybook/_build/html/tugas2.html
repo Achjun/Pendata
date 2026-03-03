@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Analisis Statistik Deskriptif &#8212; My sample book</title>
+    <title>tugas 2 &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'analisis_des';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Visualisasi Dustribusi" href="visualisasi_dis.html" />
-    <link rel="prev" title="Data Iris" href="data-iris.html" />
+    <link rel="next" title="coba" href="random.html" />
+    <link rel="prev" title="Mengukur Jarak" href="pertemuan3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,15 +180,21 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="pertemuan1.html">Pertemuan 1</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan2.html">Pertemuan 2</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="tugas1.html">Tugas Pertama</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pertemuan1.html">Bussines Understanding</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="data-iris.html">Data Iris</a></li>
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Analisis Statistik Deskriptif</a></li>
 
-<li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Dustribusi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analisis-des.html">Analisis Statistik Deskriptif</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Distribusi Data</a></li>
 </ul>
 </details></li>
+<li class="toctree-l2"><a class="reference internal" href="pertemuan3.html">Mengukur Jarak</a></li>
+
 </ul>
 </details></li>
 </ul>
@@ -262,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fanalisis_des.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftugas2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -292,7 +298,7 @@
       
       
       
-      <li><a href="_sources/analisis_des.md" target="_blank"
+      <li><a href="_sources/tugas2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -376,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analisis Statistik Deskriptif</h1>
+    <h1>tugas 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,10 +392,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Statistik Deskriptif</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-orange">Visualisasi Orange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1. Struktur Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-variabel">Klasifikasi Variabel</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-variabel-numerik">2. Statistik Deskriptif Variabel Numerik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-kategorikal">3. Distribusi Variabel Kategorikal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-kelamin">Jenis_Kelamin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-studi">Program_Studi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-beasiswa">Status_Beasiswa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-kerja">Status_Kerja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-ordinal">4. Distribusi Variabel Ordinal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-kepuasan">Tingkat_Kepuasan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivasi-belajar">Motivasi_Belajar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-tahap-data-understanding">5. Kesimpulan Tahap Data Understanding</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -400,12 +424,169 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analisis-statistik-deskriptif">
-<h1>Analisis Statistik Deskriptif<a class="headerlink" href="#analisis-statistik-deskriptif" title="Link to this heading">#</a></h1>
-<p>metode untuk meringkas, mengatur, dan menyajikan data mentah agar menjadi informasi yang mudah dipahami, biasanya melalui nilai rata-rata (mean), median, modus, standar deviasi, maksimum, dan minimum</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-2">
+<h1>tugas 2<a class="headerlink" href="#tugas-2" title="Link to this heading">#</a></h1>
+<section id="struktur-dataset">
+<h2>1. Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h2>
+<p>Dataset yang digunakan merupakan data mahasiswa dengan total:</p>
+<ul class="simple">
+<li><p>Jumlah observasi: <strong>150 baris</strong></p></li>
+<li><p>Jumlah variabel: <strong>11 kolom</strong></p></li>
+<li><p>Tidak terdapat missing value (150 non-null untuk semua variabel)</p></li>
+</ul>
+<section id="klasifikasi-variabel">
+<h3>Klasifikasi Variabel<a class="headerlink" href="#klasifikasi-variabel" title="Link to this heading">#</a></h3>
+<p><strong>Variabel Numerik:</strong></p>
+<ul class="simple">
+<li><p>Usia</p></li>
+<li><p>Semester</p></li>
+<li><p>IPK</p></li>
+<li><p>Jumlah_Organisasi</p></li>
+<li><p>ID (identifier)</p></li>
+</ul>
+<p><strong>Variabel Kategorikal (Nominal):</strong></p>
+<ul class="simple">
+<li><p>Jenis_Kelamin</p></li>
+<li><p>Program_Studi</p></li>
+<li><p>Status_Beasiswa</p></li>
+<li><p>Status_Kerja</p></li>
+</ul>
+<p><strong>Variabel Ordinal:</strong></p>
+<ul class="simple">
+<li><p>Tingkat_Kepuasan<br />
+(Rendah &lt; Sedang &lt; Tinggi &lt; Sangat Tinggi)</p></li>
+<li><p>Motivasi_Belajar<br />
+(Sangat Rendah &lt; Rendah &lt; Sedang &lt; Tinggi &lt; Sangat Tinggi)</p></li>
+</ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="visualisasi-orange">
-<h1>Visualisasi Orange<a class="headerlink" href="#visualisasi-orange" title="Link to this heading">#</a></h1>
+</section>
+<hr class="docutils" />
+<section id="statistik-deskriptif-variabel-numerik">
+<h2>2. Statistik Deskriptif Variabel Numerik<a class="headerlink" href="#statistik-deskriptif-variabel-numerik" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variabel</p></th>
+<th class="head"><p>Mean</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Usia</p></td>
+<td><p>21.43</p></td>
+<td><p>18</p></td>
+<td><p>25</p></td>
+</tr>
+<tr class="row-odd"><td><p>Semester</p></td>
+<td><p>4.33</p></td>
+<td><p>1</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-even"><td><p>IPK</p></td>
+<td><p>2.97</p></td>
+<td><p>2.00</p></td>
+<td><p>3.99</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jumlah_Organisasi</p></td>
+<td><p>2.60</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="interpretasi">
+<h3>Interpretasi:<a class="headerlink" href="#interpretasi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Rata-rata mahasiswa berada pada usia <strong>21 tahun</strong></p></li>
+<li><p>Mayoritas berada di sekitar <strong>semester 4</strong></p></li>
+<li><p>Rata-rata IPK sebesar <strong>2.97</strong></p></li>
+<li><p>Mahasiswa rata-rata mengikuti <strong>2–3 organisasi</strong></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="distribusi-variabel-kategorikal">
+<h2>3. Distribusi Variabel Kategorikal<a class="headerlink" href="#distribusi-variabel-kategorikal" title="Link to this heading">#</a></h2>
+<section id="jenis-kelamin">
+<h3>Jenis_Kelamin<a class="headerlink" href="#jenis-kelamin" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Perempuan: 80</p></li>
+<li><p>Laki-laki: 70</p></li>
+</ul>
+<p>Distribusi relatif seimbang.</p>
+</section>
+<section id="program-studi">
+<h3>Program_Studi<a class="headerlink" href="#program-studi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Manajemen: 45</p></li>
+<li><p>Sistem Informasi: 40</p></li>
+<li><p>Teknik Informatika: 33</p></li>
+<li><p>Akuntansi: 32</p></li>
+</ul>
+<p>Distribusi program studi cukup merata.</p>
+</section>
+<section id="status-beasiswa">
+<h3>Status_Beasiswa<a class="headerlink" href="#status-beasiswa" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tidak: 78</p></li>
+<li><p>Ya: 72</p></li>
+</ul>
+<p>Distribusi hampir seimbang.</p>
+</section>
+<section id="status-kerja">
+<h3>Status_Kerja<a class="headerlink" href="#status-kerja" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Part Time: 62</p></li>
+<li><p>Tidak Bekerja: 50</p></li>
+<li><p>Full Time: 38</p></li>
+</ul>
+<p>Mayoritas mahasiswa bekerja paruh waktu.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="distribusi-variabel-ordinal">
+<h2>4. Distribusi Variabel Ordinal<a class="headerlink" href="#distribusi-variabel-ordinal" title="Link to this heading">#</a></h2>
+<section id="tingkat-kepuasan">
+<h3>Tingkat_Kepuasan<a class="headerlink" href="#tingkat-kepuasan" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tinggi: 45</p></li>
+<li><p>Rendah: 37</p></li>
+<li><p>Sangat Tinggi: 37</p></li>
+<li><p>Sedang: 31</p></li>
+</ul>
+<p>Mayoritas mahasiswa berada pada kategori <strong>Tinggi dan Sangat Tinggi</strong>.</p>
+</section>
+<section id="motivasi-belajar">
+<h3>Motivasi_Belajar<a class="headerlink" href="#motivasi-belajar" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Sangat Rendah: 33</p></li>
+<li><p>Tinggi: 33</p></li>
+<li><p>Sedang: 33</p></li>
+<li><p>Sangat Tinggi: 27</p></li>
+<li><p>Rendah: 24</p></li>
+</ul>
+<p>Distribusi motivasi belajar relatif merata.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan-tahap-data-understanding">
+<h2>5. Kesimpulan Tahap Data Understanding<a class="headerlink" href="#kesimpulan-tahap-data-understanding" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Dataset bersih dan tidak memiliki missing value.</p></li>
+<li><p>Distribusi data cukup seimbang untuk analisis statistik.</p></li>
+<li><p>Tidak terdapat nilai ekstrem pada variabel IPK.</p></li>
+<li><p>Dataset cocok digunakan untuk:</p>
+<ul class="simple">
+<li><p>Analisis regresi</p></li>
+<li><p>Uji korelasi (Pearson/Spearman)</p></li>
+<li><p>Uji beda (t-test / ANOVA)</p></li>
+<li><p>Clustering</p></li>
+<li><p>Analisis hubungan variabel ordinal</p></li>
+</ul>
+</li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,20 +620,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="data-iris.html"
+       href="pertemuan3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Iris</p>
+        <p class="prev-next-title">Mengukur Jarak</p>
       </div>
     </a>
     <a class="right-next"
-       href="visualisasi_dis.html"
+       href="random.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualisasi Dustribusi</p>
+        <p class="prev-next-title">coba</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -472,10 +653,28 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisis Statistik Deskriptif</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-orange">Visualisasi Orange</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">1. Struktur Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-variabel">Klasifikasi Variabel</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-variabel-numerik">2. Statistik Deskriptif Variabel Numerik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-kategorikal">3. Distribusi Variabel Kategorikal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-kelamin">Jenis_Kelamin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#program-studi">Program_Studi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-beasiswa">Status_Beasiswa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#status-kerja">Status_Kerja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-variabel-ordinal">4. Distribusi Variabel Ordinal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-kepuasan">Tingkat_Kepuasan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivasi-belajar">Motivasi_Belajar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-tahap-data-understanding">5. Kesimpulan Tahap Data Understanding</a></li>
+</ul>
   </nav></div>
 
 </div></div>

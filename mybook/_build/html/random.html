@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualisasi Distribusi Data &#8212; My sample book</title>
+    <title>coba &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'visualisasi_dis';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'random';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mengukur Jarak" href="pertemuan3.html" />
-    <link rel="prev" title="Analisis Statistik Deskriptif" href="analisis-des.html" />
+    <link rel="prev" title="tugas 2" href="tugas2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,7 +181,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pertemuan1.html">Bussines Understanding</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="data-iris.html">Data Iris</a></li>
 
 <li class="toctree-l3"><a class="reference internal" href="analisis-des.html">Analisis Statistik Deskriptif</a></li>
@@ -190,7 +189,7 @@
 
 
 
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Visualisasi Distribusi Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Distribusi Data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="pertemuan3.html">Mengukur Jarak</a></li>
@@ -268,7 +267,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvisualisasi_dis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Frandom.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +297,7 @@
       
       
       
-      <li><a href="_sources/visualisasi_dis.md" target="_blank"
+      <li><a href="_sources/random.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,9 +368,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -382,20 +379,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualisasi Distribusi Data</h1>
+    <h1>coba</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">BoxPlot</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -405,31 +393,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualisasi-distribusi-data">
-<h1>Visualisasi Distribusi Data<a class="headerlink" href="#visualisasi-distribusi-data" title="Link to this heading">#</a></h1>
-<p>Visualisasi distribusi data adalah teknik grafis untuk menunjukkan bagaimana nilai-nilai dalam kumpulan data tersebar, mengelompok, atau membentuk pola tertentu (seperti Histogram, Boxplot atau Density plot).</p>
-<section id="histogram">
-<h2>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h2>
-<p>Histogram digunakan untuk menampilkan distribusi frekuensi dari data numerik dengan membagi data ke dalam beberapa interval (bins). Visualisasi ini membantu memahami pola penyebaran data, seperti kecenderungan nilai, tingkat variasi, serta kemungkinan adanya nilai ekstrem (outlier).</p>
-<p>Pada dataset Iris, histogram digunakan untuk melihat sebaran nilai pada setiap fitur sehingga memudahkan analisis awal sebelum dilakukan pengolahan data lebih lanjut.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/gambar_1.png"><img alt="_images/gambar_1.png" src="_images/gambar_1.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Fig. 2 Analisis Statistik Deskriptif Fitur <em>sepal_length</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="boxplot">
-<h2>BoxPlot<a class="headerlink" href="#boxplot" title="Link to this heading">#</a></h2>
-<p>Boxplot merupakan visualisasi statistik yang digunakan untuk menggambarkan ringkasan distribusi data melalui nilai minimum, kuartil pertama (Q1), median, kuartil ketiga (Q3), dan maksimum. Boxplot juga menampilkan outlier, yaitu data yang berada di luar rentang normal.</p>
-<p>Pada dataset Iris, boxplot membantu melihat sebaran data, tingkat variasi, serta perbedaan karakteristik antar fitur secara cepat. Visualisasi ini efektif untuk membandingkan distribusi data dan mendeteksi nilai ekstrem sebelum dilakukan analisis lebih lanjut.</p>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/box.png"><img alt="_images/box.png" src="_images/box.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Fig. 3 Visualisasi distribusi data bentuk BoxPlot <em>sepal_length</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="coba">
+<h1>coba<a class="headerlink" href="#coba" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -463,22 +428,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="analisis-des.html"
+       href="tugas2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analisis Statistik Deskriptif</p>
+        <p class="prev-next-title">tugas 2</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="pertemuan3.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mengukur Jarak</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -486,22 +442,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">BoxPlot</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
