@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Distance_Student_Data_updated';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Prediksi Nilai Usia yang Hilang Menggunakan KNN" href="knn.html" />
     <link rel="prev" title="Distance in Iris Data" href="distance_iris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -200,6 +201,14 @@
 <li class="toctree-l2"><a class="reference internal" href="Data_Student_updated.html">Data Student</a></li>
 <li class="toctree-l2"><a class="reference internal" href="distance_iris.html">Distance in Iris Data</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Distance in Student Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knn.html">Prediksi Nilai Usia yang Hilang Menggunakan KNN</a></li>
+
+
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -398,21 +407,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dua-mahasiswa"><strong>Data Dua Mahasiswa</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentukan-rentang-range-numerik"><strong>Tentukan Rentang (Range) Numerik</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-jarak-tiap-atribut"><strong>Hitung Jarak Tiap Atribut</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-atribut-numerik-normalisasi"><strong>A. Atribut Numerik (Normalisasi)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usia"><strong>Usia</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentukan-rentang-range-numerik"><strong>Tentukan Rentang (Range) Numerik</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-euclidean-distance">Perhitungan Euclidean Distance</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-atribut-nominal-simple-matching"><strong>B. Atribut Nominal (Simple Matching)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-jarak-tiap-atribut"><strong>Hitung Jarak Tiap Atribut</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-atribut-nominal-simple-matching"><strong>A. Atribut Nominal (Simple Matching)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#program-studi"><strong>Program_Studi</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-atribut-binary"><strong>C. Atribut Binary</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-atribut-binary"><strong>B. Atribut Binary</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#status-beasiswa"><strong>Status_Beasiswa</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-atribut-ordinal"><strong>D. Atribut Ordinal</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-atribut-ordinal"><strong>C. Atribut Ordinal</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-ranking"><strong>Konversi Ranking</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-kepuasan"><strong>Tingkat_Kepuasan</strong></a></li>
 </ul>
@@ -487,38 +495,57 @@ document.write(`
 <section id="tentukan-rentang-range-numerik">
 <h2><strong>Tentukan Rentang (Range) Numerik</strong><a class="headerlink" href="#tentukan-rentang-range-numerik" title="Link to this heading">#</a></h2>
 <p>Dari dataset:</p>
+<section id="perhitungan-euclidean-distance">
+<h3>Perhitungan Euclidean Distance<a class="headerlink" href="#perhitungan-euclidean-distance" title="Link to this heading">#</a></h3>
+<p>Rumus Euclidean Distance:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) = \sqrt{(x - y)^2}
+\]</div>
+<p>Untuk atribut <strong>Usia</strong>:</p>
 <ul class="simple">
-<li><p>Usia: 18 – 25 → Range = 7</p></li>
+<li><p>Usia Mahasiswa 1 = 18</p></li>
+<li><p>Usia Mahasiswa 2 = 25</p></li>
 </ul>
+<p>Perhitungan:</p>
+<div class="math notranslate nohighlight">
+\[
+d = \sqrt{(18 - 25)^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d = \sqrt{(-7)^2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d = \sqrt{49}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d = 7
+\]</div>
+<p>Sehingga <strong>jarak Euclidean untuk atribut usia adalah 7</strong>.</p>
+<p><img alt="Foto Saya" src="_images/euc1dan2.png" /></p>
+</section>
 </section>
 <section id="hitung-jarak-tiap-atribut">
 <h2><strong>Hitung Jarak Tiap Atribut</strong><a class="headerlink" href="#hitung-jarak-tiap-atribut" title="Link to this heading">#</a></h2>
-<section id="a-atribut-numerik-normalisasi">
-<h3><strong>A. Atribut Numerik (Normalisasi)</strong><a class="headerlink" href="#a-atribut-numerik-normalisasi" title="Link to this heading">#</a></h3>
-<section id="usia">
-<h4><strong>Usia</strong><a class="headerlink" href="#usia" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[
-|18 - 25| / 7 = 7/7 = 1.00
-\]</div>
-</section>
-</section>
-<section id="b-atribut-nominal-simple-matching">
-<h3><strong>B. Atribut Nominal (Simple Matching)</strong><a class="headerlink" href="#b-atribut-nominal-simple-matching" title="Link to this heading">#</a></h3>
+<section id="a-atribut-nominal-simple-matching">
+<h3><strong>A. Atribut Nominal (Simple Matching)</strong><a class="headerlink" href="#a-atribut-nominal-simple-matching" title="Link to this heading">#</a></h3>
 <section id="program-studi">
 <h4><strong>Program_Studi</strong><a class="headerlink" href="#program-studi" title="Link to this heading">#</a></h4>
 <p>Berbeda → 1</p>
 </section>
 </section>
-<section id="c-atribut-binary">
-<h3><strong>C. Atribut Binary</strong><a class="headerlink" href="#c-atribut-binary" title="Link to this heading">#</a></h3>
+<section id="b-atribut-binary">
+<h3><strong>B. Atribut Binary</strong><a class="headerlink" href="#b-atribut-binary" title="Link to this heading">#</a></h3>
 <section id="status-beasiswa">
 <h4><strong>Status_Beasiswa</strong><a class="headerlink" href="#status-beasiswa" title="Link to this heading">#</a></h4>
 <p>Berbeda (Tidak vs Ya) → 1</p>
 </section>
 </section>
-<section id="d-atribut-ordinal">
-<h3><strong>D. Atribut Ordinal</strong><a class="headerlink" href="#d-atribut-ordinal" title="Link to this heading">#</a></h3>
+<section id="c-atribut-ordinal">
+<h3><strong>C. Atribut Ordinal</strong><a class="headerlink" href="#c-atribut-ordinal" title="Link to this heading">#</a></h3>
 <section id="konversi-ranking">
 <h4><strong>Konversi Ranking</strong><a class="headerlink" href="#konversi-ranking" title="Link to this heading">#</a></h4>
 <p>Tingkat_Kepuasan:</p>
@@ -646,6 +673,15 @@ D = 0.875
         <p class="prev-next-title">Distance in Iris Data</p>
       </div>
     </a>
+    <a class="right-next"
+       href="knn.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Prediksi Nilai Usia yang Hilang Menggunakan KNN</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -663,21 +699,20 @@ D = 0.875
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-dua-mahasiswa"><strong>Data Dua Mahasiswa</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentukan-rentang-range-numerik"><strong>Tentukan Rentang (Range) Numerik</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-jarak-tiap-atribut"><strong>Hitung Jarak Tiap Atribut</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-atribut-numerik-normalisasi"><strong>A. Atribut Numerik (Normalisasi)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#usia"><strong>Usia</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentukan-rentang-range-numerik"><strong>Tentukan Rentang (Range) Numerik</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-euclidean-distance">Perhitungan Euclidean Distance</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-atribut-nominal-simple-matching"><strong>B. Atribut Nominal (Simple Matching)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-jarak-tiap-atribut"><strong>Hitung Jarak Tiap Atribut</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-atribut-nominal-simple-matching"><strong>A. Atribut Nominal (Simple Matching)</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#program-studi"><strong>Program_Studi</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-atribut-binary"><strong>C. Atribut Binary</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-atribut-binary"><strong>B. Atribut Binary</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#status-beasiswa"><strong>Status_Beasiswa</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-atribut-ordinal"><strong>D. Atribut Ordinal</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-atribut-ordinal"><strong>C. Atribut Ordinal</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-ranking"><strong>Konversi Ranking</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tingkat-kepuasan"><strong>Tingkat_Kepuasan</strong></a></li>
 </ul>

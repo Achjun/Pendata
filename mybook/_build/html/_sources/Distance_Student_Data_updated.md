@@ -25,31 +25,56 @@ Diambil dari dataset yang dikirim:
 
 Dari dataset:
 
-* Usia: 18 – 25 → Range = 7
+### Perhitungan Euclidean Distance
+
+Rumus Euclidean Distance:
+
+$$
+d(x,y) = \sqrt{(x - y)^2}
+$$
+
+Untuk atribut **Usia**:
+
+- Usia Mahasiswa 1 = 18  
+- Usia Mahasiswa 2 = 25  
+
+Perhitungan:
+
+$$
+d = \sqrt{(18 - 25)^2}
+$$
+
+$$
+d = \sqrt{(-7)^2}
+$$
+
+$$
+d = \sqrt{49}
+$$
+
+$$
+d = 7
+$$
+
+Sehingga **jarak Euclidean untuk atribut usia adalah 7**.
+
+![Foto Saya](images/euc1dan2.png)
 
 ## **Hitung Jarak Tiap Atribut**
 
-### **A. Atribut Numerik (Normalisasi)**
-
-#### **Usia**
-
-$$
-|18 - 25| / 7 = 7/7 = 1.00
-$$
-
-### **B. Atribut Nominal (Simple Matching)**
+### **A. Atribut Nominal (Simple Matching)**
 
 #### **Program_Studi**
 
 Berbeda → 1
 
-### **C. Atribut Binary**
+### **B. Atribut Binary**
 
 #### **Status_Beasiswa**
 
 Berbeda (Tidak vs Ya) → 1
 
-### **D. Atribut Ordinal**
+### **C. Atribut Ordinal**
 
 #### **Konversi Ranking**
 
