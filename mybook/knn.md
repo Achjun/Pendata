@@ -5,15 +5,15 @@ data ke‑10** menggunakan metode **K‑Nearest Neighbor (KNN)**.
 
 Atribut pada dataset:
 
--   Usia\
--   Tingkat_Kepuasan\
--   Status_Beasiswa\
+-   Usia
+-   Tingkat_Kepuasan
+-   Status_Beasiswa
 -   Program_Studi
 
 Untuk memprediksi **Usia**, atribut pembanding yang digunakan:
 
--   Tingkat_Kepuasan\
--   Status_Beasiswa\
+-   Tingkat_Kepuasan
+-   Status_Beasiswa
 -   Program_Studi
 
 ------------------------------------------------------------------------
