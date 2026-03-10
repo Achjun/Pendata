@@ -135,18 +135,8 @@ Artinya tingkat kemiripan keduanya relatif rendah berdasarkan atribut yang terse
 
 ## Implementasi Orange
 
-```{figure} /img/Distance_Orange.png
----
-width: 100%
-fig-margin : 0
----
-```
+![Foto Saya](images/visual.png)  
 
-```{figure} /img/Distance.png
----
-width: 50%
-fig-margin : 0
----
-```
+![Foto Saya](images/id1dan2.png)  
 
 Perbedaan nilai jarak antara perhitungan manual dan hasil pada Orange dapat terjadi karena metode pengolahan atribut kategorikal bisa berbeda. Pada perhitungan manual di sini digunakan konsep **Gower Distance** untuk data campuran, sedangkan pada Orange hasil dapat dipengaruhi oleh proses transformasi data dan metrik jarak yang dipilih saat workflow dijalankan.
