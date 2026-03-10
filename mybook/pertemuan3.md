@@ -1,4 +1,4 @@
-# Mengukur Jarak
+# Data Distance
 
 ## Mengapa Mengukur Jarak Penting dalam Penambangan Data?
 

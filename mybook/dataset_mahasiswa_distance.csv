@@ -1,0 +1,51 @@
+ID,Usia,Tingkat_Kepuasan,Status_Beasiswa,Program_Studi
+1,18,Sedang,Tidak,Manajemen
+2,25,Rendah,Ya,Sistem Informasi
+3,20,Tinggi,Tidak,Akuntansi
+4,21,Sedang,Ya,Manajemen
+5,19,Rendah,Tidak,Sistem Informasi
+6,22,Tinggi,Ya,Akuntansi
+7,23,Tinggi,Tidak,Manajemen
+8,24,Sedang,Ya,Sistem Informasi
+9,20,Rendah,Tidak,Akuntansi
+10,21,Sedang,Ya,Manajemen
+11,22,Tinggi,Tidak,Sistem Informasi
+12,19,Rendah,Tidak,Akuntansi
+13,23,Sedang,Ya,Manajemen
+14,24,Tinggi,Ya,Sistem Informasi
+15,20,Sedang,Tidak,Akuntansi
+16,21,Rendah,Tidak,Manajemen
+17,22,Sedang,Ya,Sistem Informasi
+18,23,Tinggi,Ya,Akuntansi
+19,24,Sedang,Tidak,Manajemen
+20,25,Tinggi,Ya,Sistem Informasi
+21,18,Rendah,Tidak,Akuntansi
+22,19,Sedang,Ya,Manajemen
+23,20,Tinggi,Tidak,Sistem Informasi
+24,21,Sedang,Ya,Akuntansi
+25,22,Rendah,Tidak,Manajemen
+26,23,Tinggi,Ya,Sistem Informasi
+27,24,Sedang,Tidak,Akuntansi
+28,25,Rendah,Ya,Manajemen
+29,18,Sedang,Tidak,Sistem Informasi
+30,19,Tinggi,Ya,Akuntansi
+31,20,Sedang,Tidak,Manajemen
+32,21,Rendah,Tidak,Sistem Informasi
+33,22,Tinggi,Ya,Akuntansi
+34,23,Sedang,Ya,Manajemen
+35,24,Rendah,Tidak,Sistem Informasi
+36,25,Tinggi,Ya,Akuntansi
+37,18,Sedang,Tidak,Manajemen
+38,19,Rendah,Ya,Sistem Informasi
+39,20,Tinggi,Tidak,Akuntansi
+40,21,Sedang,Ya,Manajemen
+41,22,Rendah,Tidak,Sistem Informasi
+42,23,Tinggi,Ya,Akuntansi
+43,24,Sedang,Tidak,Manajemen
+44,25,Rendah,Ya,Sistem Informasi
+45,18,Tinggi,Tidak,Akuntansi
+46,19,Sedang,Ya,Manajemen
+47,20,Rendah,Tidak,Sistem Informasi
+48,21,Tinggi,Ya,Akuntansi
+49,22,Sedang,Tidak,Manajemen
+50,23,Rendah,Ya,Sistem Informasi

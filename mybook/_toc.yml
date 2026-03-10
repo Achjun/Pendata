@@ -10,6 +10,8 @@ chapters:
           - file: data-iris  
           - file: analisis-des  
           - file: visualisasi_dis  
-      - file: pertemuan3  
-        sections:
-          - file: tugas2   
+  - file: pertemuan3  
+    sections:
+      - file: Data_Student_updated    
+      - file: distance_iris  
+      - file: Distance_Student_Data_updated  

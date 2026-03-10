@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data Distance &#8212; My sample book</title>
+    <title>Distance in Iris Data &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pertemuan3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'distance_iris';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Student" href="Data_Student_updated.html" />
-    <link rel="prev" title="Visualisasi Distribusi Data" href="visualisasi_dis.html" />
+    <link rel="next" title="Distance in Student Data" href="Distance_Student_Data_updated.html" />
+    <link rel="prev" title="Data Student" href="Data_Student_updated.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,9 +197,9 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Data Distance</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan3.html">Data Distance</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Data_Student_updated.html">Data Student</a></li>
-<li class="toctree-l2"><a class="reference internal" href="distance_iris.html">Distance in Iris Data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Distance in Iris Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Distance_Student_Data_updated.html">Distance in Student Data</a></li>
 </ul>
 </details></li>
@@ -274,7 +274,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpertemuan3.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdistance_iris.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="_sources/pertemuan3.md" target="_blank"
+      <li><a href="_sources/distance_iris.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data Distance</h1>
+    <h1>Distance in Iris Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,14 +398,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-mengukur-jarak-penting-dalam-penambangan-data">Mengapa Mengukur Jarak Penting dalam Penambangan Data?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dasar-untuk-clustering-pengelompokan">1. Dasar untuk Clustering (Pengelompokan)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digunakan-dalam-k-nearest-neighbors-knn">2. Digunakan dalam K-Nearest Neighbors (KNN)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-kemiripan-data">3. Mengukur Kemiripan Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-anomali">4. Deteksi Outlier (Anomali)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berpengaruh-terhadap-akurasi-model">5. Berpengaruh terhadap Akurasi Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fondasi-representasi-data-dalam-ruang-dimensi">6. Fondasi Representasi Data dalam Ruang Dimensi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-jarak-tipe-data-numerik">Mengukur Jarak Tipe Data Numerik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-euclidean-distance">Implementasi Menggunakan Euclidean Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pembentukan-matriks-jarak">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-manhattan-distance">Implementasi Menggunakan Manhattan Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-minkowski-distance">Implementasi Menggunakan Minkowski Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -417,98 +424,380 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-distance">
-<h1>Data Distance<a class="headerlink" href="#data-distance" title="Link to this heading">#</a></h1>
-<section id="mengapa-mengukur-jarak-penting-dalam-penambangan-data">
-<h2>Mengapa Mengukur Jarak Penting dalam Penambangan Data?<a class="headerlink" href="#mengapa-mengukur-jarak-penting-dalam-penambangan-data" title="Link to this heading">#</a></h2>
-<p>Dalam penambangan data (<em>data mining</em>), <strong>mengukur jarak (distance measurement)</strong> sangat penting karena banyak algoritma bekerja berdasarkan konsep <strong>kemiripan (similarity)</strong> atau <strong>ketidaksamaan (dissimilarity)</strong> antar data.</p>
-<p>Jarak adalah cara kuantitatif untuk menentukan seberapa mirip atau berbeda dua data.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="distance-in-iris-data">
+<h1>Distance in Iris Data<a class="headerlink" href="#distance-in-iris-data" title="Link to this heading">#</a></h1>
+<section id="mengukur-jarak-tipe-data-numerik">
+<h2>Mengukur Jarak Tipe Data Numerik<a class="headerlink" href="#mengukur-jarak-tipe-data-numerik" title="Link to this heading">#</a></h2>
+<p>Mengukur jarak adalah komponen utama dalam algoritma clustering berbasis jarak. Pada Dataset Iris ini atribut/fitur bertipe data numerik, jadi jarak bisa diukur menggunakan Manhattan Distance, Euclidean Distance, Minkwoski Distance.</p>
+<section id="implementasi-menggunakan-euclidean-distance">
+<h3>Implementasi Menggunakan Euclidean Distance<a class="headerlink" href="#implementasi-menggunakan-euclidean-distance" title="Link to this heading">#</a></h3>
+<p>Euclidean Distance digunakan untuk mengukur jarak tipe data numerik dan paling umum di pakai. Dataset Iris yang akan diukur menggunakan Euclidean Distance ini terdiri dari 150 data bunga, 4 atribut numerik yaitu sepal_length, sepal_width, petal_length, petal_width.</p>
+<p>Setiap atribut direpresentasikan sebagai vektor berdimensi 4:</p>
+<div class="math notranslate nohighlight">
+\[
+x = (x_1, x_2, x_3, x_4)
+\]</div>
+<p>Rumus Euclidean Distance yang digunakan adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) = \sqrt{
+(x_1 - y_1)^2 +
+(x_2 - y_2)^2 +
+(x_3 - y_3)^2 +
+(x_4 - y_4)^2
+}
+\]</div>
+<p>Sebagai ilustrasi, digunakan dua data pertama pada dataset Iris.</p>
+<p>Data ke-1:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = (5.1, 3.5, 1.4, 0.2)
+\]</div>
+<p>Data ke-2:</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 = (4.9, 3.0, 1.4, 0.2)
+\]</div>
+<p>Langkah perhitungan:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_2) =
+\sqrt{
+(5.1 - 4.9)^2 +
+(3.5 - 3.0)^2 +
+(1.4 - 1.4)^2 +
+(0.2 - 0.2)^2
+}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+\sqrt{
+(0.2)^2 +
+(0.5)^2 +
+(0)^2 +
+(0)^2
+}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+\sqrt{
+0.04 + 0.25 + 0 + 0
+}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+\sqrt{0.29}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\approx 0.538
+\]</div>
+<p>Penjelasan :</p>
+<p>Hasil perhitungan menunjukkan bahwa jarak antara data pertama dan data kedua sekitar 0.538. Nilai ini menunjukkan tingkat kemiripan kedua sampel, yaitu dimana semakin kecil nilai jarak maka semakin tingkat kemiripan tinggi.</p>
+<section id="pembentukan-matriks-jarak">
+<h4>Pembentukan Matriks Jarak<a class="headerlink" href="#pembentukan-matriks-jarak" title="Link to this heading">#</a></h4>
+<p>Setelah menghitung jarak antar pasangan data menggunakan Euclidean Distance, langkah berikutnya adalah menyusun nilai - nilai tersebut ke dalam suatu matriks jarak (distance matrix).</p>
+<p>Secara umum, jika terdapat <span class="math notranslate nohighlight">\(n\)</span> data, maka matriks jarak
+yang terbentuk berukuran:</p>
+<div class="math notranslate nohighlight">
+\[
+n \times n
+\]</div>
+<p>Karena dataset Iris terdiri dari 150 data, maka
+ukuran matriks jaraknya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+150 \times 150
+\]</div>
+<p>Sebagai ilustrasi, misalkan diambil tiga data pertama
+dari dataset Iris:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = (5.1, 3.5, 1.4, 0.2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_2 = (4.9, 3.0, 1.4, 0.2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_3 = (4.7, 3.2, 1.3, 0.2)
+\]</div>
+<p>Diasumsikan hasil perhitungan jaraknya menggunakan Rumus Euclidean tadi, yaitu :</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_2) = 0.538
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_3) = 0.510
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(x_2,x_3) = 0.300
+\]</div>
+<p>Maka matriks jarak yang terbentuk adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D =
+\begin{bmatrix}
+0 &amp; 0.538 &amp; 0.510 \\
+0.538 &amp; 0 &amp; 0.300 \\
+0.510 &amp; 0.300 &amp; 0
+\end{bmatrix}
+\end{split}\]</div>
+<p>Pada distance matriks terdapat elemen yang memiliki nilai 0, itu karena jarak suatu data terhadap dirinya sendiri adalah 0. Matriks bersifat simestris, yaitu :</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_i,x_j) = d(x_j,x_i)
+\]</div>
+<p>Matriks jarak ini merepresentasikan tingkat kemiripan antar seluruh data.
+Semakin kecil nilai pada matriks, maka semakin mirip kedua data tersebut.
+Berikut implementasi dari orange yang menghasilkan matriks jarak lengkap berukuran <span class="math notranslate nohighlight">\(150 \times 150\)</span>.</p>
+<p><img alt="Foto Saya" src="_images/iris1.png" /></p>
 </section>
-<section id="dasar-untuk-clustering-pengelompokan">
-<h2>1. Dasar untuk Clustering (Pengelompokan)<a class="headerlink" href="#dasar-untuk-clustering-pengelompokan" title="Link to this heading">#</a></h2>
-<p>Algoritma seperti:</p>
-<ul class="simple">
-<li><p>K-Means</p></li>
-<li><p>Hierarchical Clustering</p></li>
-<li><p>DBSCAN</p></li>
-</ul>
-<p>mengelompokkan data berdasarkan <strong>jarak antar titik data</strong>.</p>
-<p>Contoh:<br />
-Jika dua pelanggan memiliki usia, pendapatan, dan pola belanja yang mirip (jaraknya kecil), maka mereka kemungkinan masuk ke cluster yang sama.</p>
-<p>Tanpa pengukuran jarak → sistem tidak tahu mana data yang “dekat” atau “jauh”.</p>
 </section>
-<section id="digunakan-dalam-k-nearest-neighbors-knn">
-<h2>2. Digunakan dalam K-Nearest Neighbors (KNN)<a class="headerlink" href="#digunakan-dalam-k-nearest-neighbors-knn" title="Link to this heading">#</a></h2>
-<p>Pada algoritma <strong>KNN</strong>, prediksi dilakukan berdasarkan prinsip:</p>
-<ul class="simple">
-<li><p>Data baru akan mengikuti kelas dari tetangga terdekatnya.</p></li>
-</ul>
-<p>Di sini, jarak menentukan:</p>
-<ul class="simple">
-<li><p>Siapa tetangga terdekat</p></li>
-<li><p>Seberapa dekat mereka</p></li>
-</ul>
-<p>Jika pengukuran jarak salah → hasil klasifikasi bisa salah.</p>
+<section id="implementasi-menggunakan-manhattan-distance">
+<h3>Implementasi Menggunakan Manhattan Distance<a class="headerlink" href="#implementasi-menggunakan-manhattan-distance" title="Link to this heading">#</a></h3>
+<p>Manhattan Distance merupakan metode pengukuran jarak yang menghitung jumlah elisih absolut antar atribut pada dua data.</p>
+<p>Rumus Manhattan Distance :</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) = \sum_{i=1}^{n} |x_i - y_i|
+\]</div>
+<p>Karena dataset iris memiliki 4 atribut numerik, maka rumusnya diperoleh menjadi :</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) =
+|x_1 - y_1| +
+|x_2 - y_2| +
+|x_3 - y_3| +
+|x_4 - y_4|
+\]</div>
+<p>Contoh implementasi perhitungan Manhattan Distance menggunakan dua data pertama pada dataset iris.</p>
+<p>Data ke-1:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = (5.1, 3.5, 1.4, 0.2)
+\]</div>
+<p>Data ke-2:</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 = (4.9, 3.0, 1.4, 0.2)
+\]</div>
+<p>Perhitungan jaraknya :</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_2) =
+|5.1 - 4.9| +
+|3.5 - 3.0| +
+|1.4 - 1.4| +
+|0.2 - 0.2|
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+0.2 + 0.5 + 0 + 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+0.7
+\]</div>
+<p>Hasil perhitungan tersebut menunjukkan bahwa jarak Manhattan antara data pertama dan data kedua adalah 0.7.</p>
+<p>Seperti pada Euclidean Distance, nilai Manhattan Distance
+yang telah dihitung kemudian disusun dalam bentuk matriks jarak.</p>
+<p>Jika terdapat <span class="math notranslate nohighlight">\(n\)</span> data, maka ukuran matriks jaraknya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+n \times n
+\]</div>
+<p>Untuk dataset Iris lengkap:</p>
+<div class="math notranslate nohighlight">
+\[
+150 \times 150
+\]</div>
+<p>Sebagai ilustrasi, misalkan digunakan tiga data pertama.</p>
+<p>Diketahui hasil perhitungan:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_2) = 0.7
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_3) = 0.6
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(x_2,x_3) = 0.5
+\]</div>
+<section id="id1">
+<h4>Pembentukan Matriks Jarak<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D =
+\begin{bmatrix}
+0 &amp; 0.7 &amp; 0.6 \\
+0.7 &amp; 0 &amp; 0.5 \\
+0.6 &amp; 0.5 &amp; 0
+\end{bmatrix}
+\end{split}\]</div>
+<p>Sama dengan Euclidean Distance, elemen diagonal bernilai 0 karena jarak terhadap dirinya sendiri adalah 0.</p>
+<p>Manhattan Distance lebih sederhana dibandingkan Euclidean Distance
+karena tidak menggunakan akar kuadrat.
+Metode ini sering digunakan pada data berdimensi tinggi
+atau ketika ingin mengurangi pengaruh nilai ekstrem (outlier).</p>
+<p>Dalam implementasi sebenarnya, seluruh pasangan data
+akan dihitung secara otomatis menggunakan orange,
+sehingga terbentuk matriks jarak berukuran <span class="math notranslate nohighlight">\(150 \times 150\)</span>.</p>
+<p><img alt="Foto Saya" src="_images/iris2.png" /></p>
 </section>
-<section id="mengukur-kemiripan-data">
-<h2>3. Mengukur Kemiripan Data<a class="headerlink" href="#mengukur-kemiripan-data" title="Link to this heading">#</a></h2>
-<p>Dalam banyak kasus kita ingin mengetahui:</p>
-<ul class="simple">
-<li><p>Dokumen mana yang paling mirip?</p></li>
-<li><p>Produk mana yang serupa?</p></li>
-<li><p>Pasien mana yang memiliki kondisi hampir sama?</p></li>
-</ul>
-<p>Contoh metrik jarak:</p>
-<ul class="simple">
-<li><p><strong>Euclidean Distance</strong> → untuk data numerik</p></li>
-<li><p><strong>Manhattan Distance</strong> → untuk data multidimensi</p></li>
-<li><p><strong>Cosine Similarity</strong> → untuk data teks</p></li>
-<li><p><strong>Hamming Distance</strong> → untuk data biner</p></li>
-</ul>
 </section>
-<section id="deteksi-outlier-anomali">
-<h2>4. Deteksi Outlier (Anomali)<a class="headerlink" href="#deteksi-outlier-anomali" title="Link to this heading">#</a></h2>
-<p>Data yang memiliki jarak sangat jauh dari kelompok lain dapat dianggap sebagai <strong>anomali</strong>.</p>
-<p>Contoh:<br />
-Dalam sistem deteksi fraud, transaksi yang “jauh” dari pola normal bisa dianggap mencurigakan.</p>
+<section id="implementasi-menggunakan-minkowski-distance">
+<h3>Implementasi Menggunakan Minkowski Distance<a class="headerlink" href="#implementasi-menggunakan-minkowski-distance" title="Link to this heading">#</a></h3>
+<p>Minkowski Distance merupakan generalisasi dari Euclidean Distance
+dan Manhattan Distance. Metode ini menggunakan parameter <span class="math notranslate nohighlight">\(p\)</span>
+untuk menentukan jenis jarak yang dihasilkan.</p>
+<p>Rumus Minkowski Distance adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) =
+\left(
+\sum_{i=1}^{n} |x_i - y_i|^p
+\right)^{\frac{1}{p}}
+\]</div>
+<p>Jika dataset memiliki 4 atribut seperti pada Iris,
+maka rumusnya menjadi:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x,y) =
+\left(
+|x_1 - y_1|^p +
+|x_2 - y_2|^p +
+|x_3 - y_3|^p +
+|x_4 - y_4|^p
+\right)^{\frac{1}{p}}
+\]</div>
+<p>\subsection*{Hubungan dengan Metode Lain}</p>
+<p>Jika:</p>
+<div class="math notranslate nohighlight">
+\[
+p = 1
+\]</div>
+<p>maka Minkowski Distance sama dengan Manhattan Distance.</p>
+<p>Jika:</p>
+<div class="math notranslate nohighlight">
+\[
+p = 2
+\]</div>
+<p>maka Minkowski Distance sama dengan Euclidean Distance.</p>
+<p>Sebagai ilustrasi digunakan dua data pertama
+pada dataset Iris.</p>
+<p>Data ke-1:</p>
+<div class="math notranslate nohighlight">
+\[
+x_1 = (5.1, 3.5, 1.4, 0.2)
+\]</div>
+<p>Data ke-2:</p>
+<div class="math notranslate nohighlight">
+\[
+x_2 = (4.9, 3.0, 1.4, 0.2)
+\]</div>
+<p>Misalkan digunakan parameter:</p>
+<div class="math notranslate nohighlight">
+\[
+p = 3
+\]</div>
+<p>Maka perhitungannya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_2) =
+\left(
+|5.1 - 4.9|^3 +
+|3.5 - 3.0|^3 +
+|1.4 - 1.4|^3 +
+|0.2 - 0.2|^3
+\right)^{\frac{1}{3}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+\left(
+(0.2)^3 +
+(0.5)^3 +
+0 +
+0
+\right)^{\frac{1}{3}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+\left(
+0.008 + 0.125
+\right)^{\frac{1}{3}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=
+(0.133)^{\frac{1}{3}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\approx 0.509
+\]</div>
+<p>Hasil tersebut menunjukkan bahwa jarak Minkowski
+dengan <span class="math notranslate nohighlight">\(p=3\)</span> antara dua data tersebut adalah sekitar 0.509.</p>
+<section id="id2">
+<h4>Pembentukan Matriks Jarak<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Seperti metode sebelumnya, nilai Minkowski Distance
+disusun dalam bentuk matriks jarak.</p>
+<p>Jika terdapat <span class="math notranslate nohighlight">\(n\)</span> data, maka ukuran matriks jaraknya adalah:</p>
+<div class="math notranslate nohighlight">
+\[
+n \times n
+\]</div>
+<p>Untuk dataset Iris lengkap:</p>
+<div class="math notranslate nohighlight">
+\[
+150 \times 150
+\]</div>
+<p>Sebagai ilustrasi untuk tiga data pertama,
+misalkan diperoleh hasil:</p>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_2) = 0.509
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(x_1,x_3) = 0.480
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+d(x_2,x_3) = 0.420
+\]</div>
+<p>Maka matriks jarak yang terbentuk adalah:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D =
+\begin{bmatrix}
+0 &amp; 0.509 &amp; 0.480 \\
+0.509 &amp; 0 &amp; 0.420 \\
+0.480 &amp; 0.420 &amp; 0
+\end{bmatrix}
+\end{split}\]</div>
+<p>Parameter <span class="math notranslate nohighlight">\(p\)</span> mempengaruhi sensitivitas terhadap perbedaan atribut.
+Semakin besar nilai <span class="math notranslate nohighlight">\(p\)</span>, maka perbedaan yang besar pada suatu atribut
+akan memberikan pengaruh yang lebih signifikan terhadap nilai jarak.</p>
+<p>Dalam implementasi menggunakan orange,
+seluruh pasangan data akan dihitung secara otomatis
+untuk membentuk matriks jarak berukuran <span class="math notranslate nohighlight">\(150 \times 150\)</span>.</p>
+<p><img alt="Foto Saya" src="_images/iris3.png" /></p>
 </section>
-<section id="berpengaruh-terhadap-akurasi-model">
-<h2>5. Berpengaruh terhadap Akurasi Model<a class="headerlink" href="#berpengaruh-terhadap-akurasi-model" title="Link to this heading">#</a></h2>
-<p>Pemilihan jenis jarak sangat krusial.</p>
-<ul class="simple">
-<li><p>Euclidean cocok untuk data numerik dengan skala yang sama</p></li>
-<li><p>Cosine cocok untuk teks</p></li>
-<li><p>Hamming cocok untuk data biner</p></li>
-</ul>
-<p>Jika salah memilih metrik jarak:</p>
-<ul class="simple">
-<li><p>Cluster bisa tidak masuk akal</p></li>
-<li><p>Prediksi bisa bias</p></li>
-<li><p>Model bisa gagal</p></li>
-</ul>
 </section>
-<section id="fondasi-representasi-data-dalam-ruang-dimensi">
-<h2>6. Fondasi Representasi Data dalam Ruang Dimensi<a class="headerlink" href="#fondasi-representasi-data-dalam-ruang-dimensi" title="Link to this heading">#</a></h2>
-<p>Dalam data mining, data direpresentasikan sebagai titik dalam ruang multidimensi.</p>
-<p>Jarak membantu menjawab:</p>
-<ul class="simple">
-<li><p>Seberapa dekat dua titik dalam ruang tersebut?</p></li>
-<li><p>Bagaimana struktur data secara keseluruhan?</p></li>
-</ul>
 </section>
-<section id="kesimpulan">
-<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
-<p>Mengukur jarak penting karena hampir semua teknik data mining berbasis pada konsep <strong>kedekatan atau kemiripan antar data</strong>.</p>
-<p>Tanpa pengukuran jarak:</p>
-<ul class="simple">
-<li><p>Tidak ada clustering yang efektif</p></li>
-<li><p>Tidak ada KNN</p></li>
-<li><p>Tidak ada deteksi anomali berbasis jarak</p></li>
-<li><p>Tidak ada pengukuran kemiripan yang objektif</p></li>
-</ul>
-</section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -542,20 +831,20 @@ Dalam sistem deteksi fraud, transaksi yang “jauh” dari pola normal bisa dian
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="visualisasi_dis.html"
+       href="Data_Student_updated.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Visualisasi Distribusi Data</p>
+        <p class="prev-next-title">Data Student</p>
       </div>
     </a>
     <a class="right-next"
-       href="Data_Student_updated.html"
+       href="Distance_Student_Data_updated.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Student</p>
+        <p class="prev-next-title">Distance in Student Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -575,14 +864,21 @@ Dalam sistem deteksi fraud, transaksi yang “jauh” dari pola normal bisa dian
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-mengukur-jarak-penting-dalam-penambangan-data">Mengapa Mengukur Jarak Penting dalam Penambangan Data?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dasar-untuk-clustering-pengelompokan">1. Dasar untuk Clustering (Pengelompokan)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digunakan-dalam-k-nearest-neighbors-knn">2. Digunakan dalam K-Nearest Neighbors (KNN)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-kemiripan-data">3. Mengukur Kemiripan Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-outlier-anomali">4. Deteksi Outlier (Anomali)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#berpengaruh-terhadap-akurasi-model">5. Berpengaruh terhadap Akurasi Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fondasi-representasi-data-dalam-ruang-dimensi">6. Fondasi Representasi Data dalam Ruang Dimensi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengukur-jarak-tipe-data-numerik">Mengukur Jarak Tipe Data Numerik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-euclidean-distance">Implementasi Menggunakan Euclidean Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pembentukan-matriks-jarak">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-manhattan-distance">Implementasi Menggunakan Manhattan Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-menggunakan-minkowski-distance">Implementasi Menggunakan Minkowski Distance</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Pembentukan Matriks Jarak</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
