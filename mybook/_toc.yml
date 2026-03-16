@@ -16,3 +16,8 @@ chapters:
       - file: distance_iris  
       - file: Distance_Student_Data_updated  
       - file: knn  
+  - file: normalisasi  
+    sections:  
+      - file: contoh_normalisasi_data  
+      - file: wknn  
+      - file: wknn_pakai_python  

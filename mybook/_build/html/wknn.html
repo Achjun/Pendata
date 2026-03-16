@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualisasi Distribusi Data &#8212; My sample book</title>
+    <title>Perhitungan Missing Value Menggunakan Metode WKNN &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'visualisasi_dis';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'wknn';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Distance" href="pertemuan3.html" />
-    <link rel="prev" title="Analisis Statistik Deskriptif" href="analisis-des.html" />
+    <link rel="next" title="Perhitungan WKNN menggunakan python" href="wknn_pakai_python.html" />
+    <link rel="prev" title="Contoh Normalisasi Data pada Dataset Mahasiswa" href="contoh_normalisasi_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,8 +183,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pertemuan1.html">Bussines Understanding</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="data-iris.html">Data Iris</a></li>
 
 <li class="toctree-l3"><a class="reference internal" href="analisis-des.html">Analisis Statistik Deskriptif</a></li>
@@ -190,7 +192,7 @@
 
 
 
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Visualisasi Distribusi Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Distribusi Data</a></li>
 </ul>
 </details></li>
 </ul>
@@ -202,7 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="knn.html">Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="normalisasi.html">Macam-Macam Normalisasi Data pada Data Mining</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="normalisasi.html">Macam-Macam Normalisasi Data pada Data Mining</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="contoh_normalisasi_data.html">Contoh Normalisasi Data pada Dataset Mahasiswa</a></li>
 
 
@@ -210,7 +212,7 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="wknn.html">Perhitungan Missing Value Menggunakan Metode WKNN</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Perhitungan Missing Value Menggunakan Metode WKNN</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wknn_pakai_python.html">Perhitungan WKNN menggunakan python</a></li>
 </ul>
 </details></li>
@@ -285,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvisualisasi_dis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fwknn.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +317,7 @@
       
       
       
-      <li><a href="_sources/visualisasi_dis.md" target="_blank"
+      <li><a href="_sources/wknn.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,9 +388,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -399,20 +399,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualisasi Distribusi Data</h1>
+    <h1>Perhitungan Missing Value Menggunakan Metode WKNN</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">BoxPlot</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -422,31 +413,223 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualisasi-distribusi-data">
-<h1>Visualisasi Distribusi Data<a class="headerlink" href="#visualisasi-distribusi-data" title="Link to this heading">#</a></h1>
-<p>Visualisasi distribusi data adalah teknik grafis untuk menunjukkan bagaimana nilai-nilai dalam kumpulan data tersebar, mengelompok, atau membentuk pola tertentu (seperti Histogram, Boxplot atau Density plot).</p>
-<section id="histogram">
-<h2>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h2>
-<p>Histogram digunakan untuk menampilkan distribusi frekuensi dari data numerik dengan membagi data ke dalam beberapa interval (bins). Visualisasi ini membantu memahami pola penyebaran data, seperti kecenderungan nilai, tingkat variasi, serta kemungkinan adanya nilai ekstrem (outlier).</p>
-<p>Pada dataset Iris, histogram digunakan untuk melihat sebaran nilai pada setiap fitur sehingga memudahkan analisis awal sebelum dilakukan pengolahan data lebih lanjut.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/gambar_1.png"><img alt="_images/gambar_1.png" src="_images/gambar_1.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Fig. 2 Analisis Statistik Deskriptif Fitur <em>sepal_length</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="boxplot">
-<h2>BoxPlot<a class="headerlink" href="#boxplot" title="Link to this heading">#</a></h2>
-<p>Boxplot merupakan visualisasi statistik yang digunakan untuk menggambarkan ringkasan distribusi data melalui nilai minimum, kuartil pertama (Q1), median, kuartil ketiga (Q3), dan maksimum. Boxplot juga menampilkan outlier, yaitu data yang berada di luar rentang normal.</p>
-<p>Pada dataset Iris, boxplot membantu melihat sebaran data, tingkat variasi, serta perbedaan karakteristik antar fitur secara cepat. Visualisasi ini efektif untuk membandingkan distribusi data dan mendeteksi nilai ekstrem sebelum dilakukan analisis lebih lanjut.</p>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/box.png"><img alt="_images/box.png" src="_images/box.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Fig. 3 Visualisasi distribusi data bentuk BoxPlot <em>sepal_length</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="perhitungan-missing-value-menggunakan-metode-wknn">
+<h1>Perhitungan Missing Value Menggunakan Metode WKNN<a class="headerlink" href="#perhitungan-missing-value-menggunakan-metode-wknn" title="Link to this heading">#</a></h1>
+<p>Data:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>IPK</p></th>
+<th class="head"><p>PO</p></th>
+<th class="head"><p>JML</p></th>
+<th class="head"><p>IPK_MinMax</p></th>
+<th class="head"><p>PO_MinMax</p></th>
+<th class="head"><p>JML_MinMax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2000000</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>3000000</p></td>
+<td><p>3</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>2000000</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>2000000</p></td>
+<td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>3000000</p></td>
+<td><p>2</p></td>
+<td><p>0.5</p></td>
+<td><p>0.5</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>4</p></td>
+<td><p>4000000</p></td>
+<td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>3000000</p></td>
+<td><p>?</p></td>
+<td><p>0</p></td>
+<td><p>0.5</p></td>
+<td><p>?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Missing value terdapat pada <strong>JML data ke-7</strong>.</p>
+<p>Data target (data ke-7):</p>
+<p>(IPK, PO) = (0 , 0.5)</p>
+<hr class="docutils" />
+<p>Rumus jarak Euclidean:</p>
+<div class="math notranslate nohighlight">
+\[
+d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}
+\]</div>
+<p>Perhitungan jarak:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>Perhitungan</p></th>
+<th class="head"><p>Jarak</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>√((0−0)² + (0−0.5)²)</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>√((0.5−0)² + (0.5−0.5)²)</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>√((1−0)² + (0−0.5)²)</p></td>
+<td><p>1.118</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>√((0−0)² + (0−0.5)²)</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>√((0.5−0)² + (0.5−0.5)²)</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>√((1−0)² + (1−0.5)²)</p></td>
+<td><p>1.118</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p>Rumus bobot WKNN:</p>
+<div class="math notranslate nohighlight">
+\[
+w = \frac{1}{d}
+\]</div>
+<p>Perhitungan bobot:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>Jarak</p></th>
+<th class="head"><p>Bobot</p></th>
+<th class="head"><p>JML_MinMax</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0.5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0.5</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1.118</p></td>
+<td><p>0.894</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>0.5</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>0.5</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>1.118</p></td>
+<td><p>0.894</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p>Rumus prediksi:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \frac{\sum (w_i \times y_i)}{\sum w_i}
+\]</div>
+<p>Perhitungan:</p>
+<div class="math notranslate nohighlight">
+\[
+y =
+\frac{(2×0)+(2×1)+(0.894×0)+(2×1)+(2×0)+(0.894×1)}
+{2+2+0.894+2+2+0.894}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y = \frac{4.894}{9.788}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y \approx 0.5
+\]</div>
+<hr class="docutils" />
+<p>Interpretasi hasil:</p>
+<p>Nilai hasil WKNN:</p>
+<p>JML_normalisasi ≈ 0.5</p>
+<p>Pada data training:</p>
+<p>0 → JML = 2<br />
+1 → JML = 3</p>
+<p>Karena nilai berada di tengah, maka dipilih nilai yang paling dekat.</p>
+<hr class="docutils" />
+<p>Hasil akhir:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>IPK</p></th>
+<th class="head"><p>PO</p></th>
+<th class="head"><p>JML</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>2</p></td>
+<td><p>3000000</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Missing value pada <strong>JML data ke-7 diprediksi bernilai 2</strong> menggunakan metode <strong>Weighted K-Nearest Neighbor (WKNN)</strong>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -480,20 +663,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="analisis-des.html"
+       href="contoh_normalisasi_data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analisis Statistik Deskriptif</p>
+        <p class="prev-next-title">Contoh Normalisasi Data pada Dataset Mahasiswa</p>
       </div>
     </a>
     <a class="right-next"
-       href="pertemuan3.html"
+       href="wknn_pakai_python.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Distance</p>
+        <p class="prev-next-title">Perhitungan WKNN menggunakan python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -503,22 +686,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">BoxPlot</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

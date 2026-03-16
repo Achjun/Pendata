@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Visualisasi Distribusi Data &#8212; My sample book</title>
+    <title>Macam-Macam Normalisasi Data pada Data Mining &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'visualisasi_dis';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'normalisasi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Distance" href="pertemuan3.html" />
-    <link rel="prev" title="Analisis Statistik Deskriptif" href="analisis-des.html" />
+    <link rel="next" title="Contoh Normalisasi Data pada Dataset Mahasiswa" href="contoh_normalisasi_data.html" />
+    <link rel="prev" title="Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)" href="knn.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,8 +183,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pertemuan1.html">Bussines Understanding</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="data-iris.html">Data Iris</a></li>
 
 <li class="toctree-l3"><a class="reference internal" href="analisis-des.html">Analisis Statistik Deskriptif</a></li>
@@ -190,7 +192,7 @@
 
 
 
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Visualisasi Distribusi Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Distribusi Data</a></li>
 </ul>
 </details></li>
 </ul>
@@ -202,7 +204,7 @@
 <li class="toctree-l2"><a class="reference internal" href="knn.html">Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="normalisasi.html">Macam-Macam Normalisasi Data pada Data Mining</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Macam-Macam Normalisasi Data pada Data Mining</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="contoh_normalisasi_data.html">Contoh Normalisasi Data pada Dataset Mahasiswa</a></li>
 
 
@@ -285,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fvisualisasi_dis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnormalisasi.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +317,7 @@
       
       
       
-      <li><a href="_sources/visualisasi_dis.md" target="_blank"
+      <li><a href="_sources/normalisasi.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualisasi Distribusi Data</h1>
+    <h1>Macam-Macam Normalisasi Data pada Data Mining</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,8 +411,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">BoxPlot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">1. Min-Max Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keterangan">Keterangan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization-standardization">2. Z-Score Normalization (Standardization)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Keterangan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil">Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-normalization">3. Decimal Scaling Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Keterangan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Contoh</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-normalization">4. Mean Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Keterangan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
             </nav>
         </div>
@@ -422,31 +446,110 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualisasi-distribusi-data">
-<h1>Visualisasi Distribusi Data<a class="headerlink" href="#visualisasi-distribusi-data" title="Link to this heading">#</a></h1>
-<p>Visualisasi distribusi data adalah teknik grafis untuk menunjukkan bagaimana nilai-nilai dalam kumpulan data tersebar, mengelompok, atau membentuk pola tertentu (seperti Histogram, Boxplot atau Density plot).</p>
-<section id="histogram">
-<h2>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h2>
-<p>Histogram digunakan untuk menampilkan distribusi frekuensi dari data numerik dengan membagi data ke dalam beberapa interval (bins). Visualisasi ini membantu memahami pola penyebaran data, seperti kecenderungan nilai, tingkat variasi, serta kemungkinan adanya nilai ekstrem (outlier).</p>
-<p>Pada dataset Iris, histogram digunakan untuk melihat sebaran nilai pada setiap fitur sehingga memudahkan analisis awal sebelum dilakukan pengolahan data lebih lanjut.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/gambar_1.png"><img alt="_images/gambar_1.png" src="_images/gambar_1.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Fig. 2 Analisis Statistik Deskriptif Fitur <em>sepal_length</em></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+  <section class="tex2jax_ignore mathjax_ignore" id="macam-macam-normalisasi-data-pada-data-mining">
+<h1>Macam-Macam Normalisasi Data pada Data Mining<a class="headerlink" href="#macam-macam-normalisasi-data-pada-data-mining" title="Link to this heading">#</a></h1>
+<p>Dalam Data Mining, normalisasi data adalah proses mengubah nilai data agar berada dalam rentang tertentu sehingga perbedaan skala antar atribut tidak mempengaruhi hasil analisis.</p>
+<section id="min-max-normalization">
+<h2>1. Min-Max Normalization<a class="headerlink" href="#min-max-normalization" title="Link to this heading">#</a></h2>
+<p>Metode ini mengubah nilai data ke dalam rentang tertentu, biasanya antara 0 sampai 1.</p>
+<section id="rumus">
+<h3>Rumus<a class="headerlink" href="#rumus" title="Link to this heading">#</a></h3>
+<p>X’ = (X - Xmin) / (Xmax - Xmin)</p>
 </section>
-<section id="boxplot">
-<h2>BoxPlot<a class="headerlink" href="#boxplot" title="Link to this heading">#</a></h2>
-<p>Boxplot merupakan visualisasi statistik yang digunakan untuk menggambarkan ringkasan distribusi data melalui nilai minimum, kuartil pertama (Q1), median, kuartil ketiga (Q3), dan maksimum. Boxplot juga menampilkan outlier, yaitu data yang berada di luar rentang normal.</p>
-<p>Pada dataset Iris, boxplot membantu melihat sebaran data, tingkat variasi, serta perbedaan karakteristik antar fitur secara cepat. Visualisasi ini efektif untuk membandingkan distribusi data dan mendeteksi nilai ekstrem sebelum dilakukan analisis lebih lanjut.</p>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/box.png"><img alt="_images/box.png" src="_images/box.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Fig. 3 Visualisasi distribusi data bentuk BoxPlot <em>sepal_length</em></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<section id="keterangan">
+<h3>Keterangan<a class="headerlink" href="#keterangan" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>X = nilai data asli</p></li>
+<li><p>Xmin = nilai minimum data</p></li>
+<li><p>Xmax = nilai maksimum data</p></li>
+</ul>
 </section>
+<section id="contoh">
+<h3>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h3>
+<p>Jika data memiliki nilai minimum 20 dan maksimum 80, maka normalisasi nilai 50 adalah:</p>
+<p>X’ = (50 - 20) / (80 - 20)<br />
+X’ = 30 / 60<br />
+X’ = 0.5</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="z-score-normalization-standardization">
+<h2>2. Z-Score Normalization (Standardization)<a class="headerlink" href="#z-score-normalization-standardization" title="Link to this heading">#</a></h2>
+<p>Metode ini menormalisasi data berdasarkan rata-rata (mean) dan standar deviasi.</p>
+<section id="id1">
+<h3>Rumus<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>X’ = (X - μ) / σ</p>
+</section>
+<section id="id2">
+<h3>Keterangan<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>X = nilai data</p></li>
+<li><p>μ = rata-rata (mean)</p></li>
+<li><p>σ = standar deviasi</p></li>
+</ul>
+</section>
+<section id="hasil">
+<h3>Hasil<a class="headerlink" href="#hasil" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Mean = 0</p></li>
+<li><p>Standar deviasi = 1</p></li>
+</ul>
+<p>Metode ini sering digunakan pada algoritma machine learning dan analisis statistik.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="decimal-scaling-normalization">
+<h2>3. Decimal Scaling Normalization<a class="headerlink" href="#decimal-scaling-normalization" title="Link to this heading">#</a></h2>
+<p>Metode ini menormalisasi data dengan memindahkan titik desimal berdasarkan jumlah digit maksimum pada data.</p>
+<section id="id3">
+<h3>Rumus<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>X’ = X / 10^j</p>
+</section>
+<section id="id4">
+<h3>Keterangan<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>X = nilai data</p></li>
+<li><p>j = jumlah digit dari nilai maksimum</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Contoh<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Jika nilai maksimum adalah 987 maka:</p>
+<p>X’ = 987 / 10^3<br />
+X’ = 0.987</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="mean-normalization">
+<h2>4. Mean Normalization<a class="headerlink" href="#mean-normalization" title="Link to this heading">#</a></h2>
+<p>Metode ini menggunakan rata-rata dan rentang data untuk melakukan normalisasi.</p>
+<section id="id6">
+<h3>Rumus<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>X’ = (X - mean) / (Xmax - Xmin)</p>
+</section>
+<section id="id7">
+<h3>Keterangan<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>X = nilai data</p></li>
+<li><p>mean = rata-rata data</p></li>
+<li><p>Xmax = nilai maksimum</p></li>
+<li><p>Xmin = nilai minimum</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<p>Metode normalisasi yang umum digunakan dalam data mining adalah:</p>
+<ol class="arabic simple">
+<li><p>Min-Max Normalization</p></li>
+<li><p>Z-Score Normalization</p></li>
+<li><p>Decimal Scaling Normalization</p></li>
+<li><p>Mean Normalization</p></li>
+</ol>
+</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -480,20 +583,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="analisis-des.html"
+       href="knn.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analisis Statistik Deskriptif</p>
+        <p class="prev-next-title">Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)</p>
       </div>
     </a>
     <a class="right-next"
-       href="pertemuan3.html"
+       href="contoh_normalisasi_data.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data Distance</p>
+        <p class="prev-next-title">Contoh Normalisasi Data pada Dataset Mahasiswa</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -513,8 +616,30 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boxplot">BoxPlot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">1. Min-Max Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keterangan">Keterangan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#z-score-normalization-standardization">2. Z-Score Normalization (Standardization)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Keterangan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil">Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decimal-scaling-normalization">3. Decimal Scaling Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Keterangan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Contoh</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-normalization">4. Mean Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Rumus</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Keterangan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
 </ul>
   </nav></div>
 
