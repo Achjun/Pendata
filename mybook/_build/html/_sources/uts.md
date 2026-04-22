@@ -38,6 +38,7 @@ Dataset yang digunakan:
 - Melihat struktur data  
 - Mengetahui missing value  
 
+![CSV Import](images/data-tabel-uts.png)
 ---
 
 ###  3. Seleksi Fitur
@@ -48,6 +49,7 @@ Dataset yang digunakan:
 
 **Output:** Data terpilih  
 
+![CSV Import](images/select-uts.png)
 ---
 
 ###  4. Eksplorasi Data (EDA)
@@ -64,6 +66,7 @@ Dataset yang digunakan:
 - Memahami karakteristik data  
 - Deteksi anomali  
 
+![CSV Import](images/box-plot.png)
 ---
 
 ###  5. Menangani Missing Value
@@ -73,6 +76,7 @@ Dataset yang digunakan:
 
 **Output:** Data bersih dari missing value  
 
+![CSV Import](images/impute.png)
 ---
 
 ###  6. Transformasi Data
@@ -82,6 +86,7 @@ Dataset yang digunakan:
 **Penting untuk:**
 - Algoritma kNN (butuh numerik)  
 
+![CSV Import](images/con-uts.png)
 ---
 
 ###  7. Preprocessing Lanjutan
@@ -93,6 +98,7 @@ Biasanya meliputi:
 
 **Output:** Data siap untuk modeling  
 
+![CSV Import](images/prepros.png)
 ---
 
 ###  8. Modeling (Machine Learning)
@@ -105,6 +111,8 @@ Biasanya meliputi:
 **Output:**
 - Model kNN  
 
+
+![CSV Import](images/knn-uts.png)
 ---
 
 ###  9. Evaluasi Model
@@ -119,6 +127,8 @@ Biasanya meliputi:
 - Recall  
 - F1-score  
 
+
+![CSV Import](images/test-uts.png)
 ---
 
 ###  10. Confusion Matrix
@@ -128,6 +138,8 @@ Biasanya meliputi:
 **Berguna untuk:**
 - Melihat kesalahan klasifikasi  
 
+
+![CSV Import](images/matrix-uts.png)
 ---
 
 ###  11. Reduksi Dimensi (Opsional)
@@ -138,6 +150,8 @@ Biasanya meliputi:
 - Visualisasi lebih mudah  
 - Mengurangi kompleksitas  
 
+
+![CSV Import](images/pca-uts.png)
 ---
 
 ###  12. Visualisasi
@@ -147,6 +161,8 @@ Biasanya meliputi:
 **Input:**
 - Data dari PCA  
 
+
+![CSV Import](images/scatter-uts.png)
 ---
 
 ## 3. Ringkasan Alur
@@ -194,6 +210,7 @@ Menunjukkan:
 - Scatter plot (dari PCA)  
 - Distribusi fitur  
 - Outlier (box plot)  
+
 
 ---
 
