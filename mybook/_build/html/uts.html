@@ -424,6 +424,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-alur">3. Ringkasan Alur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-yang-diperoleh">4. Hasil yang Diperoleh</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-bersih">1. Data Bersih</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-knn">2. Model kNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4. Confusion Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">5. Visualisasi Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">5. Kesimpulan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#berikut-adalah-file-orange">Berikut adalah file orange:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -448,7 +460,8 @@ document.write(`
 </ul>
 <p>Dataset yang digunakan:</p>
 <ul class="simple">
-<li><p>Dataset kesuburan tanah (terdapat missing value)</p></li>
+<li><p>Dataset kesuburan tanah (terdapat missing value)
+<code class="xref download docutils literal notranslate"><span class="pre">dataset_kesuburan_tanah_missing.csv</span></code></p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -623,18 +636,78 @@ document.write(`
 <hr class="docutils" />
 <section id="ringkasan-alur">
 <h2>3. Ringkasan Alur<a class="headerlink" href="#ringkasan-alur" title="Permalink to this heading">#</a></h2>
-<p>– CSV Import
-– ↓
-– Data Table
-– ↓
-– Select Columns
-– ↓
-– (Impute → Continuize → Preprocess)
-– ↓
-– ├── kNN → Test &amp; Score → Confusion Matrix
-– ├── PCA → Scatter Plot
-– ├── Distributions
-– └── Box Plot</p>
+<p>CSV Import
+↓
+Data Table
+↓
+Select Columns
+↓
+(Impute → Continuize → Preprocess)
+↓
+├── kNN → Test &amp; Score → Confusion Matrix
+├── PCA → Scatter Plot
+├── Distributions
+└── Box Plot</p>
+</section>
+<hr class="docutils" />
+<section id="hasil-yang-diperoleh">
+<h2>4. Hasil yang Diperoleh<a class="headerlink" href="#hasil-yang-diperoleh" title="Permalink to this heading">#</a></h2>
+<section id="data-bersih">
+<h3>1. Data Bersih<a class="headerlink" href="#data-bersih" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Missing value sudah ditangani</p></li>
+<li><p>Data siap modeling</p></li>
+</ul>
+</section>
+<section id="model-knn">
+<h3>2. Model kNN<a class="headerlink" href="#model-knn" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Model klasifikasi berbasis jarak</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>3. Evaluasi Model<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<p>Dari <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">and</span> <span class="pre">Score</span></code> diperoleh:</p>
+<ul class="simple">
+<li><p>Akurasi model</p></li>
+<li><p>Precision</p></li>
+<li><p>Recall</p></li>
+<li><p>F1-score</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>4. Confusion Matrix<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Menunjukkan:</p>
+<ul class="simple">
+<li><p>True Positive</p></li>
+<li><p>False Positive</p></li>
+<li><p>False Negative</p></li>
+<li><p>True Negative</p></li>
+</ul>
+</section>
+<section id="visualisasi-data">
+<h3>5. Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Scatter plot (dari PCA)</p></li>
+<li><p>Distribusi fitur</p></li>
+<li><p>Outlier (box plot)</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>5. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<p>Workflow ini melakukan proses lengkap:</p>
+<ol class="arabic simple">
+<li><p><strong>Data preprocessing</strong></p></li>
+<li><p><strong>Eksplorasi data</strong></p></li>
+<li><p><strong>Training model (kNN)</strong></p></li>
+<li><p><strong>Evaluasi performa</strong></p></li>
+<li><p><strong>Visualisasi hasil</strong></p></li>
+</ol>
+<section id="berikut-adalah-file-orange">
+<h3>Berikut adalah file orange:<a class="headerlink" href="#berikut-adalah-file-orange" title="Permalink to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -714,6 +787,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-alur">3. Ringkasan Alur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-yang-diperoleh">4. Hasil yang Diperoleh</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-bersih">1. Data Bersih</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-knn">2. Model kNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3. Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4. Confusion Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">5. Visualisasi Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">5. Kesimpulan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#berikut-adalah-file-orange">Berikut adalah file orange:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

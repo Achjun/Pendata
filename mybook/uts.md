@@ -9,7 +9,7 @@ Workflow ini dibuat menggunakan **Orange Data Mining** untuk melakukan:
 
 Dataset yang digunakan:
 - Dataset kesuburan tanah (terdapat missing value)
-
+    {download}`dataset_kesuburan_tanah_missing.csv <data/dataset_kesuburan_tanah_missing.csv>`
 
 
 ---
@@ -146,15 +146,61 @@ Biasanya meliputi:
 
 ## 3. Ringkasan Alur
 
--- CSV Import
--- ↓
--- Data Table
--- ↓
--- Select Columns
--- ↓
--- (Impute → Continuize → Preprocess)
--- ↓
--- ├── kNN → Test & Score → Confusion Matrix
--- ├── PCA → Scatter Plot
--- ├── Distributions
--- └── Box Plot
+CSV Import
+↓
+Data Table
+↓
+Select Columns
+↓
+(Impute → Continuize → Preprocess)
+↓
+├── kNN → Test & Score → Confusion Matrix
+├── PCA → Scatter Plot
+├── Distributions
+└── Box Plot
+
+
+---
+
+## 4. Hasil yang Diperoleh
+
+###  1. Data Bersih
+- Missing value sudah ditangani  
+- Data siap modeling  
+
+###  2. Model kNN
+- Model klasifikasi berbasis jarak  
+
+###  3. Evaluasi Model
+Dari `Test and Score` diperoleh:
+- Akurasi model  
+- Precision  
+- Recall  
+- F1-score  
+
+###  4. Confusion Matrix
+Menunjukkan:
+- True Positive  
+- False Positive  
+- False Negative  
+- True Negative  
+
+###  5. Visualisasi Data
+- Scatter plot (dari PCA)  
+- Distribusi fitur  
+- Outlier (box plot)  
+
+---
+
+## 5. Kesimpulan
+
+Workflow ini melakukan proses lengkap:
+1. **Data preprocessing**  
+2. **Eksplorasi data**  
+3. **Training model (kNN)**  
+4. **Evaluasi performa**  
+5. **Visualisasi hasil**  
+
+### Berikut adalah file orange:
+
+
