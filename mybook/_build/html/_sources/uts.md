@@ -38,7 +38,7 @@ Dataset yang digunakan:
 - Melihat struktur data  
 - Mengetahui missing value  
 
-![CSV Import](images/data-tabel-uts.png)
+![Data Tabel](images/data-tabel-uts.png)
 ---
 
 ###  3. Seleksi Fitur
@@ -49,7 +49,7 @@ Dataset yang digunakan:
 
 **Output:** Data terpilih  
 
-![CSV Import](images/select-uts.png)
+![Seleksi Fitur](images/select-uts.png)
 ---
 
 ###  4. Eksplorasi Data (EDA)
@@ -66,7 +66,7 @@ Dataset yang digunakan:
 - Memahami karakteristik data  
 - Deteksi anomali  
 
-![CSV Import](images/box-plot.png)
+![Box Plot](images/box-plot.png)
 ---
 
 ###  5. Menangani Missing Value
@@ -76,7 +76,7 @@ Dataset yang digunakan:
 
 **Output:** Data bersih dari missing value  
 
-![CSV Import](images/impute.png)
+![Impute](images/impute.png)
 ---
 
 ###  6. Transformasi Data
@@ -86,7 +86,7 @@ Dataset yang digunakan:
 **Penting untuk:**
 - Algoritma kNN (butuh numerik)  
 
-![CSV Import](images/con-uts.png)
+![Transformasi](images/con-uts.png)
 ---
 
 ###  7. Preprocessing Lanjutan
@@ -98,7 +98,7 @@ Biasanya meliputi:
 
 **Output:** Data siap untuk modeling  
 
-![CSV Import](images/prepros.png)
+![Preprocessing](images/prepros.png)
 ---
 
 ###  8. Modeling (Machine Learning)
@@ -112,7 +112,7 @@ Biasanya meliputi:
 - Model kNN  
 
 
-![CSV Import](images/knn-uts.png)
+![KNN](images/knn-uts.png)
 ---
 
 ###  9. Evaluasi Model
@@ -128,7 +128,7 @@ Biasanya meliputi:
 - F1-score  
 
 
-![CSV Import](images/test-uts.png)
+![Test and Score](images/test-uts.png)
 ---
 
 ###  10. Confusion Matrix
@@ -139,7 +139,7 @@ Biasanya meliputi:
 - Melihat kesalahan klasifikasi  
 
 
-![CSV Import](images/matrix-uts.png)
+![Matrix](images/matrix-uts.png)
 ---
 
 ###  11. Reduksi Dimensi (Opsional)
@@ -151,7 +151,7 @@ Biasanya meliputi:
 - Mengurangi kompleksitas  
 
 
-![CSV Import](images/pca-uts.png)
+![PCA](images/pca-uts.png)
 ---
 
 ###  12. Visualisasi
@@ -162,7 +162,7 @@ Biasanya meliputi:
 - Data dari PCA  
 
 
-![CSV Import](images/scatter-uts.png)
+![Scatter Plot](images/scatter-uts.png)
 ---
 
 ## 3. Ringkasan Alur
