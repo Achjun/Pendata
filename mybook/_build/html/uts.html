@@ -405,22 +405,22 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gambaran-umum">1. Gambaran Umum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-workflow">2. Alur Kerja (Workflow)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">🔹 1. Input Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-awal">🔹 2. Menampilkan Data Awal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-fitur">🔹 3. Seleksi Fitur</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-eda">🔹 4. Eksplorasi Data (EDA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">1. Input Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-awal">2. Menampilkan Data Awal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-fitur">3. Seleksi Fitur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-eda">4. Eksplorasi Data (EDA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-distribusi-data">a. Distribusi Data</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-box-plot">b. Box Plot</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-missing-value">🔹 5. Menangani Missing Value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">🔹 6. Transformasi Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-lanjutan">🔹 7. Preprocessing Lanjutan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-machine-learning">🔹 8. Modeling (Machine Learning)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">🔹 9. Evaluasi Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">🔹 10. Confusion Matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-dimensi-opsional">🔹 11. Reduksi Dimensi (Opsional)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">🔹 12. Visualisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-missing-value">5. Menangani Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">6. Transformasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-lanjutan">7. Preprocessing Lanjutan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-machine-learning">8. Modeling (Machine Learning)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">9. Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">10. Confusion Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-dimensi-opsional">11. Reduksi Dimensi (Opsional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">12. Visualisasi</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-alur">3. Ringkasan Alur</a></li>
@@ -461,24 +461,27 @@ document.write(`
 <p>Dataset yang digunakan:</p>
 <ul class="simple">
 <li><p>Dataset kesuburan tanah (terdapat missing value)
-<code class="xref download docutils literal notranslate"><span class="pre">dataset_kesuburan_tanah_missing.csv</span></code></p></li>
+<a href="../data/dataset_kesuburan_tanah_missing.xlsx" download>
+<button>📥 Download Dataset</button>
+</a></p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="alur-kerja-workflow">
 <h2>2. Alur Kerja (Workflow)<a class="headerlink" href="#alur-kerja-workflow" title="Permalink to this heading">#</a></h2>
 <section id="input-data">
-<h3>🔹 1. Input Data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h3>
+<h3>1. Input Data<a class="headerlink" href="#input-data" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">CSV</span> <span class="pre">File</span> <span class="pre">Import</span></code></p>
 <ul class="simple">
 <li><p>Mengimpor dataset dari file CSV</p></li>
 <li><p>Data awal kemungkinan masih memiliki missing value</p></li>
 </ul>
 <p><strong>Output:</strong> Data mentah</p>
+<p><img alt="CSV Import" src="_images/csv-uts.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="menampilkan-data-awal">
-<h3>🔹 2. Menampilkan Data Awal<a class="headerlink" href="#menampilkan-data-awal" title="Permalink to this heading">#</a></h3>
+<h3>2. Menampilkan Data Awal<a class="headerlink" href="#menampilkan-data-awal" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Table</span></code></p>
 <ul class="simple">
 <li><p>Menampilkan isi dataset untuk inspeksi awal</p></li>
@@ -491,7 +494,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="seleksi-fitur">
-<h3>🔹 3. Seleksi Fitur<a class="headerlink" href="#seleksi-fitur" title="Permalink to this heading">#</a></h3>
+<h3>3. Seleksi Fitur<a class="headerlink" href="#seleksi-fitur" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Columns</span></code></p>
 <ul class="simple">
 <li><p>Memilih atribut yang digunakan sebagai:</p>
@@ -505,7 +508,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="eksplorasi-data-eda">
-<h3>🔹 4. Eksplorasi Data (EDA)<a class="headerlink" href="#eksplorasi-data-eda" title="Permalink to this heading">#</a></h3>
+<h3>4. Eksplorasi Data (EDA)<a class="headerlink" href="#eksplorasi-data-eda" title="Permalink to this heading">#</a></h3>
 <section id="a-distribusi-data">
 <h4>a. Distribusi Data<a class="headerlink" href="#a-distribusi-data" title="Permalink to this heading">#</a></h4>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Distributions</span></code></p>
@@ -528,7 +531,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="menangani-missing-value">
-<h3>🔹 5. Menangani Missing Value<a class="headerlink" href="#menangani-missing-value" title="Permalink to this heading">#</a></h3>
+<h3>5. Menangani Missing Value<a class="headerlink" href="#menangani-missing-value" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Impute</span></code></p>
 <ul class="simple">
 <li><p>Mengisi nilai yang hilang (missing value)</p></li>
@@ -538,7 +541,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="transformasi-data">
-<h3>🔹 6. Transformasi Data<a class="headerlink" href="#transformasi-data" title="Permalink to this heading">#</a></h3>
+<h3>6. Transformasi Data<a class="headerlink" href="#transformasi-data" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Continuize</span></code></p>
 <ul class="simple">
 <li><p>Mengubah data kategorikal menjadi numerik</p></li>
@@ -550,7 +553,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="preprocessing-lanjutan">
-<h3>🔹 7. Preprocessing Lanjutan<a class="headerlink" href="#preprocessing-lanjutan" title="Permalink to this heading">#</a></h3>
+<h3>7. Preprocessing Lanjutan<a class="headerlink" href="#preprocessing-lanjutan" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Preprocess</span></code></p>
 <p>Biasanya meliputi:</p>
 <ul class="simple">
@@ -561,7 +564,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="modeling-machine-learning">
-<h3>🔹 8. Modeling (Machine Learning)<a class="headerlink" href="#modeling-machine-learning" title="Permalink to this heading">#</a></h3>
+<h3>8. Modeling (Machine Learning)<a class="headerlink" href="#modeling-machine-learning" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">kNN</span> <span class="pre">(k-Nearest</span> <span class="pre">Neighbor)</span></code></p>
 <ul class="simple">
 <li><p>Menggunakan algoritma kNN untuk klasifikasi</p></li>
@@ -577,7 +580,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="evaluasi-model">
-<h3>🔹 9. Evaluasi Model<a class="headerlink" href="#evaluasi-model" title="Permalink to this heading">#</a></h3>
+<h3>9. Evaluasi Model<a class="headerlink" href="#evaluasi-model" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">and</span> <span class="pre">Score</span></code></p>
 <ul class="simple">
 <li><p>Menguji performa model</p></li>
@@ -597,7 +600,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="confusion-matrix">
-<h3>🔹 10. Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this heading">#</a></h3>
+<h3>10. Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Confusion</span> <span class="pre">Matrix</span></code></p>
 <ul class="simple">
 <li><p>Menampilkan hasil prediksi vs aktual</p></li>
@@ -609,7 +612,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="reduksi-dimensi-opsional">
-<h3>🔹 11. Reduksi Dimensi (Opsional)<a class="headerlink" href="#reduksi-dimensi-opsional" title="Permalink to this heading">#</a></h3>
+<h3>11. Reduksi Dimensi (Opsional)<a class="headerlink" href="#reduksi-dimensi-opsional" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">PCA</span></code></p>
 <ul class="simple">
 <li><p>Mengurangi dimensi data</p></li>
@@ -622,7 +625,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="visualisasi">
-<h3>🔹 12. Visualisasi<a class="headerlink" href="#visualisasi" title="Permalink to this heading">#</a></h3>
+<h3>12. Visualisasi<a class="headerlink" href="#visualisasi" title="Permalink to this heading">#</a></h3>
 <p><strong>Widget:</strong> <code class="docutils literal notranslate"><span class="pre">Scatter</span> <span class="pre">Plot</span></code></p>
 <ul class="simple">
 <li><p>Menampilkan data dalam bentuk 2D</p></li>
@@ -771,22 +774,22 @@ Select Columns
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gambaran-umum">1. Gambaran Umum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-workflow">2. Alur Kerja (Workflow)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">🔹 1. Input Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-awal">🔹 2. Menampilkan Data Awal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-fitur">🔹 3. Seleksi Fitur</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-eda">🔹 4. Eksplorasi Data (EDA)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-data">1. Input Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menampilkan-data-awal">2. Menampilkan Data Awal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleksi-fitur">3. Seleksi Fitur</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data-eda">4. Eksplorasi Data (EDA)</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-distribusi-data">a. Distribusi Data</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-box-plot">b. Box Plot</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-missing-value">🔹 5. Menangani Missing Value</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">🔹 6. Transformasi Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-lanjutan">🔹 7. Preprocessing Lanjutan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-machine-learning">🔹 8. Modeling (Machine Learning)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">🔹 9. Evaluasi Model</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">🔹 10. Confusion Matrix</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-dimensi-opsional">🔹 11. Reduksi Dimensi (Opsional)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">🔹 12. Visualisasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menangani-missing-value">5. Menangani Missing Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data">6. Transformasi Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-lanjutan">7. Preprocessing Lanjutan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-machine-learning">8. Modeling (Machine Learning)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-model">9. Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix">10. Confusion Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduksi-dimensi-opsional">11. Reduksi Dimensi (Opsional)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi">12. Visualisasi</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-alur">3. Ringkasan Alur</a></li>

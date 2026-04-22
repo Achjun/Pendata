@@ -9,23 +9,28 @@ Workflow ini dibuat menggunakan **Orange Data Mining** untuk melakukan:
 
 Dataset yang digunakan:
 - Dataset kesuburan tanah (terdapat missing value)
-    {download}`dataset_kesuburan_tanah_missing.csv <data/dataset_kesuburan_tanah_missing.csv>`
+    <a href="../data/dataset_kesuburan_tanah_missing.xlsx" download>
+    <button>📥 Download Dataset</button>
+</a>
+
 
 
 ---
 
 ## 2. Alur Kerja (Workflow)
 
-### 🔹 1. Input Data
+###  1. Input Data
 **Widget:** `CSV File Import`  
 - Mengimpor dataset dari file CSV  
 - Data awal kemungkinan masih memiliki missing value  
 
-**Output:** Data mentah  
+**Output:** Data mentah
+
+![CSV Import](images/csv-uts.png)
 
 ---
 
-### 🔹 2. Menampilkan Data Awal
+###  2. Menampilkan Data Awal
 **Widget:** `Data Table`  
 - Menampilkan isi dataset untuk inspeksi awal  
 
@@ -35,7 +40,7 @@ Dataset yang digunakan:
 
 ---
 
-### 🔹 3. Seleksi Fitur
+###  3. Seleksi Fitur
 **Widget:** `Select Columns`  
 - Memilih atribut yang digunakan sebagai:
   - Feature (input)
@@ -45,7 +50,7 @@ Dataset yang digunakan:
 
 ---
 
-### 🔹 4. Eksplorasi Data (EDA)
+###  4. Eksplorasi Data (EDA)
 
 #### a. Distribusi Data
 **Widget:** `Distributions`  
@@ -61,7 +66,7 @@ Dataset yang digunakan:
 
 ---
 
-### 🔹 5. Menangani Missing Value
+###  5. Menangani Missing Value
 **Widget:** `Impute`  
 - Mengisi nilai yang hilang (missing value)  
 - Metode umum: mean, median, dll  
@@ -70,7 +75,7 @@ Dataset yang digunakan:
 
 ---
 
-### 🔹 6. Transformasi Data
+###  6. Transformasi Data
 **Widget:** `Continuize`  
 - Mengubah data kategorikal menjadi numerik  
 
@@ -79,7 +84,7 @@ Dataset yang digunakan:
 
 ---
 
-### 🔹 7. Preprocessing Lanjutan
+###  7. Preprocessing Lanjutan
 **Widget:** `Preprocess`  
 
 Biasanya meliputi:
@@ -90,7 +95,7 @@ Biasanya meliputi:
 
 ---
 
-### 🔹 8. Modeling (Machine Learning)
+###  8. Modeling (Machine Learning)
 **Widget:** `kNN (k-Nearest Neighbor)`  
 - Menggunakan algoritma kNN untuk klasifikasi  
 
@@ -102,7 +107,7 @@ Biasanya meliputi:
 
 ---
 
-### 🔹 9. Evaluasi Model
+###  9. Evaluasi Model
 **Widget:** `Test and Score`  
 - Menguji performa model  
 - Biasanya menggunakan:
@@ -116,7 +121,7 @@ Biasanya meliputi:
 
 ---
 
-### 🔹 10. Confusion Matrix
+###  10. Confusion Matrix
 **Widget:** `Confusion Matrix`  
 - Menampilkan hasil prediksi vs aktual  
 
@@ -125,7 +130,7 @@ Biasanya meliputi:
 
 ---
 
-### 🔹 11. Reduksi Dimensi (Opsional)
+###  11. Reduksi Dimensi (Opsional)
 **Widget:** `PCA`  
 - Mengurangi dimensi data  
 
@@ -135,7 +140,7 @@ Biasanya meliputi:
 
 ---
 
-### 🔹 12. Visualisasi
+###  12. Visualisasi
 **Widget:** `Scatter Plot`  
 - Menampilkan data dalam bentuk 2D  
 
