@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10) &#8212; My sample book</title>
   
@@ -28,35 +29,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'knn';</script>
@@ -160,18 +165,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -216,6 +210,7 @@
 <li class="toctree-l2"><a class="reference internal" href="wknn_pakai_python.html">Perhitungan WKNN menggunakan python</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="uts.html">uts</a></li>
 </ul>
 
     </div>
@@ -245,9 +240,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -388,9 +383,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -444,12 +439,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="perhitungan-knn-dengan-euclidean-distance-data-19-ke-data-10">
-<h1>Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)<a class="headerlink" href="#perhitungan-knn-dengan-euclidean-distance-data-19-ke-data-10" title="Link to this heading">#</a></h1>
+<h1>Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)<a class="headerlink" href="#perhitungan-knn-dengan-euclidean-distance-data-19-ke-data-10" title="Permalink to this heading">#</a></h1>
 <p>Dataset yang digunakan merupakan data mahasiswa <a class="reference download internal" download="" href="_downloads/27fb7f714b6c3e5a3b98e93f117405ad/mahasiswa.csv"><code class="xref download docutils literal notranslate"><span class="pre">mahasiswa.csv</span></code></a>:</p>
 <p>Pada contoh ini, <strong>Usia data ke-10 dianggap hilang</strong>, lalu diprediksi menggunakan <strong>K-Nearest Neighbor (KNN)</strong> dengan <strong>Euclidean Distance</strong>.</p>
 <hr class="docutils" />
 <section id="data-ke-10-target">
-<h2>1. Data ke-10 (Target)<a class="headerlink" href="#data-ke-10-target" title="Link to this heading">#</a></h2>
+<h2>1. Data ke-10 (Target)<a class="headerlink" href="#data-ke-10-target" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Data ke</p></th>
@@ -473,7 +468,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="one-hot-encoding">
-<h2>2. One-Hot Encoding<a class="headerlink" href="#one-hot-encoding" title="Link to this heading">#</a></h2>
+<h2>2. One-Hot Encoding<a class="headerlink" href="#one-hot-encoding" title="Permalink to this heading">#</a></h2>
 <p>Atribut kategorikal yang dipakai:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Tingkat_Kepuasan</span></code></p></li>
@@ -511,7 +506,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="rumus-euclidean-distance">
-<h2>3. Rumus Euclidean Distance<a class="headerlink" href="#rumus-euclidean-distance" title="Link to this heading">#</a></h2>
+<h2>3. Rumus Euclidean Distance<a class="headerlink" href="#rumus-euclidean-distance" title="Permalink to this heading">#</a></h2>
 <p>Rumus Euclidean Distance:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -545,7 +540,7 @@ d(x,y) = \sqrt{
 </section>
 <hr class="docutils" />
 <section id="data-pembanding-19-setelah-one-hot-encoding">
-<h2>4. Data Pembanding 1–9 setelah One-Hot Encoding<a class="headerlink" href="#data-pembanding-19-setelah-one-hot-encoding" title="Link to this heading">#</a></h2>
+<h2>4. Data Pembanding 1–9 setelah One-Hot Encoding<a class="headerlink" href="#data-pembanding-19-setelah-one-hot-encoding" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Data</p></th>
@@ -656,9 +651,9 @@ d(x,y) = \sqrt{
 </section>
 <hr class="docutils" />
 <section id="perhitungan-jarak-data-1-sampai-9-ke-data-10">
-<h2>5. Perhitungan Jarak Data 1 sampai 9 ke Data 10<a class="headerlink" href="#perhitungan-jarak-data-1-sampai-9-ke-data-10" title="Link to this heading">#</a></h2>
+<h2>5. Perhitungan Jarak Data 1 sampai 9 ke Data 10<a class="headerlink" href="#perhitungan-jarak-data-1-sampai-9-ke-data-10" title="Permalink to this heading">#</a></h2>
 <section id="data-1-ke-data-10">
-<h3>Data 1 ke Data 10<a class="headerlink" href="#data-1-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 1 ke Data 10<a class="headerlink" href="#data-1-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 1 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,1,0,0,1,0)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -678,7 +673,7 @@ d(1,10)=\sqrt{2}=1.414
 </section>
 <hr class="docutils" />
 <section id="data-2-ke-data-10">
-<h3>Data 2 ke Data 10<a class="headerlink" href="#data-2-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 2 ke Data 10<a class="headerlink" href="#data-2-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 2 = <code class="docutils literal notranslate"><span class="pre">(1,0,0,0,1,0,0,1)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -698,7 +693,7 @@ d(2,10)=\sqrt{4}=2.000
 </section>
 <hr class="docutils" />
 <section id="data-3-ke-data-10">
-<h3>Data 3 ke Data 10<a class="headerlink" href="#data-3-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 3 ke Data 10<a class="headerlink" href="#data-3-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 3 = <code class="docutils literal notranslate"><span class="pre">(0,0,1,1,0,1,0,0)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -718,7 +713,7 @@ d(3,10)=\sqrt{6}=2.449
 </section>
 <hr class="docutils" />
 <section id="data-4-ke-data-10">
-<h3>Data 4 ke Data 10<a class="headerlink" href="#data-4-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 4 ke Data 10<a class="headerlink" href="#data-4-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 4 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -738,7 +733,7 @@ d(4,10)=0.000
 </section>
 <hr class="docutils" />
 <section id="data-5-ke-data-10">
-<h3>Data 5 ke Data 10<a class="headerlink" href="#data-5-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 5 ke Data 10<a class="headerlink" href="#data-5-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 5 = <code class="docutils literal notranslate"><span class="pre">(1,0,0,1,0,0,0,1)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -758,7 +753,7 @@ d(5,10)=\sqrt{6}=2.449
 </section>
 <hr class="docutils" />
 <section id="data-6-ke-data-10">
-<h3>Data 6 ke Data 10<a class="headerlink" href="#data-6-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 6 ke Data 10<a class="headerlink" href="#data-6-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 6 = <code class="docutils literal notranslate"><span class="pre">(0,0,1,0,1,1,0,0)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -778,7 +773,7 @@ d(6,10)=\sqrt{4}=2.000
 </section>
 <hr class="docutils" />
 <section id="data-7-ke-data-10">
-<h3>Data 7 ke Data 10<a class="headerlink" href="#data-7-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 7 ke Data 10<a class="headerlink" href="#data-7-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 7 = <code class="docutils literal notranslate"><span class="pre">(0,0,1,1,0,0,1,0)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -798,7 +793,7 @@ d(7,10)=\sqrt{4}=2.000
 </section>
 <hr class="docutils" />
 <section id="data-8-ke-data-10">
-<h3>Data 8 ke Data 10<a class="headerlink" href="#data-8-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 8 ke Data 10<a class="headerlink" href="#data-8-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 8 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,0,1)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -818,7 +813,7 @@ d(8,10)=\sqrt{2}=1.414
 </section>
 <hr class="docutils" />
 <section id="data-9-ke-data-10">
-<h3>Data 9 ke Data 10<a class="headerlink" href="#data-9-ke-data-10" title="Link to this heading">#</a></h3>
+<h3>Data 9 ke Data 10<a class="headerlink" href="#data-9-ke-data-10" title="Permalink to this heading">#</a></h3>
 <p>Data 9 = <code class="docutils literal notranslate"><span class="pre">(1,0,0,1,0,1,0,0)</span></code><br />
 Data 10 = <code class="docutils literal notranslate"><span class="pre">(0,1,0,0,1,0,1,0)</span></code></p>
 <div class="math notranslate nohighlight">
@@ -839,7 +834,7 @@ d(9,10)=\sqrt{6}=2.449
 </section>
 <hr class="docutils" />
 <section id="tabel-hasil-jarak">
-<h2>6. Tabel Hasil Jarak<a class="headerlink" href="#tabel-hasil-jarak" title="Link to this heading">#</a></h2>
+<h2>6. Tabel Hasil Jarak<a class="headerlink" href="#tabel-hasil-jarak" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Data</p></th>
@@ -890,7 +885,7 @@ d(9,10)=\sqrt{6}=2.449
 </section>
 <hr class="docutils" />
 <section id="urutkan-tetangga-terdekat">
-<h2>7. Urutkan Tetangga Terdekat<a class="headerlink" href="#urutkan-tetangga-terdekat" title="Link to this heading">#</a></h2>
+<h2>7. Urutkan Tetangga Terdekat<a class="headerlink" href="#urutkan-tetangga-terdekat" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Peringkat</p></th>
@@ -951,7 +946,7 @@ d(9,10)=\sqrt{6}=2.449
 </section>
 <hr class="docutils" />
 <section id="tentukan-nilai-k">
-<h2>8. Tentukan Nilai K<a class="headerlink" href="#tentukan-nilai-k" title="Link to this heading">#</a></h2>
+<h2>8. Tentukan Nilai K<a class="headerlink" href="#tentukan-nilai-k" title="Permalink to this heading">#</a></h2>
 <p>Misalkan digunakan:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -980,7 +975,7 @@ K = 3
 </section>
 <hr class="docutils" />
 <section id="prediksi-usia">
-<h2>9. Prediksi Usia<a class="headerlink" href="#prediksi-usia" title="Link to this heading">#</a></h2>
+<h2>9. Prediksi Usia<a class="headerlink" href="#prediksi-usia" title="Permalink to this heading">#</a></h2>
 <p>Karena <strong>Usia</strong> adalah atribut numerik, maka digunakan rata-rata:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -993,7 +988,7 @@ Usia_{prediksi}=\frac{63}{3}=21
 </section>
 <hr class="docutils" />
 <section id="kesimpulan">
-<h2>10. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h2>
+<h2>10. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
 <p>Berdasarkan perhitungan <strong>KNN dengan Euclidean Distance</strong> pada data ke-1 sampai ke-9 terhadap data ke-10, diperoleh 3 tetangga terdekat yaitu <strong>data ke-4, data ke-1, dan data ke-8</strong>. Maka nilai <strong>Usia pada data ke-10 diprediksi sebesar 21 tahun</strong>.</p>
 </section>
 </section>
@@ -1107,7 +1102,7 @@ By The Jupyter Book Community
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
