@@ -10,6 +10,8 @@ Workflow ini dibuat menggunakan **Orange Data Mining** untuk melakukan:
 Dataset yang digunakan:
 - Dataset kesuburan tanah (terdapat missing value)
 
+
+
 ---
 
 ## 2. Alur Kerja (Workflow)
@@ -144,15 +146,15 @@ Biasanya meliputi:
 
 ## 3. Ringkasan Alur
 
-CSV Import
-↓
-Data Table
-↓
-Select Columns
-↓
-(Impute → Continuize → Preprocess)
-↓
-├── kNN → Test & Score → Confusion Matrix
-├── PCA → Scatter Plot
-├── Distributions
-└── Box Plot
+-- CSV Import
+-- ↓
+-- Data Table
+-- ↓
+-- Select Columns
+-- ↓
+-- (Impute → Continuize → Preprocess)
+-- ↓
+-- ├── kNN → Test & Score → Confusion Matrix
+-- ├── PCA → Scatter Plot
+-- ├── Distributions
+-- └── Box Plot
