@@ -462,7 +462,7 @@ document.write(`
 <h2>File Pendukung Tugas<a class="headerlink" href="#file-pendukung-tugas" title="Permalink to this heading">#</a></h2>
 <p>Dataset baru yang digunakan:</p>
 <ul class="simple">
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">mahasiswa_lulus.xlsx</span></code>:</p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/cc124a9721adc17b057ecb8ee96afa65/mahasiswa_lulus.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">mahasiswa_lulus</span> <span class="pre">(xlsx)</span></code></a>:</p></li>
 <li><p><a class="reference download internal" download="" href="_downloads/51e8501f7a7af244d02ceb18b25b4510/klasifikasi%20data.knwf"><code class="xref download docutils literal notranslate"><span class="pre">Workflow</span> <span class="pre">KNIME</span> <span class="pre">Terintegrasi</span> <span class="pre">Python</span> <span class="pre">(.knwf)</span></code></a></p></li>
 </ul>
 <p>Dataset terdiri dari <strong>50 baris data mahasiswa</strong> dengan target klasifikasi <code class="docutils literal notranslate"><span class="pre">Lulus</span></code>.</p>
@@ -550,6 +550,7 @@ document.write(`
 <h2>4. Penjelasan Detail Per Node<a class="headerlink" href="#penjelasan-detail-per-node" title="Permalink to this heading">#</a></h2>
 <section id="node-excel-reader-csv-reader">
 <h3>4.1 Node Excel Reader / CSV Reader<a class="headerlink" href="#node-excel-reader-csv-reader" title="Permalink to this heading">#</a></h3>
+<p><img alt="Tabel" src="_images/image.png" /></p>
 <p><strong>Fungsi:</strong> Membaca dataset baru yang berisi 50 data mahasiswa.</p>
 <p>Jika menggunakan file Excel:</p>
 <ul class="simple">
@@ -579,6 +580,7 @@ document.write(`
 <hr class="docutils" />
 <section id="node-normalizer">
 <h3>4.2 Node Normalizer<a class="headerlink" href="#node-normalizer" title="Permalink to this heading">#</a></h3>
+<p><img alt="Tabel" src="_images/normalizer.png" /></p>
 <p><strong>Fungsi:</strong> Melakukan normalisasi data menggunakan metode <strong>Min-Max Normalization</strong> agar seluruh fitur numerik berada pada rentang 0 sampai 1.</p>
 <p><strong>Kolom yang dinormalisasi:</strong></p>
 <ul class="simple">
@@ -609,6 +611,7 @@ X_{normalized} = \frac{X - X_{min}}{X_{max} - X_{min}}
 <hr class="docutils" />
 <section id="node-partitioning">
 <h3>4.3 Node Partitioning<a class="headerlink" href="#node-partitioning" title="Permalink to this heading">#</a></h3>
+<p><img alt="Tabel" src="_images/partisi.png" /></p>
 <p><strong>Fungsi:</strong> Membagi dataset menjadi data training dan testing.</p>
 <p><strong>Konfigurasi:</strong></p>
 <ul class="simple">
@@ -632,6 +635,7 @@ X_{normalized} = \frac{X - X_{min}}{X_{max} - X_{min}}
 <hr class="docutils" />
 <section id="node-python-script-learner">
 <h3>4.4 Node Python Script Learner<a class="headerlink" href="#node-python-script-learner" title="Permalink to this heading">#</a></h3>
+<p><img alt="Tabel" src="_images/piton.png" /></p>
 <p><strong>Fungsi:</strong> Melatih model <strong>Gaussian Naive Bayes</strong> menggunakan data training.</p>
 <p><strong>Konfigurasi Port:</strong></p>
 <ul class="simple">
@@ -671,6 +675,7 @@ X_{normalized} = \frac{X - X_{min}}{X_{max} - X_{min}}
 <hr class="docutils" />
 <section id="node-python-script-predictor">
 <h3>4.5 Node Python Script Predictor<a class="headerlink" href="#node-python-script-predictor" title="Permalink to this heading">#</a></h3>
+<p><img alt="Tabel" src="_images/predik.png" /></p>
 <p><strong>Fungsi:</strong> Menggunakan model yang sudah dilatih untuk memprediksi data testing.</p>
 <p><strong>Konfigurasi Port:</strong></p>
 <ul class="simple">
@@ -706,6 +711,7 @@ X_{normalized} = \frac{X - X_{min}}{X_{max} - X_{min}}
 <hr class="docutils" />
 <section id="node-scorer">
 <h3>4.6 Node Scorer<a class="headerlink" href="#node-scorer" title="Permalink to this heading">#</a></h3>
+<p><img alt="Tabel" src="_images/scorer.png" /></p>
 <p><strong>Fungsi:</strong> Mengevaluasi performa model dengan membandingkan label asli dengan hasil prediksi.</p>
 <p><strong>Konfigurasi:</strong></p>
 <ul class="simple">

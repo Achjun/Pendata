@@ -22,7 +22,7 @@ Fokus utama tugas ini adalah:
 
 Dataset baru yang digunakan:
 
-- {download}`mahasiswa_lulus.xlsx <data/mahasiswa_lulus.csv>`:  
+- {download}`mahasiswa_lulus (xlsx) <data/mahasiswa_lulus.xlsx>`:  
 - {download}`Workflow KNIME Terintegrasi Python (.knwf) <data/klasifikasi data.knwf>`
 
 Dataset terdiri dari **50 baris data mahasiswa** dengan target klasifikasi `Lulus`.
@@ -83,6 +83,8 @@ Urutan workflow:
 
 ### 4.1 Node Excel Reader / CSV Reader
 
+![Tabel](naive/image.png)
+
 **Fungsi:** Membaca dataset baru yang berisi 50 data mahasiswa.
 
 Jika menggunakan file Excel:
@@ -112,6 +114,8 @@ Jika menggunakan file CSV:
 ---
 
 ### 4.2 Node Normalizer
+
+![Tabel](naive/normalizer.png)
 
 **Fungsi:** Melakukan normalisasi data menggunakan metode **Min-Max Normalization** agar seluruh fitur numerik berada pada rentang 0 sampai 1.
 
@@ -146,6 +150,8 @@ $$
 
 ### 4.3 Node Partitioning
 
+![Tabel](naive/partisi.png)
+
 **Fungsi:** Membagi dataset menjadi data training dan testing.
 
 **Konfigurasi:**
@@ -169,6 +175,8 @@ Karena jumlah data adalah 50, maka pembagian 80:20 menghasilkan:
 ---
 
 ### 4.4 Node Python Script Learner
+
+![Tabel](naive/piton.png)
 
 **Fungsi:** Melatih model **Gaussian Naive Bayes** menggunakan data training.
 
@@ -213,6 +221,8 @@ knio.output_objects[0] = model
 
 ### 4.5 Node Python Script Predictor
 
+![Tabel](naive/predik.png)
+
 **Fungsi:** Menggunakan model yang sudah dilatih untuk memprediksi data testing.
 
 **Konfigurasi Port:**
@@ -251,6 +261,8 @@ knio.output_tables[0] = knio.Table.from_pandas(test_df)
 ---
 
 ### 4.6 Node Scorer
+
+![Tabel](naive/scorer.png)
 
 **Fungsi:** Mengevaluasi performa model dengan membandingkan label asli dengan hasil prediksi.
 
