@@ -430,7 +430,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">6. Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-implementasi">7. Catatan Implementasi</a></li>
 </ul>
             </nav>
         </div>
@@ -462,10 +461,7 @@ document.write(`
 <section id="file-pendukung-tugas">
 <h2>File Pendukung Tugas<a class="headerlink" href="#file-pendukung-tugas" title="Permalink to this heading">#</a></h2>
 <p>Dataset baru yang digunakan:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dataset_kelulusan_mahasiswa_50.csv</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">dataset_kelulusan_mahasiswa_50.xlsx</span></code></p></li>
-</ul>
+<p>Dataset yang digunakan merupakan data mahasiswa <code class="xref download docutils literal notranslate"><span class="pre">mahasiswa_lulus.xlsx</span></code>:</p>
 <p>Dataset terdiri dari <strong>50 baris data mahasiswa</strong> dengan target klasifikasi <code class="docutils literal notranslate"><span class="pre">Lulus</span></code>.</p>
 </section>
 <hr class="docutils" />
@@ -845,18 +841,6 @@ Actual: 1       FN              TP
 <li><p>Model menghasilkan performa sangat baik pada data testing, tetapi tetap perlu diuji menggunakan dataset yang lebih besar dan lebih realistis.</p></li>
 </ol>
 </section>
-<hr class="docutils" />
-<section id="catatan-implementasi">
-<h2>7. Catatan Implementasi<a class="headerlink" href="#catatan-implementasi" title="Permalink to this heading">#</a></h2>
-<p>Jika hasil evaluasi di KNIME berbeda dari contoh pada dokumen ini, penyebab paling umum adalah:</p>
-<ol class="arabic simple">
-<li><p>Random seed pada node Partitioning berbeda.</p></li>
-<li><p>Urutan data training dan testing berbeda.</p></li>
-<li><p>Kolom yang dinormalisasi tidak sama.</p></li>
-<li><p>Kolom target atau kolom prediksi pada Scorer belum dipilih dengan benar.</p></li>
-</ol>
-<p>Agar hasil lebih konsisten, gunakan random seed yang sama pada node Partitioning.</p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -938,7 +922,6 @@ Actual: 1       FN              TP
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">6. Kesimpulan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-implementasi">7. Catatan Implementasi</a></li>
 </ul>
   </nav></div>
 

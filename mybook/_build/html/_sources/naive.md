@@ -22,8 +22,7 @@ Fokus utama tugas ini adalah:
 
 Dataset baru yang digunakan:
 
-- `dataset_kelulusan_mahasiswa_50.csv`
-- `dataset_kelulusan_mahasiswa_50.xlsx`
+Dataset yang digunakan merupakan data mahasiswa {download}`mahasiswa_lulus.xlsx <data/mahasiswa_lulus.csv>`:
 
 Dataset terdiri dari **50 baris data mahasiswa** dengan target klasifikasi `Lulus`.
 
@@ -347,15 +346,3 @@ Poin-poin penting:
 5. **Workflow KNIME** tetap modular, mulai dari pembacaan dataset, normalisasi, partitioning, training, prediksi, hingga evaluasi.
 6. Model menghasilkan performa sangat baik pada data testing, tetapi tetap perlu diuji menggunakan dataset yang lebih besar dan lebih realistis.
 
----
-
-## 7. Catatan Implementasi
-
-Jika hasil evaluasi di KNIME berbeda dari contoh pada dokumen ini, penyebab paling umum adalah:
-
-1. Random seed pada node Partitioning berbeda.
-2. Urutan data training dan testing berbeda.
-3. Kolom yang dinormalisasi tidak sama.
-4. Kolom target atau kolom prediksi pada Scorer belum dipilih dengan benar.
-
-Agar hasil lebih konsisten, gunakan random seed yang sama pada node Partitioning.
