@@ -22,7 +22,7 @@ Fokus utama tugas ini adalah:
 
 Dataset baru yang digunakan:
 
-- {download}`mahasiswa_lulus.xlsx <data/mahasiswa_lulus.csv>`:  
+- {download}`mahasiswa_lulus (.xlsx) <data/mahasiswa_lulus.csv>`:  
 - {download}`Workflow KNIME Terintegrasi Python (.knwf) <data/klasifikasi data.knwf>`
 
 Dataset terdiri dari **50 baris data mahasiswa** dengan target klasifikasi `Lulus`.
