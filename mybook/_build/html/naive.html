@@ -1,0 +1,996 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tugas Klasifikasi: Naive Bayes &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'naive';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="uts" href="uts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    📘 Buku Data Mining
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pertemuan1.html">Bussines Understanding</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pertemuan2.html">Memahami Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tugas1.html">Eksplorasi Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="data-iris.html">Data Iris</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="analisis-des.html">Analisis Statistik Deskriptif</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="visualisasi_dis.html">Visualisasi Distribusi Data</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pertemuan3.html">Data Distance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Student_updated.html">Data Student</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distance_iris.html">Distance in Iris Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Distance_Student_Data_updated.html">Distance in Student Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knn.html">Perhitungan KNN dengan Euclidean Distance (Data 1–9 ke Data 10)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="normalisasi.html">Macam-Macam Normalisasi Data pada Data Mining</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="contoh_normalisasi_data.html">Contoh Normalisasi Data pada Dataset Mahasiswa</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="wknn.html">Perhitungan Missing Value Menggunakan Metode WKNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wknn_pakai_python.html">Perhitungan WKNN menggunakan python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="uts.html">uts</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Klasifikasi: Naive Bayes</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnaive.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/naive.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tugas Klasifikasi: Naive Bayes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">1. Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-pendukung-tugas">File Pendukung Tugas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">2. Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-target">2.1 Fitur dan Target</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-workflow-knime">3. Alur Kerja Workflow KNIME</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-detail-per-node">4. Penjelasan Detail Per Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-excel-reader-csv-reader">4.1 Node Excel Reader / CSV Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-normalizer">4.2 Node Normalizer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-partitioning">4.3 Node Partitioning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-python-script-learner">4.4 Node Python Script Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-python-script-predictor">4.5 Node Python Script Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-scorer">4.6 Node Scorer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix-viewer">4.7 Confusion Matrix Viewer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-dan-analisis">5. Hasil dan Analisis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-dataset">5.1 Komposisi Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-evaluasi-model">5.2 Hasil Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil">5.3 Analisis Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">6. Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-implementasi">7. Catatan Implementasi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-klasifikasi-naive-bayes">
+<h1>Tugas Klasifikasi: Naive Bayes<a class="headerlink" href="#tugas-klasifikasi-naive-bayes" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="pendahuluan">
+<h2>1. Pendahuluan<a class="headerlink" href="#pendahuluan" title="Permalink to this heading">#</a></h2>
+<p>Tugas Klasifikasi: Prediksi Kelulusan Mahasiswa Menggunakan Naive Bayes dan Python.</p>
+<p>Dokumen ini merupakan versi yang sudah disesuaikan dengan <strong>dataset baru berjumlah 50 data</strong>. Model klasifikasi yang digunakan adalah <strong>Gaussian Naive Bayes</strong> untuk memprediksi apakah mahasiswa <strong>lulus</strong> atau <strong>tidak lulus</strong> berdasarkan beberapa indikator akademik.</p>
+<p>Fokus utama tugas ini adalah:</p>
+<ol class="arabic simple">
+<li><p>Membaca dataset baru berisi 50 data mahasiswa.</p></li>
+<li><p>Melakukan <strong>normalisasi data</strong> menggunakan metode <strong>Min-Max Normalization</strong>.</p></li>
+<li><p>Membagi data menjadi training dan testing set.</p></li>
+<li><p>Melatih model <strong>Gaussian Naive Bayes</strong> menggunakan Python <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> pada KNIME.</p></li>
+<li><p>Melakukan prediksi dan evaluasi model.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="file-pendukung-tugas">
+<h2>File Pendukung Tugas<a class="headerlink" href="#file-pendukung-tugas" title="Permalink to this heading">#</a></h2>
+<p>Dataset baru yang digunakan:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_kelulusan_mahasiswa_50.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_kelulusan_mahasiswa_50.xlsx</span></code></p></li>
+</ul>
+<p>Dataset terdiri dari <strong>50 baris data mahasiswa</strong> dengan target klasifikasi <code class="docutils literal notranslate"><span class="pre">Lulus</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="dataset">
+<h2>2. Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">#</a></h2>
+<p>Dataset yang digunakan adalah dataset sintetis berisi 50 data mahasiswa. Setiap baris mewakili satu mahasiswa dengan beberapa atribut akademik.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nama Kolom</p></th>
+<th class="head text-left"><p>Tipe Data</p></th>
+<th class="head text-left"><p>Deskripsi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ID_Mahasiswa</span></code></p></td>
+<td class="text-left"><p>Kategorikal/ID</p></td>
+<td class="text-left"><p>Kode unik mahasiswa, tidak digunakan sebagai fitur model</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Jam_Belajar</span></code></p></td>
+<td class="text-left"><p>Numerik</p></td>
+<td class="text-left"><p>Jumlah jam belajar mahasiswa per minggu</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Kehadiran</span></code></p></td>
+<td class="text-left"><p>Numerik</p></td>
+<td class="text-left"><p>Persentase kehadiran mahasiswa dalam kelas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Nilai_Tugas</span></code></p></td>
+<td class="text-left"><p>Numerik</p></td>
+<td class="text-left"><p>Rata-rata nilai tugas mahasiswa</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Nilai_UTS</span></code></p></td>
+<td class="text-left"><p>Numerik</p></td>
+<td class="text-left"><p>Nilai Ujian Tengah Semester</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Partisipasi_Kelas</span></code></p></td>
+<td class="text-left"><p>Numerik</p></td>
+<td class="text-left"><p>Skor keaktifan mahasiswa di kelas, skala 1 sampai 10</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">Lulus</span></code></p></td>
+<td class="text-left"><p>Target</p></td>
+<td class="text-left"><p>Label target: <code class="docutils literal notranslate"><span class="pre">1</span></code> berarti lulus, <code class="docutils literal notranslate"><span class="pre">0</span></code> berarti tidak lulus</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="fitur-dan-target">
+<h3>2.1 Fitur dan Target<a class="headerlink" href="#fitur-dan-target" title="Permalink to this heading">#</a></h3>
+<p>Fitur yang digunakan untuk membangun model:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Jam_Belajar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kehadiran</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nilai_Tugas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nilai_UTS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Partisipasi_Kelas</span></code></p></li>
+</ul>
+<p>Kolom target:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Lulus</span></code></p></li>
+</ul>
+<p>Kolom yang tidak digunakan sebagai fitur:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ID_Mahasiswa</span></code>, karena hanya berfungsi sebagai identitas data.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="alur-kerja-workflow-knime">
+<h2>3. Alur Kerja Workflow KNIME<a class="headerlink" href="#alur-kerja-workflow-knime" title="Permalink to this heading">#</a></h2>
+<p>Workflow KNIME dibuat secara berurutan dari pembacaan dataset sampai evaluasi hasil prediksi.</p>
+<p>Urutan workflow:</p>
+<ol class="arabic simple">
+<li><p><strong>Excel Reader</strong> atau <strong>CSV Reader</strong></p></li>
+<li><p><strong>Normalizer</strong></p></li>
+<li><p><strong>Partitioning</strong></p></li>
+<li><p><strong>Python Script Learner</strong></p></li>
+<li><p><strong>Python Script Predictor</strong></p></li>
+<li><p><strong>Scorer</strong></p></li>
+<li><p><strong>Confusion Matrix Viewer</strong></p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="penjelasan-detail-per-node">
+<h2>4. Penjelasan Detail Per Node<a class="headerlink" href="#penjelasan-detail-per-node" title="Permalink to this heading">#</a></h2>
+<section id="node-excel-reader-csv-reader">
+<h3>4.1 Node Excel Reader / CSV Reader<a class="headerlink" href="#node-excel-reader-csv-reader" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Membaca dataset baru yang berisi 50 data mahasiswa.</p>
+<p>Jika menggunakan file Excel:</p>
+<ul class="simple">
+<li><p><strong>Node:</strong> Excel Reader</p></li>
+<li><p><strong>File Path:</strong> <code class="docutils literal notranslate"><span class="pre">dataset_kelulusan_mahasiswa_50.xlsx</span></code></p></li>
+<li><p><strong>Sheet Selection:</strong> pilih sheet <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></p></li>
+<li><p><strong>Read Area:</strong> Whole sheet</p></li>
+</ul>
+<p>Jika menggunakan file CSV:</p>
+<ul class="simple">
+<li><p><strong>Node:</strong> CSV Reader</p></li>
+<li><p><strong>File Path:</strong> <code class="docutils literal notranslate"><span class="pre">dataset_kelulusan_mahasiswa_50.csv</span></code></p></li>
+<li><p><strong>Delimiter:</strong> Comma <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+<li><p><strong>Header:</strong> baris pertama sebagai nama kolom</p></li>
+</ul>
+<p><strong>Output:</strong> Tabel dengan 7 kolom:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ID_Mahasiswa</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Jam_Belajar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kehadiran</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nilai_Tugas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nilai_UTS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Partisipasi_Kelas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lulus</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="node-normalizer">
+<h3>4.2 Node Normalizer<a class="headerlink" href="#node-normalizer" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Melakukan normalisasi data menggunakan metode <strong>Min-Max Normalization</strong> agar seluruh fitur numerik berada pada rentang 0 sampai 1.</p>
+<p><strong>Kolom yang dinormalisasi:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Jam_Belajar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Kehadiran</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nilai_Tugas</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nilai_UTS</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Partisipasi_Kelas</span></code></p></li>
+</ul>
+<p><strong>Kolom yang tidak dinormalisasi:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ID_Mahasiswa</span></code>, karena hanya identitas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lulus</span></code>, karena merupakan target/label.</p></li>
+</ul>
+<p><strong>Konfigurasi:</strong></p>
+<ul class="simple">
+<li><p><strong>Normalization Method:</strong> Min-Max Normalization</p></li>
+<li><p><strong>New Minimum:</strong> <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><strong>New Maximum:</strong> <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></li>
+</ul>
+<p><strong>Rumus Min-Max:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+X_{normalized} = \frac{X - X_{min}}{X_{max} - X_{min}}
+\]</div>
+<p><strong>Output:</strong> Tabel dengan fitur numerik yang sudah berada pada rentang nilai <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="node-partitioning">
+<h3>4.3 Node Partitioning<a class="headerlink" href="#node-partitioning" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Membagi dataset menjadi data training dan testing.</p>
+<p><strong>Konfigurasi:</strong></p>
+<ul class="simple">
+<li><p><strong>Partitioning Mode:</strong> Relative [%]</p></li>
+<li><p><strong>Training Set:</strong> 80%</p></li>
+<li><p><strong>Testing Set:</strong> 20%</p></li>
+<li><p><strong>Sampling Strategy:</strong> Random</p></li>
+<li><p><strong>Random Seed:</strong> <code class="docutils literal notranslate"><span class="pre">42</span></code> atau seed default KNIME</p></li>
+</ul>
+<p><strong>Output:</strong></p>
+<ul class="simple">
+<li><p><strong>Port 0:</strong> Data training sebanyak 80% dari dataset</p></li>
+<li><p><strong>Port 1:</strong> Data testing sebanyak 20% dari dataset</p></li>
+</ul>
+<p>Karena jumlah data adalah 50, maka pembagian 80:20 menghasilkan:</p>
+<ul class="simple">
+<li><p>40 data training</p></li>
+<li><p>10 data testing</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="node-python-script-learner">
+<h3>4.4 Node Python Script Learner<a class="headerlink" href="#node-python-script-learner" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Melatih model <strong>Gaussian Naive Bayes</strong> menggunakan data training.</p>
+<p><strong>Konfigurasi Port:</strong></p>
+<ul class="simple">
+<li><p><strong>Input Port 0 (Table):</strong> data training dari node Partitioning</p></li>
+<li><p><strong>Output Port 0 (Object):</strong> model Naive Bayes yang sudah dilatih</p></li>
+</ul>
+<p><strong>Kode Python:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">knime.scripting.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">knio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianNB</span>
+
+<span class="c1"># 1. Ambil data training dari input table KNIME</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">input_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+
+<span class="c1"># 2. Tentukan fitur dan target</span>
+<span class="n">fitur</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jam_Belajar&#39;</span><span class="p">,</span> <span class="s1">&#39;Kehadiran&#39;</span><span class="p">,</span> <span class="s1">&#39;Nilai_Tugas&#39;</span><span class="p">,</span> <span class="s1">&#39;Nilai_UTS&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisipasi_Kelas&#39;</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">fitur</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Lulus&#39;</span><span class="p">]</span>
+
+<span class="c1"># 3. Buat dan latih model Gaussian Naive Bayes</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># 4. Kirim model ke output object port</span>
+<span class="n">knio</span><span class="o">.</span><span class="n">output_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span>
+</pre></div>
+</div>
+<p><strong>Penjelasan Kode:</strong></p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">knime.scripting.io</span></code> digunakan untuk komunikasi antara KNIME dan Python.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code> digunakan karena semua fitur yang dipakai adalah numerik.</p></li>
+<li><p>Kolom <code class="docutils literal notranslate"><span class="pre">ID_Mahasiswa</span></code> tidak dimasukkan ke fitur karena bukan variabel prediktif.</p></li>
+<li><p>Kolom <code class="docutils literal notranslate"><span class="pre">Lulus</span></code> digunakan sebagai target klasifikasi.</p></li>
+<li><p>Model dikirim ke output port dalam bentuk Python Object.</p></li>
+</ol>
+<p><strong>Output:</strong> Model Gaussian Naive Bayes yang sudah dilatih.</p>
+</section>
+<hr class="docutils" />
+<section id="node-python-script-predictor">
+<h3>4.5 Node Python Script Predictor<a class="headerlink" href="#node-python-script-predictor" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Menggunakan model yang sudah dilatih untuk memprediksi data testing.</p>
+<p><strong>Konfigurasi Port:</strong></p>
+<ul class="simple">
+<li><p><strong>Input Port 0 (Object):</strong> model dari node Python Script Learner</p></li>
+<li><p><strong>Input Port 1 (Table):</strong> data testing dari node Partitioning</p></li>
+<li><p><strong>Output Port 0 (Table):</strong> tabel testing dengan kolom prediksi tambahan</p></li>
+</ul>
+<p><strong>Kode Python:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">knime.scripting.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">knio</span>
+
+<span class="c1"># 1. Ambil model dari input object</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">input_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 2. Ambil data testing dari input table</span>
+<span class="n">test_df</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">input_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+
+<span class="c1"># 3. Tentukan kolom fitur yang sama dengan saat training</span>
+<span class="n">fitur</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jam_Belajar&#39;</span><span class="p">,</span> <span class="s1">&#39;Kehadiran&#39;</span><span class="p">,</span> <span class="s1">&#39;Nilai_Tugas&#39;</span><span class="p">,</span> <span class="s1">&#39;Nilai_UTS&#39;</span><span class="p">,</span> <span class="s1">&#39;Partisipasi_Kelas&#39;</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_df</span><span class="p">[</span><span class="n">fitur</span><span class="p">]</span>
+
+<span class="c1"># 4. Prediksi kelas kelulusan</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># 5. Tambahkan hasil prediksi ke dataframe</span>
+<span class="n">test_df</span><span class="p">[</span><span class="s1">&#39;Prediksi_Lulus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions</span>
+
+<span class="c1"># 6. Kirim kembali ke KNIME sebagai tabel</span>
+<span class="n">knio</span><span class="o">.</span><span class="n">output_tables</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">knio</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">test_df</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Output:</strong> Tabel testing dengan kolom tambahan <code class="docutils literal notranslate"><span class="pre">Prediksi_Lulus</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="node-scorer">
+<h3>4.6 Node Scorer<a class="headerlink" href="#node-scorer" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Mengevaluasi performa model dengan membandingkan label asli dengan hasil prediksi.</p>
+<p><strong>Konfigurasi:</strong></p>
+<ul class="simple">
+<li><p><strong>First Column / Actual:</strong> <code class="docutils literal notranslate"><span class="pre">Lulus</span></code></p></li>
+<li><p><strong>Second Column / Predicted:</strong> <code class="docutils literal notranslate"><span class="pre">Prediksi_Lulus</span></code></p></li>
+</ul>
+<p><strong>Metrik Evaluasi:</strong></p>
+<ul class="simple">
+<li><p><strong>Accuracy:</strong> persentase seluruh prediksi yang benar.</p></li>
+<li><p><strong>Precision:</strong> ketepatan model saat memprediksi kelas lulus.</p></li>
+<li><p><strong>Recall:</strong> kemampuan model menemukan seluruh mahasiswa yang benar-benar lulus.</p></li>
+<li><p><strong>F1-Score:</strong> rata-rata harmonis antara precision dan recall.</p></li>
+<li><p><strong>Confusion Matrix:</strong> tabel distribusi prediksi benar dan salah.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="confusion-matrix-viewer">
+<h3>4.7 Confusion Matrix Viewer<a class="headerlink" href="#confusion-matrix-viewer" title="Permalink to this heading">#</a></h3>
+<p><strong>Fungsi:</strong> Menampilkan confusion matrix agar kesalahan prediksi lebih mudah dianalisis.</p>
+<p>Struktur confusion matrix:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                Predicted: 0    Predicted: 1
+Actual: 0       TN              FP
+Actual: 1       FN              TP
+</pre></div>
+</div>
+<p>Keterangan:</p>
+<ul class="simple">
+<li><p><strong>TN (True Negative):</strong> mahasiswa diprediksi tidak lulus dan memang tidak lulus.</p></li>
+<li><p><strong>FP (False Positive):</strong> mahasiswa diprediksi lulus, tetapi sebenarnya tidak lulus.</p></li>
+<li><p><strong>FN (False Negative):</strong> mahasiswa diprediksi tidak lulus, tetapi sebenarnya lulus.</p></li>
+<li><p><strong>TP (True Positive):</strong> mahasiswa diprediksi lulus dan memang lulus.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="hasil-dan-analisis">
+<h2>5. Hasil dan Analisis<a class="headerlink" href="#hasil-dan-analisis" title="Permalink to this heading">#</a></h2>
+<section id="komposisi-dataset">
+<h3>5.1 Komposisi Dataset<a class="headerlink" href="#komposisi-dataset" title="Permalink to this heading">#</a></h3>
+<p>Dataset baru terdiri dari 50 data dengan komposisi target:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Kelas</p></th>
+<th class="head text-right"><p>Jumlah Data</p></th>
+<th class="head text-left"><p>Keterangan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-right"><p>19</p></td>
+<td class="text-left"><p>Lulus</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-right"><p>31</p></td>
+<td class="text-left"><p>Tidak lulus</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hasil-evaluasi-model">
+<h3>5.2 Hasil Evaluasi Model<a class="headerlink" href="#hasil-evaluasi-model" title="Permalink to this heading">#</a></h3>
+<p>Dengan pembagian data 80% training dan 20% testing, jumlah data testing adalah 10 data.</p>
+<p>Contoh hasil evaluasi menggunakan Gaussian Naive Bayes pada dataset ini:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Metrik</p></th>
+<th class="head text-right"><p>Hasil</p></th>
+<th class="head text-left"><p>Interpretasi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Accuracy</p></td>
+<td class="text-right"><p>1.000</p></td>
+<td class="text-left"><p>Semua data testing diprediksi dengan benar</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Precision</p></td>
+<td class="text-right"><p>1.000</p></td>
+<td class="text-left"><p>Semua prediksi lulus benar-benar lulus</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Recall</p></td>
+<td class="text-right"><p>1.000</p></td>
+<td class="text-left"><p>Semua mahasiswa yang lulus berhasil dikenali</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>F1-Score</p></td>
+<td class="text-right"><p>1.000</p></td>
+<td class="text-left"><p>Keseimbangan precision dan recall sangat baik</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Confusion matrix contoh:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Actual / Predicted</p></th>
+<th class="head text-right"><p>Predicted 0</p></th>
+<th class="head text-right"><p>Predicted 1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Actual 0</p></td>
+<td class="text-right"><p>6</p></td>
+<td class="text-right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Actual 1</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="analisis-hasil">
+<h3>5.3 Analisis Hasil<a class="headerlink" href="#analisis-hasil" title="Permalink to this heading">#</a></h3>
+<p>Model mampu memprediksi data testing dengan sangat baik karena pola pada dataset cukup jelas. Mahasiswa dengan kombinasi nilai akademik tinggi, kehadiran baik, jam belajar cukup, dan partisipasi kelas baik cenderung masuk kelas <code class="docutils literal notranslate"><span class="pre">1</span></code> atau lulus.</p>
+<p>Namun, hasil sempurna pada dataset berjumlah 50 data tetap perlu dianalisis secara hati-hati. Beberapa kemungkinan penyebab akurasi tinggi adalah:</p>
+<ol class="arabic simple">
+<li><p>Dataset sintetis memiliki pola yang lebih teratur dibanding dataset nyata.</p></li>
+<li><p>Jumlah data masih relatif kecil.</p></li>
+<li><p>Data testing hanya 20% dari 50 data, yaitu 10 data.</p></li>
+<li><p>Perlu pengujian lanjutan menggunakan data mahasiswa nyata atau data tambahan.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>6. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<p>Tugas klasifikasi ini berhasil disesuaikan dengan dataset baru berjumlah 50 data mahasiswa. Dataset baru menggunakan lima fitur numerik, yaitu <code class="docutils literal notranslate"><span class="pre">Jam_Belajar</span></code>, <code class="docutils literal notranslate"><span class="pre">Kehadiran</span></code>, <code class="docutils literal notranslate"><span class="pre">Nilai_Tugas</span></code>, <code class="docutils literal notranslate"><span class="pre">Nilai_UTS</span></code>, dan <code class="docutils literal notranslate"><span class="pre">Partisipasi_Kelas</span></code>, dengan target <code class="docutils literal notranslate"><span class="pre">Lulus</span></code>.</p>
+<p>Poin-poin penting:</p>
+<ol class="arabic simple">
+<li><p><strong>Dataset baru</strong> berisi 50 data mahasiswa.</p></li>
+<li><p><strong>Target klasifikasi</strong> adalah <code class="docutils literal notranslate"><span class="pre">Lulus</span></code>, dengan nilai <code class="docutils literal notranslate"><span class="pre">1</span></code> untuk lulus dan <code class="docutils literal notranslate"><span class="pre">0</span></code> untuk tidak lulus.</p></li>
+<li><p><strong>Normalisasi Min-Max</strong> diterapkan pada semua fitur numerik.</p></li>
+<li><p><strong>Gaussian Naive Bayes</strong> cocok digunakan karena fitur yang dipakai berbentuk numerik.</p></li>
+<li><p><strong>Workflow KNIME</strong> tetap modular, mulai dari pembacaan dataset, normalisasi, partitioning, training, prediksi, hingga evaluasi.</p></li>
+<li><p>Model menghasilkan performa sangat baik pada data testing, tetapi tetap perlu diuji menggunakan dataset yang lebih besar dan lebih realistis.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="catatan-implementasi">
+<h2>7. Catatan Implementasi<a class="headerlink" href="#catatan-implementasi" title="Permalink to this heading">#</a></h2>
+<p>Jika hasil evaluasi di KNIME berbeda dari contoh pada dokumen ini, penyebab paling umum adalah:</p>
+<ol class="arabic simple">
+<li><p>Random seed pada node Partitioning berbeda.</p></li>
+<li><p>Urutan data training dan testing berbeda.</p></li>
+<li><p>Kolom yang dinormalisasi tidak sama.</p></li>
+<li><p>Kolom target atau kolom prediksi pada Scorer belum dipilih dengan benar.</p></li>
+</ol>
+<p>Agar hasil lebih konsisten, gunakan random seed yang sama pada node Partitioning.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="uts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">uts</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">1. Pendahuluan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-pendukung-tugas">File Pendukung Tugas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">2. Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-dan-target">2.1 Fitur dan Target</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-kerja-workflow-knime">3. Alur Kerja Workflow KNIME</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-detail-per-node">4. Penjelasan Detail Per Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-excel-reader-csv-reader">4.1 Node Excel Reader / CSV Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-normalizer">4.2 Node Normalizer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-partitioning">4.3 Node Partitioning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-python-script-learner">4.4 Node Python Script Learner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-python-script-predictor">4.5 Node Python Script Predictor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-scorer">4.6 Node Scorer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matrix-viewer">4.7 Confusion Matrix Viewer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-dan-analisis">5. Hasil dan Analisis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-dataset">5.1 Komposisi Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-evaluasi-model">5.2 Hasil Evaluasi Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-hasil">5.3 Analisis Hasil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">6. Kesimpulan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-implementasi">7. Catatan Implementasi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
