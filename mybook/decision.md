@@ -32,6 +32,8 @@ C --> F[Decision Tree View]
 
 ### 1. Excel Reader
 
+![Tabel](decison/1.png)
+
 Node Excel Reader digunakan untuk membaca data dari file Excel (.xlsx atau .xls).
 
 Konfigurasi utama:
@@ -49,6 +51,8 @@ Data tabel (dataset) yang siap diproses
 ---
 ### 2. Partitioning
 
+![Tabel](decison/2.png)
+
 Node Partitioning digunakan untuk membagi dataset menjadi dua bagian, yaitu data latih dan data uji.
 
 Konfigurasi utama:
@@ -64,6 +68,8 @@ Port 2: Testing data
 
 ---
 ### 3. Decision Tree Learner
+
+![Tabel](decison/3.png)
 
 Node Decision Tree Learner digunakan untuk membangun model klasifikasi berbasis pohon keputusan.
 
@@ -81,6 +87,8 @@ Model Decision Tree
 ---
 ### 4. Decision Tree Predictor
 
+![Tabel](decison/4.png)
+
 Node Decision Tree Predictor digunakan untuk menerapkan model yang telah dibuat ke data testing.
 
 Konfigurasi utama:
@@ -94,6 +102,8 @@ Data testing yang sudah ditambahkan kolom hasil prediksi
 
 ---
 ### 5. Scorer
+
+![Tabel](decison/5.png)
 
 Node Scorer digunakan untuk mengevaluasi performa model klasifikasi.
 
@@ -111,6 +121,8 @@ Output:
 
 ---
 ### 6. Decision Tree View
+
+![Tabel](decison/6.png)
 
 Node Decision Tree View digunakan untuk menampilkan visualisasi dari model Decision Tree.
 
