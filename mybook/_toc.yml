@@ -23,3 +23,4 @@ chapters:
       - file: wknn_pakai_python  
   - file: uts  
   - file: naive  
+  - file: decision  
