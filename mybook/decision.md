@@ -44,8 +44,7 @@ Output:
 
 Data tabel (dataset) yang siap diproses
 
-Peran dalam workflow:
-Sebagai sumber data utama yang akan digunakan untuk proses training dan testing.
+
 
 ---
 ### 2. Partitioning
@@ -62,8 +61,7 @@ Output:
 Port 1: Training data
 Port 2: Testing data
 
-Peran dalam workflow:
-Memastikan model tidak hanya belajar, tetapi juga diuji menggunakan data yang belum pernah dilihat sebelumnya.
+
 ---
 ### 3. Decision Tree Learner
 
@@ -79,8 +77,7 @@ Output:
 
 Model Decision Tree
 
-Peran dalam workflow:
-Melatih model berdasarkan data training untuk menemukan pola dan aturan klasifikasi.
+
 ---
 ### 4. Decision Tree Predictor
 
@@ -95,8 +92,6 @@ Output:
 
 Data testing yang sudah ditambahkan kolom hasil prediksi
 
-Peran dalam workflow:
-Menghasilkan prediksi berdasarkan model Decision Tree.
 ---
 ### 5. Scorer
 
@@ -114,8 +109,6 @@ Output:
 - Precision
 - -Recall
 
-Peran dalam workflow:
-Menilai seberapa akurat model dalam melakukan prediksi.
 ---
 ### 6. Decision Tree View
 
@@ -131,8 +124,6 @@ Output:
 
 Visualisasi pohon keputusan
 
-Peran dalam workflow:
-Mempermudah pengguna dalam memahami cara kerja model Decision Tree.
 ---
 ### Kesimpulan
 
@@ -140,12 +131,12 @@ Workflow ini menunjukkan proses lengkap dalam pembuatan model machine learning m
 
 Langkah-langkah utama:
 
-Membaca data
-Membagi data
-Melatih model
-Melakukan prediksi
-Mengevaluasi hasil
-Visualisasi model
+- Membaca data
+- Membagi data
+- Melatih model
+- Melakukan prediksi
+- Mengevaluasi hasil
+- Visualisasi model
 
-Dengan workflow ini, pengguna dapat memahami bagaimana model klasifikasi dibangun dan diuji secara sistematis.
+
 ---
