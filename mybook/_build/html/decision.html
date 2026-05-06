@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>📄 Penjelasan Workflow KNIME – Decision Tree &#8212; My sample book</title>
+    <title>Decision Tree &#8212; My sample book</title>
   
   
   
@@ -209,7 +209,7 @@ const thebe_selector_output = ".output, .cell_output"
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="uts.html">uts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="naive.html">Tugas Klasifikasi: Naive Bayes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">📄 Penjelasan Workflow KNIME – Decision Tree</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Decision Tree</a></li>
 </ul>
 
     </div>
@@ -395,7 +395,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>📄 Penjelasan Workflow KNIME – Decision Tree</h1>
+    <h1>Decision Tree</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -410,8 +410,35 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-proses-workflow">🔄 Alur Proses Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-detail-setiap-node">🧩 Penjelasan Detail Setiap Node</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-reader">1. Excel Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partitioning">2. Partitioning</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-memastikan-model-tidak-hanya-belajar-tetapi-juga-diuji-menggunakan-data-yang-belum-pernah-dilihat-sebelumnya">Peran dalam workflow:
+Memastikan model tidak hanya belajar, tetapi juga diuji menggunakan data yang belum pernah dilihat sebelumnya.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-learner">3. Decision Tree Learner</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-melatih-model-berdasarkan-data-training-untuk-menemukan-pola-dan-aturan-klasifikasi">Peran dalam workflow:
+Melatih model berdasarkan data training untuk menemukan pola dan aturan klasifikasi.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-predictor">4. Decision Tree Predictor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-menghasilkan-prediksi-berdasarkan-model-decision-tree">Peran dalam workflow:
+Menghasilkan prediksi berdasarkan model Decision Tree.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scorer">5. Scorer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-menilai-seberapa-akurat-model-dalam-melakukan-prediksi">Peran dalam workflow:
+Menilai seberapa akurat model dalam melakukan prediksi.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-view">6. Decision Tree View</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-mempermudah-pengguna-dalam-memahami-cara-kerja-model-decision-tree">Peran dalam workflow:
+Mempermudah pengguna dalam memahami cara kerja model Decision Tree.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dengan-workflow-ini-pengguna-dapat-memahami-bagaimana-model-klasifikasi-dibangun-dan-diuji-secara-sistematis">Dengan workflow ini, pengguna dapat memahami bagaimana model klasifikasi dibangun dan diuji secara sistematis.</a></li>
 </ul>
             </nav>
         </div>
@@ -423,8 +450,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="penjelasan-workflow-knime-decision-tree">
-<h1>📄 Penjelasan Workflow KNIME – Decision Tree<a class="headerlink" href="#penjelasan-workflow-knime-decision-tree" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="decision-tree">
+<h1>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this heading">#</a></h1>
 <section id="pendahuluan">
 <h2>📌 Pendahuluan<a class="headerlink" href="#pendahuluan" title="Permalink to this heading">#</a></h2>
 <p>Workflow ini dibuat menggunakan <strong>KNIME Analytics Platform</strong> dan bertujuan untuk melakukan proses <em>data mining</em> menggunakan algoritma <strong>Decision Tree</strong>.</p>
@@ -469,8 +496,101 @@ C --&gt; F[Decision Tree View]
 <p>Data tabel (dataset) yang siap diproses</p>
 <p>Peran dalam workflow:
 Sebagai sumber data utama yang akan digunakan untuk proses training dan testing.</p>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
+<section id="partitioning">
+<h3>2. Partitioning<a class="headerlink" href="#partitioning" title="Permalink to this heading">#</a></h3>
+<p>Node Partitioning digunakan untuk membagi dataset menjadi dua bagian, yaitu data latih dan data uji.</p>
+<p>Konfigurasi utama:</p>
+<p>Rasio pembagian data (misalnya 70% training, 30% testing)
+Metode sampling (random atau stratified)</p>
+<p>Output:</p>
+<p>Port 1: Training data
+Port 2: Testing data</p>
+</section>
+</section>
+<section id="peran-dalam-workflow-memastikan-model-tidak-hanya-belajar-tetapi-juga-diuji-menggunakan-data-yang-belum-pernah-dilihat-sebelumnya">
+<h2>Peran dalam workflow:
+Memastikan model tidak hanya belajar, tetapi juga diuji menggunakan data yang belum pernah dilihat sebelumnya.<a class="headerlink" href="#peran-dalam-workflow-memastikan-model-tidak-hanya-belajar-tetapi-juga-diuji-menggunakan-data-yang-belum-pernah-dilihat-sebelumnya" title="Permalink to this heading">#</a></h2>
+<section id="decision-tree-learner">
+<h3>3. Decision Tree Learner<a class="headerlink" href="#decision-tree-learner" title="Permalink to this heading">#</a></h3>
+<p>Node Decision Tree Learner digunakan untuk membangun model klasifikasi berbasis pohon keputusan.</p>
+<p>Konfigurasi utama:</p>
+<ul class="simple">
+<li><p>Menentukan atribut target (label/kelas)</p></li>
+<li><p>Menentukan kriteria pemisahan (misalnya Gini Index atau Information Gain)</p></li>
+<li><p>Mengatur kedalaman maksimum pohon (max depth)</p></li>
+</ul>
+<p>Output:</p>
+<p>Model Decision Tree</p>
+</section>
+</section>
+<section id="peran-dalam-workflow-melatih-model-berdasarkan-data-training-untuk-menemukan-pola-dan-aturan-klasifikasi">
+<h2>Peran dalam workflow:
+Melatih model berdasarkan data training untuk menemukan pola dan aturan klasifikasi.<a class="headerlink" href="#peran-dalam-workflow-melatih-model-berdasarkan-data-training-untuk-menemukan-pola-dan-aturan-klasifikasi" title="Permalink to this heading">#</a></h2>
+<section id="decision-tree-predictor">
+<h3>4. Decision Tree Predictor<a class="headerlink" href="#decision-tree-predictor" title="Permalink to this heading">#</a></h3>
+<p>Node Decision Tree Predictor digunakan untuk menerapkan model yang telah dibuat ke data testing.</p>
+<p>Konfigurasi utama:</p>
+<ul class="simple">
+<li><p>Menghubungkan model dari Learner</p></li>
+<li><p>Menggunakan dataset testing sebagai input</p></li>
+</ul>
+<p>Output:</p>
+<p>Data testing yang sudah ditambahkan kolom hasil prediksi</p>
+</section>
+</section>
+<section id="peran-dalam-workflow-menghasilkan-prediksi-berdasarkan-model-decision-tree">
+<h2>Peran dalam workflow:
+Menghasilkan prediksi berdasarkan model Decision Tree.<a class="headerlink" href="#peran-dalam-workflow-menghasilkan-prediksi-berdasarkan-model-decision-tree" title="Permalink to this heading">#</a></h2>
+<section id="scorer">
+<h3>5. Scorer<a class="headerlink" href="#scorer" title="Permalink to this heading">#</a></h3>
+<p>Node Scorer digunakan untuk mengevaluasi performa model klasifikasi.</p>
+<p>Konfigurasi utama:</p>
+<p>Menentukan kolom actual (label asli)
+Menentukan kolom predicted (hasil prediksi)</p>
+<p>Output:</p>
+<ul class="simple">
+<li><p>Confusion Matrix</p></li>
+<li><p>Accuracy</p></li>
+<li><p>Precision</p></li>
+<li><p>-Recall</p></li>
+</ul>
+</section>
+</section>
+<section id="peran-dalam-workflow-menilai-seberapa-akurat-model-dalam-melakukan-prediksi">
+<h2>Peran dalam workflow:
+Menilai seberapa akurat model dalam melakukan prediksi.<a class="headerlink" href="#peran-dalam-workflow-menilai-seberapa-akurat-model-dalam-melakukan-prediksi" title="Permalink to this heading">#</a></h2>
+<section id="decision-tree-view">
+<h3>6. Decision Tree View<a class="headerlink" href="#decision-tree-view" title="Permalink to this heading">#</a></h3>
+<p>Node Decision Tree View digunakan untuk menampilkan visualisasi dari model Decision Tree.</p>
+<p>Fitur utama:</p>
+<ul class="simple">
+<li><p>Menampilkan struktur pohon</p></li>
+<li><p>Menampilkan aturan keputusan (rule)</p></li>
+<li><p>Menunjukkan atribut yang digunakan pada setiap percabangan</p></li>
+</ul>
+<p>Output:</p>
+<p>Visualisasi pohon keputusan</p>
+</section>
+</section>
+<section id="peran-dalam-workflow-mempermudah-pengguna-dalam-memahami-cara-kerja-model-decision-tree">
+<h2>Peran dalam workflow:
+Mempermudah pengguna dalam memahami cara kerja model Decision Tree.<a class="headerlink" href="#peran-dalam-workflow-mempermudah-pengguna-dalam-memahami-cara-kerja-model-decision-tree" title="Permalink to this heading">#</a></h2>
+<section id="kesimpulan">
+<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h3>
+<p>Workflow ini menunjukkan proses lengkap dalam pembuatan model machine learning menggunakan algoritma Decision Tree, mulai dari input data hingga evaluasi model.</p>
+<p>Langkah-langkah utama:</p>
+<p>Membaca data
+Membagi data
+Melatih model
+Melakukan prediksi
+Mengevaluasi hasil
+Visualisasi model</p>
+</section>
+</section>
+<section id="dengan-workflow-ini-pengguna-dapat-memahami-bagaimana-model-klasifikasi-dibangun-dan-diuji-secara-sistematis">
+<h2>Dengan workflow ini, pengguna dapat memahami bagaimana model klasifikasi dibangun dan diuji secara sistematis.<a class="headerlink" href="#dengan-workflow-ini-pengguna-dapat-memahami-bagaimana-model-klasifikasi-dibangun-dan-diuji-secara-sistematis" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -534,8 +654,35 @@ Sebagai sumber data utama yang akan digunakan untuk proses training dan testing.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-proses-workflow">🔄 Alur Proses Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-detail-setiap-node">🧩 Penjelasan Detail Setiap Node</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-reader">1. Excel Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partitioning">2. Partitioning</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-memastikan-model-tidak-hanya-belajar-tetapi-juga-diuji-menggunakan-data-yang-belum-pernah-dilihat-sebelumnya">Peran dalam workflow:
+Memastikan model tidak hanya belajar, tetapi juga diuji menggunakan data yang belum pernah dilihat sebelumnya.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-learner">3. Decision Tree Learner</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-melatih-model-berdasarkan-data-training-untuk-menemukan-pola-dan-aturan-klasifikasi">Peran dalam workflow:
+Melatih model berdasarkan data training untuk menemukan pola dan aturan klasifikasi.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-predictor">4. Decision Tree Predictor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-menghasilkan-prediksi-berdasarkan-model-decision-tree">Peran dalam workflow:
+Menghasilkan prediksi berdasarkan model Decision Tree.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scorer">5. Scorer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-menilai-seberapa-akurat-model-dalam-melakukan-prediksi">Peran dalam workflow:
+Menilai seberapa akurat model dalam melakukan prediksi.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree-view">6. Decision Tree View</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#peran-dalam-workflow-mempermudah-pengguna-dalam-memahami-cara-kerja-model-decision-tree">Peran dalam workflow:
+Mempermudah pengguna dalam memahami cara kerja model Decision Tree.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dengan-workflow-ini-pengguna-dapat-memahami-bagaimana-model-klasifikasi-dibangun-dan-diuji-secara-sistematis">Dengan workflow ini, pengguna dapat memahami bagaimana model klasifikasi dibangun dan diuji secara sistematis.</a></li>
 </ul>
   </nav></div>
 
