@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Panduan Membuat Random Forest di KNIME &#8212; My sample book</title>
+    <title>Random Forest &#8212; My sample book</title>
   
   
   
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="uts.html">uts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="naive.html">Tugas Klasifikasi: Naive Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="decision.html">Decision Tree</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Panduan Membuat Random Forest di KNIME</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Random Forest</a></li>
 </ul>
 
     </div>
@@ -396,7 +396,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Panduan Membuat Random Forest di KNIME</h1>
+    <h1>Random Forest</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,7 +417,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tambahkan-scorer-untuk-random-forest">9. Tambahkan Scorer untuk Random Forest</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-akhir">10. Workflow akhir</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-konfigurasi-yang-benar">11. Ringkasan konfigurasi yang benar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-untuk-laporan">12. Catatan untuk laporan</a></li>
 </ul>
             </nav>
         </div>
@@ -429,8 +428,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="panduan-membuat-random-forest-di-knime">
-<h1>Panduan Membuat Random Forest di KNIME<a class="headerlink" href="#panduan-membuat-random-forest-di-knime" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="random-forest">
+<h1>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this heading">#</a></h1>
 <p>Dataset: <code class="docutils literal notranslate"><span class="pre">data_sampel_play_tennis_knime.csv</span></code><br />
 Target/label prediksi: <code class="docutils literal notranslate"><span class="pre">PlayTennis</span></code><br />
 Fitur/input model: <code class="docutils literal notranslate"><span class="pre">Outlook</span></code>, <code class="docutils literal notranslate"><span class="pre">Temperature</span></code>, <code class="docutils literal notranslate"><span class="pre">Humidity</span></code>, <code class="docutils literal notranslate"><span class="pre">Wind</span></code><br />
@@ -686,12 +685,7 @@ Random Forest Predictor → Scorer
 </tbody>
 </table>
 </div>
-</section>
 <hr class="docutils" />
-<section id="catatan-untuk-laporan">
-<h2>12. Catatan untuk laporan<a class="headerlink" href="#catatan-untuk-laporan" title="Permalink to this heading">#</a></h2>
-<p>Random Forest adalah metode ensemble yang membangun banyak Decision Tree. Hasil prediksi ditentukan berdasarkan voting dari beberapa tree. Dibandingkan Decision Tree tunggal, Random Forest biasanya lebih stabil karena tidak bergantung hanya pada satu pohon keputusan.</p>
-<p>Untuk dataset <code class="docutils literal notranslate"><span class="pre">PlayTennis</span></code>, model menggunakan fitur cuaca seperti <code class="docutils literal notranslate"><span class="pre">Outlook</span></code>, <code class="docutils literal notranslate"><span class="pre">Temperature</span></code>, <code class="docutils literal notranslate"><span class="pre">Humidity</span></code>, dan <code class="docutils literal notranslate"><span class="pre">Wind</span></code> untuk memprediksi apakah seseorang akan bermain tenis atau tidak pada kolom target <code class="docutils literal notranslate"><span class="pre">PlayTennis</span></code>.</p>
 </section>
 </section>
 
@@ -761,7 +755,6 @@ Random Forest Predictor → Scorer
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tambahkan-scorer-untuk-random-forest">9. Tambahkan Scorer untuk Random Forest</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-akhir">10. Workflow akhir</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-konfigurasi-yang-benar">11. Ringkasan konfigurasi yang benar</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-untuk-laporan">12. Catatan untuk laporan</a></li>
 </ul>
   </nav></div>
 

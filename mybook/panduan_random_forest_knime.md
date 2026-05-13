@@ -1,4 +1,4 @@
-# Panduan Membuat Random Forest di KNIME
+#  Random Forest
 
 Dataset: `data_sampel_play_tennis_knime.csv`  
 Target/label prediksi: `PlayTennis`  
@@ -314,8 +314,3 @@ Random Forest Predictor → Scorer
 
 ---
 
-## 12. Catatan untuk laporan
-
-Random Forest adalah metode ensemble yang membangun banyak Decision Tree. Hasil prediksi ditentukan berdasarkan voting dari beberapa tree. Dibandingkan Decision Tree tunggal, Random Forest biasanya lebih stabil karena tidak bergantung hanya pada satu pohon keputusan.
-
-Untuk dataset `PlayTennis`, model menggunakan fitur cuaca seperti `Outlook`, `Temperature`, `Humidity`, dan `Wind` untuk memprediksi apakah seseorang akan bermain tenis atau tidak pada kolom target `PlayTennis`.
