@@ -24,3 +24,4 @@ chapters:
   - file: uts  
   - file: naive  
   - file: decision  
+  - file: panduan_random_forest_knime  
