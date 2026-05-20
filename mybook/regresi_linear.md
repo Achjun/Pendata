@@ -1,6 +1,8 @@
-# Rumus dan Langkah Regresi Linier
+# Regresi Linier
 
-## Data
+## Data yang Digunakan
+
+Data yang digunakan berupa titik-titik koordinat sebagai berikut:
 
 | Titik | x | y |
 |---|---:|---:|
@@ -14,230 +16,11 @@
 
 ---
 
-## 1. Model Regresi Linier
+## Visualisasi Menggunakan GeoGebra
 
-Model regresi linier sederhana adalah:
+Pada GeoGebra Calculator, data dimasukkan dalam bentuk titik koordinat:
 
-```text
-y = b0 + b1x + e
-```
-
-Keterangan:
-
-- `y` = nilai yang diprediksi
-- `x` = variabel input
-- `b0` = intercept atau titik potong garis dengan sumbu y
-- `b1` = koefisien regresi atau kemiringan garis
-- `e` = error atau residual
-
-Tujuan regresi linier adalah mencari garis terbaik yang dapat mewakili pola data.
-
----
-
-## 2. Jumlah Data
-
-Jumlah titik data:
-
-```text
-n = 7
-```
-
----
-
-## 3. Membuat Tabel Bantuan
-
-Untuk menghitung regresi linier, kita membutuhkan nilai:
-
-- `x`
-- `y`
-- `x²`
-- `xy`
-
-| Titik | x | y | x² | xy |
-|---|---:|---:|---:|---:|
-| A | 2 | 2 | 4 | 4 |
-| B | 4 | 3 | 16 | 12 |
-| C | 5 | 5 | 25 | 25 |
-| D | 3 | 4 | 9 | 12 |
-| E | 3 | 3 | 9 | 9 |
-| F | 4 | 5 | 16 | 20 |
-| G | 5 | 6 | 25 | 30 |
-| **Jumlah** | **26** | **28** | **104** | **112** |
-
-Jadi diperoleh:
-
-```text
-Σx = 26
-Σy = 28
-Σx² = 104
-Σxy = 112
-```
-
----
-
-## 4. Menghitung Koefisien b1
-
-Rumus koefisien regresi atau kemiringan garis adalah:
-
-```text
-b1 = [nΣxy - (Σx)(Σy)] / [nΣx² - (Σx)²]
-```
-
-Masukkan nilai yang sudah diketahui:
-
-```text
-b1 = [7(112) - (26)(28)] / [7(104) - (26)²]
-```
-
-```text
-b1 = [784 - 728] / [728 - 676]
-```
-
-```text
-b1 = 56 / 52
-```
-
-```text
-b1 = 14 / 13
-```
-
-```text
-b1 = 1.0769
-```
-
-Jadi:
-
-```text
-b1 = 1.0769
-```
-
----
-
-## 5. Menghitung Intercept b0
-
-Rumus intercept adalah:
-
-```text
-b0 = [Σy - b1Σx] / n
-```
-
-Masukkan nilai yang sudah diketahui:
-
-```text
-b0 = [28 - (1.0769)(26)] / 7
-```
-
-Karena:
-
-```text
-1.0769 × 26 = 28
-```
-
-Maka:
-
-```text
-b0 = [28 - 28] / 7
-```
-
-```text
-b0 = 0
-```
-
-Jadi:
-
-```text
-b0 = 0
-```
-
----
-
-## 6. Membentuk Persamaan Regresi
-
-Rumus awal:
-
-```text
-y = b0 + b1x
-```
-
-Masukkan nilai `b0` dan `b1`:
-
-```text
-y = 0 + 1.0769x
-```
-
-Maka persamaan regresinya adalah:
-
-```text
-y = 1.0769x
-```
-
-Atau dalam bentuk pecahan:
-
-```text
-y = 14/13 x
-```
-
----
-
-## 7. Menghitung Prediksi
-
-Rumus prediksi:
-
-```text
-ŷ = 1.0769x
-```
-
-| Titik | x | y aktual | y prediksi |
-|---|---:|---:|---:|
-| A | 2 | 2 | 2.1538 |
-| B | 4 | 3 | 4.3077 |
-| C | 5 | 5 | 5.3846 |
-| D | 3 | 4 | 3.2308 |
-| E | 3 | 3 | 3.2308 |
-| F | 4 | 5 | 4.3077 |
-| G | 5 | 6 | 5.3846 |
-
----
-
-## 8. Menghitung Residual atau Error
-
-Residual adalah selisih antara nilai aktual dengan nilai prediksi.
-
-Rumus residual:
-
-```text
-e = y - ŷ
-```
-
-| Titik | y aktual | y prediksi | residual |
-|---|---:|---:|---:|
-| A | 2 | 2.1538 | -0.1538 |
-| B | 3 | 4.3077 | -1.3077 |
-| C | 5 | 5.3846 | -0.3846 |
-| D | 4 | 3.2308 | 0.7692 |
-| E | 3 | 3.2308 | -0.2308 |
-| F | 5 | 4.3077 | 0.6923 |
-| G | 6 | 5.3846 | 0.6154 |
-
----
-
-## 9. Interpretasi
-
-Persamaan regresi:
-
-```text
-y = 1.0769x
-```
-
-Artinya, setiap nilai `x` naik 1 satuan, maka nilai `y` diprediksi naik sekitar `1.0769` satuan.
-
-Karena `b0 = 0`, maka garis regresi memotong sumbu y di titik 0.
-
----
-
-## 10. Kesimpulan
-
-Berdasarkan data:
+![Regresi Linier](images/image.png)
 
 ```text
 A = (2, 2)
@@ -249,16 +32,294 @@ F = (4, 5)
 G = (5, 6)
 ```
 
-diperoleh persamaan regresi linier:
+Setelah semua titik dimasukkan, dibuat garis regresi linier menggunakan perintah:
 
 ```text
-y = 1.0769x
+FitLine({A, B, C, D, E, F, G})
 ```
 
+Berdasarkan hasil dari GeoGebra, diperoleh persamaan garis regresi:
 
-Garis ini adalah garis terbaik berdasarkan metode **least squares**, yaitu metode yang memilih garis dengan jumlah kuadrat residual terkecil.
+```text
+y = 1.0769230769231x
+```
 
+Artinya, garis regresi memiliki nilai kemiringan atau slope sebesar `1.0769230769231`.
 
-## 11. Visualisai akhir
+![Regresi Linier](images/image2.png)
 
-![Regresi linear](images/image.png)
+---
+
+## Konsep Regresi Linier
+
+Regresi linier sederhana memiliki bentuk umum:
+
+```text
+y = β0 + β1x
+```
+
+Keterangan:
+
+```text
+y  = variabel terikat
+x  = variabel bebas
+β0 = intercept atau konstanta
+β1 = slope atau koefisien regresi
+```
+
+Pada data ini, hasil yang diperoleh adalah:
+
+```text
+β0 = 0
+β1 = 1.0769230769231
+```
+
+Sehingga persamaan regresi liniernya menjadi:
+
+```text
+y = 0 + 1.0769230769231x
+```
+
+atau dapat disederhanakan menjadi:
+
+```text
+y = 1.0769230769231x
+```
+
+---
+
+## Perhitungan Menggunakan Python Sklearn
+
+Perhitungan regresi linier dapat dilakukan menggunakan library `sklearn` pada Python.
+
+```python
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Data
+X = np.array([[2], [4], [5], [3], [3], [4], [5]])
+Y = np.array([2, 3, 5, 4, 3, 5, 6])
+
+# Membuat model regresi linier
+model = LinearRegression()
+
+# Melatih model
+model.fit(X, Y)
+
+# Mengambil nilai intercept dan slope
+intercept = model.intercept_
+slope = model.coef_[0]
+
+print("Intercept / β0:", intercept)
+print("Slope / β1:", slope)
+print(f"Persamaan regresi: y = {intercept:.4f} + {slope:.4f}x")
+```
+
+Hasil output:
+
+```text
+Intercept / β0: 0.0
+Slope / β1: 1.0769230769230769
+Persamaan regresi: y = 0.0000 + 1.0769x
+```
+
+Berdasarkan hasil tersebut, diperoleh:
+
+```text
+β0 = 0
+β1 = 1.0769230769231
+```
+
+Maka persamaan regresinya adalah:
+
+```text
+y = 1.0769230769231x
+```
+
+---
+
+## Visualisasi Menggunakan Python
+
+Selain menggunakan GeoGebra, data dan garis regresi juga dapat divisualisasikan menggunakan Python.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Data
+x = np.array([2, 4, 5, 3, 3, 4, 5])
+y = np.array([2, 3, 5, 4, 3, 5, 6])
+X = x.reshape(-1, 1)
+
+# Model regresi linier
+model = LinearRegression()
+model.fit(X, y)
+
+# Prediksi nilai y
+y_pred = model.predict(X)
+
+# Label titik
+labels = ["A", "B", "C", "D", "E", "F", "G"]
+
+# Visualisasi
+plt.figure(figsize=(8, 6))
+plt.scatter(x, y, label="Data Asli", s=80)
+plt.plot(x, y_pred, label="Garis Regresi", linewidth=2)
+
+# Menampilkan label pada setiap titik
+for i, label in enumerate(labels):
+    plt.text(x[i] + 0.05, y[i] + 0.05, label, fontsize=12)
+
+plt.title("Visualisasi Regresi Linier")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid(True)
+plt.legend()
+plt.show()
+```
+
+Visualisasi tersebut menampilkan titik-titik data asli dan garis regresi linier yang diperoleh dari hasil perhitungan Python.
+
+---
+
+## Perhitungan Analitik
+
+Selain menggunakan `sklearn`, koefisien regresi juga dapat dihitung secara analitik menggunakan rumus matriks:
+
+```text
+β̂ = (XᵀX)⁻¹XᵀY
+```
+
+Keterangan:
+
+```text
+β̂       = vektor koefisien regresi
+X        = matriks variabel input
+Xᵀ       = transpose dari matriks X
+(XᵀX)⁻¹  = invers dari matriks XᵀX
+Y        = vektor nilai target
+```
+
+Karena model regresi linier memiliki bentuk:
+
+```text
+y = β0 + β1x
+```
+
+maka matriks `X` perlu ditambahkan kolom angka `1` untuk mewakili intercept.
+
+---
+
+## Matriks X dan Y
+
+Data nilai `x` adalah:
+
+```text
+x = [2, 4, 5, 3, 3, 4, 5]
+```
+
+Data nilai `y` adalah:
+
+```text
+y = [2, 3, 5, 4, 3, 5, 6]
+```
+
+Matriks `X` disusun menjadi:
+
+```text
+X =
+[1  2]
+[1  4]
+[1  5]
+[1  3]
+[1  3]
+[1  4]
+[1  5]
+```
+
+Matriks `Y` disusun menjadi:
+
+```text
+Y =
+[2]
+[3]
+[5]
+[4]
+[3]
+[5]
+[6]
+```
+
+Kolom pertama pada matriks `X` berisi angka `1` karena digunakan untuk menghitung nilai intercept `β0`.
+
+---
+
+## Kode Perhitungan Analitik
+
+Berikut kode Python untuk menghitung koefisien regresi menggunakan rumus analitik:
+
+```python
+import numpy as np
+
+# Data
+x = np.array([2, 4, 5, 3, 3, 4, 5])
+y = np.array([2, 3, 5, 4, 3, 5, 6])
+
+# Membuat matriks X dengan kolom 1 untuk intercept
+X = np.column_stack((np.ones(len(x)), x))
+
+# Membuat Y menjadi matriks kolom
+Y = y.reshape(-1, 1)
+
+# Menghitung beta menggunakan rumus analitik
+beta = np.linalg.inv(X.T @ X) @ X.T @ Y
+
+print("β0 / Intercept:", beta[0][0])
+print("β1 / Slope:", beta[1][0])
+print(f"Persamaan regresi: y = {beta[0][0]:.4f} + {beta[1][0]:.4f}x")
+```
+
+Hasil output:
+
+```text
+β0 / Intercept: 0.0
+β1 / Slope: 1.0769230769230769
+Persamaan regresi: y = 0.0000 + 1.0769x
+```
+
+Hasil tersebut sama dengan hasil dari GeoGebra dan `sklearn`.
+
+---
+
+## Perbandingan Hasil
+
+Berikut perbandingan hasil dari tiga metode:
+
+| Metode | Persamaan Regresi |
+|---|---|
+| GeoGebra Calculator | y = 1.0769230769231x |
+| Python Sklearn | y = 1.0769230769231x |
+| Perhitungan Analitik | y = 1.0769230769231x |
+
+Ketiga metode menghasilkan persamaan regresi yang sama.
+
+---
+
+## Kesimpulan
+
+Berdasarkan hasil analisis, diperoleh persamaan regresi linier:
+
+```text
+y = 1.0769230769231x
+```
+
+Hasil tersebut diperoleh dari tiga metode, yaitu:
+
+1. GeoGebra Calculator.
+2. Python menggunakan library `sklearn`.
+3. Perhitungan analitik menggunakan rumus matriks.
+
+Hasil dari ketiga metode sama, sehingga dapat disimpulkan bahwa hasil garis regresi pada GeoGebra sudah sesuai dengan hasil perhitungan Python dan perhitungan analitik.
+
+Persamaan regresi tersebut menunjukkan bahwa setiap kenaikan nilai `x` sebesar 1 akan meningkatkan nilai prediksi `y` sebesar sekitar `1.0769`.
