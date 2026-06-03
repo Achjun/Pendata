@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Peramalan kadar \(NO_2\) di daerah Bangkalan &#8212; My sample book</title>
+    <title>Peramalan kadar NO2 di daerah Bangkalan &#8212; My sample book</title>
   
   
   
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="decision.html">Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="panduan_random_forest_knime.html">Random Forest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regresi_linear.html">Regresi Linier</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Peramalan kadar <span class="math notranslate nohighlight">\(NO_2\)</span> di daerah Bangkalan</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Peramalan kadar NO2 di daerah Bangkalan</a></li>
 </ul>
 
     </div>
@@ -400,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Peramalan kadar NO_2 di daerah Bangkalan</h1>
+    <h1>Peramalan kadar NO2 di daerah Bangkalan</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -439,8 +439,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="peramalan-kadar-no-2-di-daerah-bangkalan">
-<h1>Peramalan kadar <span class="math notranslate nohighlight">\(NO_2\)</span> di daerah Bangkalan<a class="headerlink" href="#peramalan-kadar-no-2-di-daerah-bangkalan" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="peramalan-kadar-no2-di-daerah-bangkalan">
+<h1>Peramalan kadar NO2 di daerah Bangkalan<a class="headerlink" href="#peramalan-kadar-no2-di-daerah-bangkalan" title="Permalink to this heading">#</a></h1>
 <section id="latar-belakang">
 <h2>Latar Belakang<a class="headerlink" href="#latar-belakang" title="Permalink to this heading">#</a></h2>
 <p>Peningkatan aktivitas industri, transportasi, serta pertumbuhan populasi yang pesat telah menyebabkan peningkatan signifikan terhadap tingkat pencemaran udara di berbagai wilayah. Salah satu polutan udara utama yang menjadi perhatian adalah Nitrogen Dioksida (NO₂), yaitu gas beracun yang dihasilkan terutama dari proses pembakaran bahan bakar fosil seperti kendaraan bermotor, pembangkit listrik, dan kegiatan industri. NO₂ memiliki dampak serius terhadap kesehatan manusia, seperti gangguan pernapasan, iritasi paru-paru, serta memperburuk penyakit asma dan bronkitis. Selain itu, NO₂ juga berkontribusi terhadap pembentukan hujan asam dan penurunan kualitas lingkungan secara keseluruhan.</p>
@@ -450,7 +450,7 @@ document.write(`
 <p>Pertama kita akan mengumpulkan data Time Series Harian kadar NO2 di daerah Bangkalan. Pengumpulan data dari sumber website <a class="reference external" href="https://dataspace.copernicus.eu/">https://dataspace.copernicus.eu/</a> , buat akun terlebih dahulu di website copernicus tersebut.</p>
 <p>Dokumentasi cara pengambilan data di <a class="reference external" href="https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/NO2Covid.html">https://documentation.dataspace.copernicus.eu/notebook-samples/openeo/NO2Covid.html</a> .</p>
 <p>Untuk menuliskan code Python untuk mengambil data, silahkan kunjungi halaman <a class="reference external" href="https://dataspace.copernicus.eu/analyse/jupyterlab">https://dataspace.copernicus.eu/analyse/jupyterlab</a>, klik Access JupyterLab, scroll kebawah sedikit …, lalu pilih Python 3 (ipykernel)</p>
-<p><img alt="Teks alternatif" src="img/Screenshot%202025-10-23%20105545.png" /></p>
+<p><img alt="Teks alternatif" src="_images/kernel.png" /></p>
 <p>Disini kita akan mengambil data kadar NO2 di daerah Bangkalan dari tanggal … sampai … .</p>
 <p>Kita install terlebih dahulu openoneo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">openeo</span>
@@ -504,7 +504,7 @@ Authenticated using device code flow.
 </pre></div>
 </div>
 <p>Code diatas memerlukan titik koordinasi area yang akan diambil data <span class="math notranslate nohighlight">\(NO_2\)</span>-nya, untuk mengambil titik koordinasi kaian kunjungi webiste <a class="reference external" href="https://geojson.io/#map=14.8/-7.04732/112.69463">https://geojson.io/#map=14.8/-7.04732/112.69463</a> . Didalam website tersebut kalian akan memilih daerah dengan cara memberi shape kotak didaerah yang ingin kalian ambil datanya.</p>
-<p><img alt="Teks alternatif" src="img/Screenshot%202025-10-23%20110952.png" /></p>
+<p><img alt="Teks alternatif" src="_images/geo.png" /></p>
 <p>Di panel sebelah kanan terdapat data JSON yang berupa koordinat daerah yang kalian pilih, kalian salin terus sesuaikan dengan code diatas di bagian variabel “aoi” dan spatial_extent.</p>
 <p>Lalu kalian tambahkan baris code dibawah untuk memulai pengambilan data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">job</span> <span class="o">=</span> <span class="n">s5post</span><span class="o">.</span><span class="n">execute_batch</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NO2 in Bangkalan&quot;</span><span class="p">,</span> <span class="n">outputfile</span><span class="o">=</span><span class="s2">&quot;NO2Bangkalan.nc&quot;</span><span class="p">)</span>
@@ -529,7 +529,7 @@ Authenticated using device code flow.
 </div>
 <p>Abaikan ketika ada N/A.</p>
 <p>Ketika proses pengambilan data, aktivitas kalian akan terekam di halaman <a class="reference external" href="https://editor.openeo.org/?server=https%3A%2F%2Fopeneo.dataspace.copernicus.eu%2Fopeneo%2F1.2">https://editor.openeo.org/?server=https%3A%2F%2Fopeneo.dataspace.copernicus.eu%2Fopeneo%2F1.2</a> . Disitu terdapat nama dataset dan status pengambilan data.</p>
-<p><img alt="Teks alternatif" src="img/Screenshot%202025-10-24%20121430.png" /></p>
+<p><img alt="Teks alternatif" src="_images/open.png" /></p>
 </section>
 <section id="preproccessing-data">
 <h2>2. Preproccessing Data<a class="headerlink" href="#preproccessing-data" title="Permalink to this heading">#</a></h2>
