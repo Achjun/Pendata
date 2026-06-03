@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'pendata';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Peramalan Kadar NO₂ di Daerah Bangkalan Madura (Revisi)" href="no2.html" />
+    <link rel="prev" title="Regresi Linier" href="regresi_linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -214,14 +214,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="decision.html">Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="panduan_random_forest_knime.html">Random Forest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regresi_linear.html">Regresi Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="no2.html">Peramalan Kadar NO₂ di Daerah Bangkalan Madura (Revisi)</a></li>
-
-
-
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Peramalan kadar <span class="math notranslate nohighlight">\(NO_2\)</span> di daerah Bangkalan</a></li>
 </ul>
 
@@ -544,7 +536,7 @@ Authenticated using device code flow.
 <p>Setelah kita mengambil data, data bisa diunduh di halaman <a class="reference external" href="https://editor.openeo.org/?server=https%3A%2F%2Fopeneo.dataspace.copernicus.eu%2Fopeneo%2F1.2">https://editor.openeo.org/?server=https%3A%2F%2Fopeneo.dataspace.copernicus.eu%2Fopeneo%2F1.2</a> . File akan berbentuk .nc. Kita cuman perlu kolom date dan NO2 menggunakan code dibawah:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">netCDF4</span>
 
-<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;data/NO2Bangkalan.nc&quot;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;NO2BangkalanTerkini.nc&quot;</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">netCDF4</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 
 <span class="c1"># Lihat seluruh variabel yang tersedia</span>
@@ -580,13 +572,6 @@ Authenticated using device code flow.
 
 <span class="nb">print</span><span class="p">(</span><span class="n">no2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 <span class="c1"># 3.7701793e-05</span>
-</pre></div>
-</div>
-<p>Dari code diatas kita mengetahui bentuk data dari kolom NO2 nya.</p>
-<p>jadi struktur data NO2 perbaris adalah:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">[[]</span> <span class="o">*</span> <span class="mi">8</span><span class="p">]</span> <span class="o">*</span> <span class="mi">9</span>
-<span class="p">]</span>
 </pre></div>
 </div>
 <p>Untuk melihat 10 data pertama adalah:</p>
@@ -639,7 +624,7 @@ Authenticated using device code flow.
 <p>Setelah itu kita akan membentuk data menjadi DataFrame Pandas untuk disimpan menjadi CSV.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">dates</span><span class="p">,</span>
-    <span class="s2">&quot;NO2&quot;</span><span class="p">:</span> <span class="n">no2_values</span>
+    <span class="s2">&quot;NO2&quot;</span><span class="p">:</span> <span class="n">new_no2</span>
 <span class="p">})</span>
 
 <span class="c1"># Simpan ke CSV</span>
@@ -660,8 +645,8 @@ Authenticated using device code flow.
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
 
 <span class="c1"># Buat rentang tanggal lengkap</span>
-<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;2023-10-01&quot;</span>
-<span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;2025-09-30&quot;</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;2025-01-01&quot;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;2026-06-01&quot;</span>
 <span class="n">full_range</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_date</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 
 <span class="c1"># Cek tanggal yang hilang</span>
@@ -688,7 +673,7 @@ Authenticated using device code flow.
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
 
 <span class="c1"># Buat rentang tanggal lengkap</span>
-<span class="n">full_range</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2023-10-01&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2025-09-30&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="n">full_range</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;2026-06-01&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
 
 <span class="c1"># Reindex agar tanggal yang hilang muncul sebagai NaN</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">full_range</span><span class="p">)</span>
@@ -711,23 +696,6 @@ Authenticated using device code flow.
 </pre></div>
 </div>
 <p>dengan bentuk data terdapat 2 kolom, kolom pertama yaitu date atau tanggal, kolom kedua yaitu kadar NO2 yang sudah di rata-rata kan.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         date       NO2
-0  2023-10-01  0.000027
-1  2023-10-02  0.000024
-2  2023-10-03  0.000024
-3  2023-10-04  0.000021
-4  2023-10-05  0.000021
-&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 731 entries, 0 to 730
-Data columns (total 2 columns):
- #   Column  Non-Null Count  Dtype
----  ------  --------------  -----
- 0   date    731 non-null    object
- 1   NO2     731 non-null    float64
-dtypes: float64(1), object(1)
-memory usage: 11.5+ KB
-</pre></div>
-</div>
 </section>
 <section id="e-deteksi-outlier-iqr">
 <h3>e. Deteksi Outlier IQR<a class="headerlink" href="#e-deteksi-outlier-iqr" title="Permalink to this heading">#</a></h3>
@@ -790,7 +758,7 @@ memory usage: 11.5+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><img alt="Teks alternatif" src="img/Figure_1.png" /></p>
+<p><img alt="Teks alternatif" src="_images/outlier.png" /></p>
 <p>Setelah itu, kita akan menghapus data outlier. Karena data ini merupakan data Time Series, maka data outlier yang dihapus akan diisi kembali menggunakan Interpolasi Linear.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tandai outlier menjadi NaN</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NO2_cleaned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mask</span><span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">lower_bound</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;NO2&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">upper_bound</span><span class="p">))</span>
@@ -825,7 +793,7 @@ memory usage: 11.5+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><img alt="Teks alternatif" src="img/Figure_2.png" /></p>
+<p><img alt="Teks alternatif" src="_images/removal.png" /></p>
 </section>
 </section>
 <section id="modeling-menggunakan-knn-regression">
@@ -1136,12 +1104,12 @@ MAPE: 72.2295%
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="no2.html"
+       href="regresi_linear.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Peramalan Kadar NO₂ di Daerah Bangkalan Madura (Revisi)</p>
+        <p class="prev-next-title">Regresi Linier</p>
       </div>
     </a>
 </div>

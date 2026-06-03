@@ -26,6 +26,5 @@ chapters:
   - file: decision  
   - file: panduan_random_forest_knime  
   - file: regresi_linear  
-  - file: no2  
   - file: pendata  
-  
+
